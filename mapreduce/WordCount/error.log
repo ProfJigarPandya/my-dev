@@ -1,0 +1,62 @@
+2022-07-18 17:11:50,406 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at /0.0.0.0:8032
+2022-07-18 17:11:51,253 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2022-07-18 17:11:51,315 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/jigar/.staging/job_1658144450757_0002
+2022-07-18 17:11:52,048 INFO input.FileInputFormat: Total input files to process : 3
+2022-07-18 17:11:52,281 INFO mapreduce.JobSubmitter: number of splits:3
+2022-07-18 17:11:52,835 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1658144450757_0002
+2022-07-18 17:11:52,836 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2022-07-18 17:11:53,236 INFO conf.Configuration: resource-types.xml not found
+2022-07-18 17:11:53,236 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2022-07-18 17:11:53,390 INFO impl.YarnClientImpl: Submitted application application_1658144450757_0002
+2022-07-18 17:11:53,467 INFO mapreduce.Job: The url to track the job: http://pandya:8088/proxy/application_1658144450757_0002/
+2022-07-18 17:11:53,468 INFO mapreduce.Job: Running job: job_1658144450757_0002
+2022-07-18 17:11:57,551 INFO mapreduce.Job: Job job_1658144450757_0002 running in uber mode : false
+2022-07-18 17:11:57,552 INFO mapreduce.Job:  map 0% reduce 0%
+2022-07-18 17:11:57,589 INFO mapreduce.Job: Job job_1658144450757_0002 failed with state FAILED due to: Application application_1658144450757_0002 failed 2 times due to AM Container for appattempt_1658144450757_0002_000002 exited with  exitCode: 1
+Failing this attempt.Diagnostics: [2022-07-18 17:11:56.859]Exception from container-launch.
+Container id: container_1658144450757_0002_02_000001
+Exit code: 1
+
+[2022-07-18 17:11:56.867]Container exited with a non-zero exit code 1. Error file: prelaunch.err.
+Last 4096 bytes of prelaunch.err :
+Last 4096 bytes of stderr :
+Error: Could not find or load main class org.apache.hadoop.mapreduce.v2.app.MRAppMaster
+Caused by: java.lang.ClassNotFoundException: org.apache.hadoop.mapreduce.v2.app.MRAppMaster
+
+Please check whether your <HADOOP_HOME>/etc/hadoop/mapred-site.xml contains the below configuration:
+<property>
+  <name>yarn.app.mapreduce.am.env</name>
+  <value>HADOOP_MAPRED_HOME=${full path of your hadoop distribution directory}</value>
+</property>
+<property>
+  <name>mapreduce.map.env</name>
+  <value>HADOOP_MAPRED_HOME=${full path of your hadoop distribution directory}</value>
+</property>
+<property>
+  <name>mapreduce.reduce.env</name>
+  <value>HADOOP_MAPRED_HOME=${full path of your hadoop distribution directory}</value>
+</property>
+
+[2022-07-18 17:11:56.868]Container exited with a non-zero exit code 1. Error file: prelaunch.err.
+Last 4096 bytes of prelaunch.err :
+Last 4096 bytes of stderr :
+Error: Could not find or load main class org.apache.hadoop.mapreduce.v2.app.MRAppMaster
+Caused by: java.lang.ClassNotFoundException: org.apache.hadoop.mapreduce.v2.app.MRAppMaster
+
+Please check whether your <HADOOP_HOME>/etc/hadoop/mapred-site.xml contains the below configuration:
+<property>
+  <name>yarn.app.mapreduce.am.env</name>
+  <value>HADOOP_MAPRED_HOME=${full path of your hadoop distribution directory}</value>
+</property>
+<property>
+  <name>mapreduce.map.env</name>
+  <value>HADOOP_MAPRED_HOME=${full path of your hadoop distribution directory}</value>
+</property>
+<property>
+  <name>mapreduce.reduce.env</name>
+  <value>HADOOP_MAPRED_HOME=${full path of your hadoop distribution directory}</value>
+</property>
+
+For more detailed output, check the application tracking page: http://pandya:8088/cluster/app/application_1658144450757_0002 Then click on links to logs of each attempt.
+. Failing the application.
+2022-07-18 17:11:57,632 INFO mapreduce.Job: Counters: 0
