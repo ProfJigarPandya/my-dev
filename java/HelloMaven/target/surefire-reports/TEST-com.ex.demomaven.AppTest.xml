@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ex.demomaven.AppTest" time="0.002" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ex.demomaven.AppTest" time="0.025" tests="1" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value=""/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/jigarpandya/my-dev/java/HelloMaven/target/test-classes:/home/jigarpandya/my-dev/java/HelloMaven/target/classes:/home/jigarpandya/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
+    <property name="java.class.path" value="/home/jigar/my-dev/java/HelloMaven/target/test-classes:/home/jigar/my-dev/java/HelloMaven/target/classes:/home/jigar/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
@@ -14,48 +13,48 @@
     <property name="java.vm.specification.version" value="11"/>
     <property name="os.name" value="Linux"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="user.country" value="IN"/>
+    <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/jigarpandya/my-dev/java/HelloMaven/target/surefire/surefirebooter13963187468864620179.jar /home/jigarpandya/my-dev/java/HelloMaven/target/surefire 2022-07-26T16-48-55_456-jvmRun1 surefire9542397826935942381tmp surefire_07171918906359930997tmp"/>
+    <property name="sun.java.command" value="/home/jigar/my-dev/java/HelloMaven/target/surefire/surefirebooter9182057686016572444.jar /home/jigar/my-dev/java/HelloMaven/target/surefire 2022-11-23T09-47-52_274-jvmRun1 surefire10441654494173885729tmp surefire_08234513231440969536tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home/jigarpandya/my-dev/java/HelloMaven/target/test-classes:/home/jigarpandya/my-dev/java/HelloMaven/target/classes:/home/jigarpandya/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
+    <property name="surefire.test.class.path" value="/home/jigar/my-dev/java/HelloMaven/target/test-classes:/home/jigar/my-dev/java/HelloMaven/target/classes:/home/jigar/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/home/jigarpandya"/>
+    <property name="user.home" value="/home/jigar"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2020-01-14"/>
+    <property name="java.version.date" value="2022-07-19"/>
     <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/home/jigarpandya/my-dev/java/HelloMaven"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="basedir" value="/home/jigar/my-dev/java/HelloMaven"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/jigarpandya/my-dev/java/HelloMaven/target/surefire/surefirebooter13963187468864620179.jar"/>
+    <property name="surefire.real.class.path" value="/home/jigar/my-dev/java/HelloMaven/target/surefire/surefirebooter9182057686016572444.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="11.0.6+10-post-Ubuntu-1ubuntu118.04.1"/>
-    <property name="user.name" value="jigarpandya"/>
+    <property name="java.runtime.version" value="11.0.16+8-post-Ubuntu-0ubuntu118.04"/>
+    <property name="user.name" value="jigar"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="5.3.0-40-generic"/>
+    <property name="os.version" value="4.15.0-193-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="localRepository" value="/home/jigarpandya/.m2/repository"/>
+    <property name="localRepository" value="/home/jigar/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-lts"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="java.version" value="11.0.6"/>
-    <property name="user.dir" value="/home/jigarpandya/my-dev/java/HelloMaven"/>
+    <property name="java.version" value="11.0.16"/>
+    <property name="user.dir" value="/home/jigar/my-dev/java/HelloMaven"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="sun.os.patch.level" value="unknown"/>
-    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
-    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.library.path" value="/opt/oracle/product/21c/dbhomeXE/lib:/lib:/usr/lib/::/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vm.version" value="11.0.6+10-post-Ubuntu-1ubuntu118.04.1"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="11.0.16+8-post-Ubuntu-0ubuntu118.04"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testApp" classname="com.ex.demomaven.AppTest" time="0"/>
+  <testcase name="testApp" classname="com.ex.demomaven.AppTest" time="0.001"/>
 </testsuite>
