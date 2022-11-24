@@ -12,6 +12,7 @@ http://locahost:8080
 sbin/start-worker.sh spark://localhost:7077
 jps
 
+http://locahost:8080
 
 Way#1 to run the scala word count
 
@@ -19,6 +20,8 @@ spark-shell --master spark://localhost:7077
 
 Run the code within src main App.scala manually line by line.
 
+Way#2 
+spark-submit --master spark://localhost:7077 --deploy-mode=cluster --class=me.my.mine.App target/SparkWordCount-1.0-SNAPSHOT.jar
 
 ###Spark setup steps
 chown -R jigar:jigar /opt/spark-3.3.0-bin-without-hadoop
