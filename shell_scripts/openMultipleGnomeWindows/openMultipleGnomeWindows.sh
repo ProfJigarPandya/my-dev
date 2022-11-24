@@ -4,9 +4,10 @@ if [ -z $1 ]
 then
         set 1
 fi
+preswd=`pwd`
 for ((i=1;i<=$1;i++))
-{
-        gnome-terminal --tab -e "internalscript.sh $password"  --tab -e "/internalscript.sh $password" --tab -e "internalscript.sh $password" &
+ {
+        gnome-terminal --tab -e "$preswd/internalscript.sh $password"  --tab -e "$preswd/internalscript.sh $password" --tab -e "$preswd/internalscript.sh $password" &
 echo ''
 }
 

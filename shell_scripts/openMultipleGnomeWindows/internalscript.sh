@@ -3,8 +3,7 @@ username=jigar
 sshport=1985
 if [ $# -eq 0 ]
 then
-        ssh $username@$ip -p $ssport
+        ssh $username@$ip -p $sshport
 else
         sshpass -p $1 ssh $username@$ip -p $sshport
 fi
-
