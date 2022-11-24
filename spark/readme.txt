@@ -43,4 +43,6 @@ vi spark-defaults.conf
 
 
 
-
+stop-worker.sh
+stop-master.sh
+stop-dfs.sh
