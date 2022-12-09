@@ -59,29 +59,49 @@ public class MagicSquare {
 			}
 			
 
-			rowNum=((n/2)+n)%n;
-			colNum=((n-1)+n)%n;
+			rowNum=((n/2));
+			colNum=((n-1));
 			
 			//The very first number is always stored at row n/2 and column n-1.
 			squareMatrix[rowNum][colNum]=currentVal++;
 			System.out.println("rowNum is "+rowNum+" and colNUm is "+colNum);
 			
 			//Update positioning next number 
-			rowNum=(rowNum-1+n)%n;
-			colNum=(colNum+1+n)%n;
+			rowNum=(rowNum-1);
+			colNum=(colNum+1);
 			do
 			{
 				System.out.println("rowNum is "+rowNum+" and colNUm is "+colNum);				
+				if((rowNum==-1)&&(colNum==n))
+				{
+					//System.out.println("You have a case of both together, rowNum is -1 and colNum is n");
+					//System.out.println("rowNum is "+rowNum+" and colNUm is "+colNum);				
+					rowNum=0;
+					colNum=n-2;					
+				}
+				else if(rowNum<0)
+				{
+					//System.out.println("You have a case of rowNum is -1");
+					//System.out.println("rowNum is "+rowNum+" and colNUm is "+colNum);				
+					rowNum=n-1;
+				}
+				else if(colNum==n)
+					{
+						//System.out.println("You have a case of colNum is n");
+						//System.out.println("rowNum is "+rowNum+" and colNUm is "+colNum);				
+						colNum=0;
+					}
+
 				if(squareMatrix[rowNum][colNum]==0)//Check if the position is not taken
 				{
 					squareMatrix[rowNum][colNum]=currentVal++;
-					rowNum=(rowNum-1+n)%n;
-					colNum=(colNum+1+n)%n;
+					rowNum=(rowNum-1);
+					colNum=(colNum+1);
 				}
 				else//If the position is taken already updated row and column in the previous run shall be updated further. row by +1 and column by -2.
 				{
-					rowNum=(rowNum+1+n)%n;
-					colNum=(colNum-2+n)%n;
+					rowNum=(rowNum+1);
+					colNum=(colNum-2);
 				}
 				
 			}while(currentVal<=(n*n));//Do it until we have placed all numbers from 1 to n*n.
