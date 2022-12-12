@@ -12,15 +12,13 @@
      * it doesn't give solution at all in some situation eventhough available.
      * It doesn't give best solution always.
 */
+using namespace std;
 
-#include <stdio.h>
-#include <conio.h>
-#include <iostream.h>
+#include <iostream>
 
 #define MAXC 10
-void main()
+int main()
 {
- clrscr();
  int avail_values[MAXC];
  int nvalues,tmoney;
  cout<<"\n Enter available valued coins .... ";
@@ -29,7 +27,7 @@ void main()
  if(nvalues>MAXC)
  {
   cout<<"\nmaximum distinct valued coin allowed are "<<MAXC;
-  return;
+  return 0;
  }
 
  cout<<"\n Enter coin values in ascending order ";
@@ -42,7 +40,7 @@ void main()
  cin>>tmoney;
 
  int money=tmoney;
- i=nvalues-1;
+ int i=nvalues-1;
  int rarr[MAXC]={0};
  while(1)
  {
@@ -74,6 +72,5 @@ void main()
  }
  cout<<"\n Total coins used "<<totalcoins;
 
-
- getch();
+ return 0;
 }
