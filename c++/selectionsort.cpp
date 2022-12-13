@@ -1,24 +1,23 @@
 /* selection sort */
+using namespace std;
 
-#include <stdio.h>
-#include <conio.h>
-#include <iostream.h>
+#include <iostream>
 
 #define MAX 10
-void main()
+
+int main()
 {
  int array[MAX];
- int n;
- int max,index;
- clrscr();
+ int n, i, j, index, temp, max;
+
  cout<<"\n How many elements to be sorted ";
  cin>>n;
  if(n>MAX)
  {
 	cout<<"\n Sorry, not enough space:";
-	return;
+	return 0;
  }
- for(int i=0;i<n;i++)
+ for(i=0;i<n;i++)
  {
   cin>>array[i];
  }
@@ -35,7 +34,6 @@ void main()
 	index = j;
     }
    }
-   int temp;
    temp =array[i];
    array[i] = array[index];
    array[index] = temp;
@@ -45,5 +43,5 @@ void main()
   for(i=0;i<n;i++)
     cout<<"\n"<<array[i];
 
- getch();
+  return 0;
 }
