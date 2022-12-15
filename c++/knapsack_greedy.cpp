@@ -1,3 +1,4 @@
+//Knapsack solution using greedy approach.
 using namespace std;
 
 #include <iostream>
@@ -100,3 +101,41 @@ int main()
 
  return 0;
 }
+
+/*
+ Enter how many distinct objects available5
+
+ Enter for 0 th objects
+ Enter value 40
+
+ Enter Weight20
+
+ Enter for 1 th objects
+ Enter value 50
+
+ Enter Weight60
+
+ Enter for 2 th objects
+ Enter value 30
+
+ Enter Weight80
+
+ Enter for 3 th objects
+ Enter value 40
+
+ Enter Weight10
+
+ Enter for 4 th objects
+ Enter value 30
+
+ Enter Weight20
+
+ Enter capacity of Main Bucket 100
+
+alue   weight   status   ratio
+40 10 1  4
+40 20 1  2
+30 20 1  1.5
+50 60 0.833333  0.833333
+30 80 0  0.375
+*/
