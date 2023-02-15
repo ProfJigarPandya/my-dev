@@ -1,0 +1,7 @@
+ChallengeNo	Question Title
+1		Primality test
+2		Decimal integer to Binary
+3		Print 15 leap years from a given year
+4		Reversing a number
+5		Caeser Cipher
+6		Election result

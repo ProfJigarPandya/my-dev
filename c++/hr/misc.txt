@@ -1,0 +1,14 @@
+unzip $1 -d $2
+
+for i in {2..10}; 
+do 
+	mkdir handson$i; 
+	for j in {1..5}; 
+	do 
+		mkdir handson$i/challenge$j; 
+	done; 
+done
+
+sh runme.sh handson1/challenge1/PrimalityTest.cpp
+sh validate.sh handson1/challenge1/PrimalityTest.cpp
+
