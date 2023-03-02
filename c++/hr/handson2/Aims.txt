@@ -1,0 +1,11 @@
+Handson#2	
+Teaching-Topics:	namespaces and using type alias declaration
+TargetTopics:	vector, string, references, range for
+ChallengeNo	Question Title
+1		swap two numbers
+2		Play with numbers
+3		Play with coins
+4		Reduce given number to 1
+5		Find integer occurring odd number of times
+6		Concatenate all the strings in the input with space in between
+7		Understanding namespaces
