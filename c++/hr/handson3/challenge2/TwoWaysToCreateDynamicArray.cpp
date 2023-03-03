@@ -13,16 +13,16 @@ int main() {
       cin>>m>>n;
 
 //    one method
-    int **ip2;
-    ip2 = (int **) malloc(sizeof(int *) * m);
-    for(i = 0; i < m; i++)
-    {
-        ip2[i] = (int *) malloc(sizeof(int) * n);
-    }
+//    int **ip2;
+//    ip2 = (int **) malloc(sizeof(int *) * m);
+//    for(i = 0; i < m; i++)
+//    {
+//        ip2[i] = (int *) malloc(sizeof(int) * n);
+//    }
     
 //    another method
-//    int (*ip2)[n];
-//    ip2 = (int (*)[n]) malloc(sizeof(int) * m * n);
+    int (*ip2)[n];
+    ip2 = (int (*)[n]) malloc(sizeof(int) * m * n);
     
     for(i = 0; i < m; i++)
     {
@@ -46,9 +46,9 @@ int main() {
     }
     cout<<*(*(ip2 + i) + j);
     
-    for(i = 0; i < m; i++)
-    {
-        free(ip2[i]);        
-    }
+    //for(i = 0; i < m; i++)
+    //{
+    //    free(ip2[i]);        
+   //}
     free(ip2);  
 }
