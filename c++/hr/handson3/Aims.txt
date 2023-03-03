@@ -1,0 +1,12 @@
+Handson 3	
+TargetTopics:	Dynamic memory allocation
+ChallengeNo	Question Title
+1		Accessing dynamic array in different ways
+2		Two ways to create dynamic array
+3		Find out highest marks
+4		Sort the numbers
+5		Sorting of names yet again
+6		Find the closest number to the given number
+7		Creating manipulators
+8		Find the volume
+9		Area of different shapes

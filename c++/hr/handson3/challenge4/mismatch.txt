@@ -1,0 +1,2 @@
+Somehow output5 and output6 did difer from what downloaded to the program generated. The expected output downloaded from the web had extra space/char at the end.
+I have replaced both files from actual output of my program and updated the zip file. May verify further.

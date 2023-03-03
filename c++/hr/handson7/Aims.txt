@@ -1,0 +1,6 @@
+Lab 7	
+TargetTopics:	Inheritence
+SrNo	Question Title
+1	Company Hierarchy
+2	A shopping cart
+3	Vehicle Movement

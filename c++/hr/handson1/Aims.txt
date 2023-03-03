@@ -1,3 +1,6 @@
+Handson#1
+Teaching-Topics:	Debugging using Code::Blocks, C++ program structure, data types, auto, Stream and I/O
+TargetTopics:	C and C++ difference
 ChallengeNo	Question Title
 1		Primality test
 2		Decimal integer to Binary
