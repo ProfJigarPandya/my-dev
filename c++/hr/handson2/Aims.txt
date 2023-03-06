@@ -2,7 +2,7 @@ Handson#2
 Teaching-Topics:	namespaces and using type alias declaration
 TargetTopics:	vector, string, references, range for
 ChallengeNo	Question Title
-1		swap two numbers
+1		Swap two numbers
 2		Play with numbers
 3		Play with coins
 4		Reduce given number to 1

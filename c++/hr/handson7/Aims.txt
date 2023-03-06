@@ -1,6 +1,7 @@
-Lab 7	
+Handson#7
 TargetTopics:	Inheritence
-SrNo	Question Title
-1	Company Hierarchy
-2	A shopping cart
-3	Vehicle Movement
+Teaching Topics:
+ChallengeNo	Question Title
+1		Company Hierarchy
+2		A shopping cart
+3		Vehicle movement

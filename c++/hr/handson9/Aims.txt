@@ -1,5 +1,6 @@
-Lab 9	
+Handson#9	
 TargetTopics:	Exception handling
-SrNo	Question Title
-1	Validate color
-2	Throwing exception of user defined type
+Teaching Topics:
+ChallengeNo	Question Title
+1		Validate color
+2		Throwing exception of user defined type
