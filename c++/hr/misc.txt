@@ -12,3 +12,10 @@ done
 sh runme.sh handson1/challenge1/PrimalityTest.cpp
 sh validate.sh handson1/challenge1/PrimalityTest.cpp
 
+
+sed -r "s/([[:space:]])([a-z])/\U\2/g"
+
+i.e.
+echo "Two ways to create dynamic array" | sed -r "s/([[:space:]])([a-z])/\U\2/g"
+TwoWaysToCreateDynamicArray
+
