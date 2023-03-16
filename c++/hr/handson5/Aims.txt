@@ -1,8 +1,9 @@
-Lab 5 (Two labs combined into one)	
+Handson#5
+Teaching Topics: 	
 TargetTopics:	OOP - classes, objects, friend function, constructors, destructor
-SrNo	Question Title
-1	Moving point on 2-D plane
-2	Resizable and moving rectangle
-3	Family and Person classes
-4	Product class - constructor and copy constructor
-5	Bonus_Calculator
+ChallengeNo	Question Title
+1		Moving point on 2-D plane
+2		Resizable and moving rectangle
+3		Family and Person classes
+4		Product class - constructor and copy constructor
+5		Bonus_Calculator
