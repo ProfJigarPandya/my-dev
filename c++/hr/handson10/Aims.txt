@@ -1,5 +1,6 @@
-Lab 10	
+Handson#10	
 TargetTopics:	Templates
-SrNo	Question Title
-1	Sort and print function templates I
-2	Sort and print function templates II
+Teaching Topics
+ChallengeNo	Question Title
+1		Sort and print function templates I
+2		Sort and print function templates II

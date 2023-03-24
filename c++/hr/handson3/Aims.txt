@@ -1,4 +1,5 @@
-Handson 3	
+Handson#3
+Teaching-Topics:
 TargetTopics:	Dynamic memory allocation
 ChallengeNo	Question Title
 1		Accessing dynamic array in different ways
