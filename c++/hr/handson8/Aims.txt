@@ -1,6 +1,5 @@
-Handson#8
+Lab 8	
 TargetTopics:	Polymorphism (virtual methods and abstract class)
-Teaching Topics:
-ChallengeNo	Question Title
-1		Find area and perimeter of different shapes (ABC)
-2		A simple tetris game
+SrNo	Question Title
+1	Find area and perimeter of different shapes (ABC)
+2	A simple tetris game
