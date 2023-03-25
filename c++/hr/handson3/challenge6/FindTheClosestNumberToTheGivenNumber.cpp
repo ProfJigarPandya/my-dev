@@ -4,26 +4,6 @@ using namespace std;
 #include <iostream>
 #include <iterator> //for std::istream_iterator
 
-int binarySearchR(vector<int> data, int keyword,int low, int high)
-{
-    int mid = (low+high)/2;
-
-    if(high<low)
-        return -1; //not found
-
-    if(keyword==data[mid])
-        return mid;
-
-    if(keyword<=data[mid])
-    {
-        return binarySearchR(data,keyword, low,mid-1);
-    }
-    else
-    {
-        return binarySearchR(data,keyword, mid+1,high);
-    }
-}
-
 
 
 int main() {
