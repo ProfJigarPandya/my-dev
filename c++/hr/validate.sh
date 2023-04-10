@@ -7,8 +7,7 @@ handsOnNumber=`echo $1|cut -d "/" -f1`
 challengeNumber=`echo $1|cut -d "/" -f2`
 sourceFileNameWE=`echo $1|cut -d "/" -f3`
 
-
-if [ $# -ne 1 ]:
+if [ $# -ne 1 ];
 then
 	echo "Usage:validate.sh handsOnNumber/challengeNumber/sourceFileName(With Extension)"
 	exit 1
@@ -27,7 +26,7 @@ do
 	outFileName=output$outFileNameSuffix;
 	echo "Expected output: ./$handsOnNumber/$challengeNumber/output/$outFileName Generated Output: ./$handsOnNumber/$challengeNumber/demo/$outFileName"; 
 	diff ./$handsOnNumber/$challengeNumber/output/$outFileName ./$handsOnNumber/$challengeNumber/demo/$outFileName
-	if [ `echo $?` -ne 0 ]:
+	if [ `echo $?` -ne 0 ];
 	then
 		echo "Output is not as per expectation. Test case failed."
 		break
