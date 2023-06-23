@@ -2,8 +2,9 @@
 Created on 19-Nov-2022
 
 @author: jigarpandya
-'''
+pip install scikit-learn
 
+'''
 from sklearn.cluster import kmeans_plusplus
 from sklearn.cluster import k_means
 import numpy as np
