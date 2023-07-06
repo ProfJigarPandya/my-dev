@@ -4,3 +4,4 @@ sqlplus '/ as sysdba'
 #system
 #password
 #select sysdate from dual;
+select * from product_component_version; 
