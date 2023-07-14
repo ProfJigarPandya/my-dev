@@ -1,0 +1,8 @@
+
+Jan 06, 2023 09:26:19.616 NEW SESSION
+Jan 06, 2023 09:26:19.616 /usr/bin/firefox
+
+Feb 01, 2023 17:04:09.198 NEW SESSION
+Feb 01, 2023 17:04:09.198 which: no mozilla in (/home/jigar/.local/bin:/home/jigar/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin:/opt/oracle/product/21c/dbhomeXE/bin:/home/jigar/bin)
+Feb 01, 2023 17:04:09.198 which: no netscape in (/home/jigar/.local/bin:/home/jigar/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/var/lib/snapd/snap/bin:/opt/oracle/product/21c/dbhomeXE/bin:/home/jigar/bin)
+Feb 01, 2023 17:04:09.199 /usr/bin/firefox

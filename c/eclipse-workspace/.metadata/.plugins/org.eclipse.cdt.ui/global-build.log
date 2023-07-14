@@ -1,0 +1,59 @@
+
+Invoking autoreconf in build directory: /run/media/jigar/6BF2D0CF44B3482D/my-dev/c/eclipse-workspace/HelloWorld/
+
+sh -c "autoreconf -i" 
+sh: line 1: autoreconf: command not found
+
+Configuration failed with error
+
+Invoking autoreconf in build directory: /run/media/jigar/6BF2D0CF44B3482D/my-dev/c/eclipse-workspace/HelloWorld/
+
+sh -c "autoreconf -i" 
+sh: line 1: autoreconf: command not found
+
+Configuration failed with error
+Build stopped
+()17:15:13 **** Build of configuration Build (GNU) for project HelloWorld ****
+make all 
+make: *** No rule to make target 'all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+Invoking autoreconf in build directory: /run/media/jigar/6BF2D0CF44B3482D/my-dev/c/eclipse-workspace/HelloWorld/
+
+sh -c "autoreconf -i" 
+sh: line 1: autoreconf: command not found
+
+Configuration failed with error
+Build stopped
+()17:15:23 **** Incremental Build of configuration Build (GNU) for project HelloWorld ****
+make all 
+make: *** No rule to make target 'all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+17:15:30 **** Clean-only build of configuration Build (GNU) for project HelloWorld ****
+make clean 
+make: *** No rule to make target 'clean'.  Stop.
+"make clean" terminated with exit code 2. Build might be incomplete.
+
+Invoking autoreconf in build directory: /run/media/jigar/6BF2D0CF44B3482D/my-dev/c/eclipse-workspace/HelloWorld/
+
+sh -c "autoreconf -i" 
+sh: line 1: autoreconf: command not found
+
+Configuration failed with error
+Build stopped
+()17:15:30 **** Build of configuration Build (GNU) for project HelloWorld ****
+make all 
+make: *** No rule to make target 'all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+Invoking autoreconf in build directory: /run/media/jigar/6BF2D0CF44B3482D/my-dev/c/eclipse-workspace/HelloWorld/
+
+sh -c "autoreconf -i" 
+sh: line 1: autoreconf: command not found
+
+Configuration failed with error
+Build stopped
+()17:15:45 **** Incremental Build of configuration Build (GNU) for project HelloWorld ****
+make all 
+make: *** No rule to make target 'all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
