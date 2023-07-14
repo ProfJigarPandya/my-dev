@@ -1,0 +1,20 @@
+1.Display Picture ids of pictures posted by user id “1”
+2. Display captions of pictures posted by “2”. Display ‘No caption’ if caption is not having any value.
+3. Which pictures (picture ids) and by which users (user ids) have be in posted in last 1 year?
+4. Which picture/s (picture ids) has received maximum likes?
+5. Display all picture ids in descending order of the likes they have got. Also display total no. of likes each picture has received.
+6. Display picture ids of pictures with more than 3 likes.
+7. Who (user id) has liked the most pictures?
+8. Which day of the week users are posting the maximum no. of pictures?
+9. Get the count of pictures posted during weekends.
+10. Find pictures (picture ids) with more than 3 tags.
+11. Display pictures with “London” in their caption. Do case insensitive search.
+12. Which pictures (picture ids) are stored on my “D:” drive?
+13. Display year, pic_id of pictures posted by User id -3 in last 5 years.
+14. Display first and last names of all users who have either have an account on gmail or yahoo.
+15. Add new user with user-name, his first & last name and email.
+16. Add a like for Picture id 6 by user id 7.
+17. Delete all likes done by user id ‘3’.
+18. Update last name for user id ‘9’ to ‘Kumar’.
+19. Update email address of User “Angella Smith” to asmith@gmail.com.
+20. Add a new tag for “Literature”.
