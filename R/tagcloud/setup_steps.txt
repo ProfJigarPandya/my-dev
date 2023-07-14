@@ -1,0 +1,9 @@
+Linux
+sudo apt install libxml2-dev
+sudo apt install libpq-dev
+
+R -> 
+install.packages("tm")
+install.packages("corpus")
+install.packages("SnowballC")
+install.packages("wordcloud")
