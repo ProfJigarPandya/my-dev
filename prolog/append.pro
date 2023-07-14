@@ -1,0 +1,9 @@
+domains
+	l1=integer*
+	l2=integer*
+	l3=integer*
+predicates
+	append(l1,l2,l3)
+clauses
+	append([],L,L)
+	append([X|L1],L2,[X|L3]):-append(L1,L2,L3).

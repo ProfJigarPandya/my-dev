@@ -1,0 +1,10 @@
+domains
+	list = integer*
+predicates
+	max(list,integer)
+	maxi(list,integer,integer)
+clauses
+	max([H|L],Max):-maxi([H|L],H,Max).
+	maxi([],Max,Max).
+	maxi([H|T],Temp,Max):-H>=Temp,maxi(T,H,Max).
+	maxi([H|T],Temp,Max):-H<Temp,maxi(T,Temp,Max).		

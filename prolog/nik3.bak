@@ -1,0 +1,7 @@
+domains 
+	list = integer*.
+predicates
+	rl(list,list).
+clauses
+	rl([Head|Tail],L1):-rl([Tail|[Head|L1]]),[Head|L1]).
+	

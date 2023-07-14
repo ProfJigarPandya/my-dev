@@ -1,0 +1,1108 @@
+
+€ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
+€                    HELP IN EDITOR                            	€
+€                                                         	€
+€  F1:   Popup editor menus                                  	€
+€  S-F1: Popup help text                                      	€
+€                                                         	€
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+
+
+
+€ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
+€				  				€
+€			C O L O R S  				€
+€				  				€
+€                HOW TO CALCULATE SCREEN ATTRIBUTES.		€
+€				  				€
+€ 1. Choose ONE foreground color and ONE background color.	€
+€ 2. Add the corresponding integer values below.		€
+€ 3. Add 128 if you want whatever is displayed with that 	€
+€    attribute to blink.				  	€
+€                                                         	€
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+
+BACKGROUND-COLORS (Screen)       FOREGROUND-COLORS (Characters)
+-----------------------+---------+----------------+------------
+Black			 0	  Black			   0
+Blue			16	  Blue			   1
+Green			32	  Green			   2
+Cyan			48	  Cyan			   3
+Red			64	  Red			   4
+Magenta			80	  Magenta		   5
+Brown			96	  Brown			   6
+White 		       112	  White  		   7
+				  Grey			   8
+				  Light Blue		   9
+				  Light Green		  10
+				  Light Cyan   		  11
+				  Light Red		  12
+				  Light Magenta		  13
+				  Yellow                  14
+				  White (High Intensity)  15
+
+
+
+
+€ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
+€								 €
+€		STANDARD PREDICATES		                 €
+€								 €
+€‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹€
+
+
+INPUT
+=====
+
+readln(StringVariable)
+	(string) - (o)
+
+readint(IntgVariable)
+	(integer) - (o)
+
+readreal(RealVariable)
+	(real) - (o)
+
+readchar(CharVariable)
+	(char) - (o)
+
+file_str(DosFileName,StringVariable)	File <--> String
+	(string,string) - (i,o) (i,i)
+
+inkey(CharVariable)
+	(Char) - (o)
+
+keypressed
+
+unreadchar(CharToBePushedBack)
+	(Char) - (i)
+
+readterm( Domain, Variable )
+	(DomainName,Domain) - (i,_)
+
+
+OUTPUT
+======
+
+write( Variable|Constant * )
+
+nl
+
+writef( FormatString, Variable|Constant* )
+
+In the format string the following options are known after a percentage sign:
+ %d  Normal decimal number. (chars and integers)
+ %u  As an unsigned integer. (chars and integers)
+ %R  As a database reference number. (database reference numbers)
+ %X  As a long hexadecimal number.  (strings, database reference numb).
+ %x  As a hexadecimal number. (chars and integers).
+ %s  Strings.  (symbols and strings).
+ %c  As a char. (chars and integers).
+ %g  Reals in shortest posible format (default for reals)
+ %e  Reals in exponetial notation
+ %f  Reals in fixed notation
+ %lf Only for C compatibility (fixed reals)
+
+\n - newline
+\t - tabulator
+\nnn - character with code nnn
+
+
+
+FILESYSTEM
+==========
+
+openread(SymbolicFileName,DosFileName)
+	(file,string) - (i,i)
+
+openwrite(SymbolicFileName,DosFileName)
+	(file,string) - (i,i)
+
+openappend(SymbolicFileName,DosFileName)
+	(file,string) - (i,i)
+
+openmodify(SymbolicFileName,DosFileName)
+	(file,string) - (i,i)
+
+readdevice(SymbolicFileName)
+	(file) - (i) (o)
+
+writedevice(SymbolicFileName)
+	(file) - (i) (o)
+
+filemode(SymbolicFileName,FileMode)
+	(file,Integer) - (i,i) (i,o)
+	FileMode specifies: 0:Text mode,  1:Binary mode.
+
+closefile(SymbolicFileName)
+	(file) - (i)
+
+filepos(SymbolicFileName,FilePosition,Mode)
+	(file,real,integer) - (i,i,i) (i,o,i)
+        Mode specifies:  0:Start 1:Relative 2:End
+
+eof(SymbolicFileName)
+	(file) - (i)
+
+flush(SymbolicFileName)
+	(file) - (i)
+
+existfile(DosFileName)
+	(string) - (i)
+
+deletefile(DosFileName)
+	(string) - (i)
+
+renamefile(OldDosFileName,NewDosFileName)
+	(string,string) - (i,i)
+
+disk(DosPath)
+	(string) - (i) (o)
+
+
+SCREEN HANDLING
+===============
+
+scr_char(Row,Column,Char)
+	(integer,integer,char) - (i,i,i) (i,i,o)
+
+scr_attr(Row,Column,Attr)
+	(integer,integer,integer) - (i,i,i) (i,i,o)
+
+field_str(Row,Column,Length,String)
+	(integer,integer,integer,string) - (i,i,i,i) (i,i,i,o)
+
+field_attr(Row,Column,Length,Attr)
+	(integer,integer,integer,integer) - (i,i,i,i) (i,i,i,o)
+
+cursor(Row,Column)
+	(integer,integer) - (i,i) (o,o)
+
+cursorform(Startline,Endline)	0<Startline<14, 0<Endline<14
+	(integer,integer) - (i,i) (o,o)
+
+attribute(Attr)
+	(integer) - (i) (o)
+
+textmode(Rows,Cols)
+	(integer,integer) - (i,i) (o,o)
+
+snowcheck(on/off)
+	(string) -- (i) (o)
+
+
+WINDOW SYSTEM
+=============
+
+makewindow(WindowNo,ScrAtt,FrameAtt,Framestr,Row,Column,Height,Width)
+	(integer,integer,integer,string,integer,integer,integer,integer)
+	- (i,i,i,i,i,i,i,i)
+	  (o,o,o,o,o,o,o,o)
+
+makewindow(WindowNo,ScrAtt,FrameAtt,Framestr,Row,Column,Height,Width,
+					ClearWindow,FrameStrPos,BorderChars)
+	(integer,integer,integer,string,integer,integer,integer,integer,
+					integer,integer,string)
+	- (i,i,i,i,i,i,i,i,i,i,i)
+	- (o,o,o,o,o,o,o,o,o,o,o)
+
+	ClearWindow	= 0	Don't clear window after creation.
+			= 1	Clear window after creation.
+
+	FrameStrPos	= 255	Center the framestring (window title)
+			<> 255	Place the framestring at the given pos'n.
+
+	BorderChars		A string with exactly six characters,
+				specifying how to draw the window frame:
+		
+				1st char: Upper left corner
+				2nd char: Upper right corner
+				3rd char: Lower left corner
+				4th char: Lower right corner
+				5th char: Horizontal line
+				6th char: Vertical line
+	Ex.
+		"⁄ø¿Ÿƒ≥" 	 for a single border
+	or	"…ª»ºÕ∫"	 for a double border
+
+
+shiftwindow(WindowNo)
+	(integer) - (i) (o)
+
+gotowindow(WindowNo)
+	(integer) - (i)
+
+resizewindow
+
+resizewindow(StartRow,NoOfRows,StartCol,NoOfCols)
+	(integer,integer,integer,integer) - (i,i,i,i)
+
+colorsetup(Main_Frame)
+	(integer) - (i)
+
+	Main_frame	= 0	Change the color for the window.
+			= 1	Change the color for the frame.
+
+existwindow(WindowNo)
+	(integer) - (i)
+
+removewindow
+
+removewindow(WindowNo,Refresh)
+	(Integer,Integer) - (i,i)
+	Refresh		= 0	Don't refresh background.
+			= 1	Do refresh background
+
+clearwindow
+
+window_str(ScreenString)
+	(string) - (i) (o)
+
+window_attr(Attribute)
+	(integer) - (i)
+
+scroll(NoOfRows,NoOfCols)
+	(integer,integer) - (i,i)
+
+framewindow(FrameAttr)
+	(integer) - (i)
+
+framewindow(FrameAttr,FrameStr,FrameStrPos,FrameTypeStr)
+	(Integer,String,Integer,String)
+	- (i,i,i,i)
+
+	FrameAttr	=	Attribute for the window frame.
+
+	FrameStr	=	Window title.
+
+	FrameStrPos	=	0 .. width of window. Specifies where in
+				the window frame to place the window title.
+				A value of 255 will centre the title.
+
+	FrameTypeStr	=	A string consisting of 6 characters
+				specifying how to build the window frame,
+				Please refer to makewindow.
+
+
+STRING HANDLING
+===============
+
+frontchar(String,FrontChar,RestString)
+	(string,char,string) - (i,o,o) (i,i,o)
+	(i,o,i) (i,i,i) (o,i,i)
+
+fronttoken(String,Token,RestString)
+	(string,string,string) - (i,o,o) (i,i,o)
+	(i,o,i) (i,i,i) (o,i,i)
+
+frontstr(Lenght,Inpstring,StartString,RestString)
+	(integer,string,string,string) - (i,i,o,o)
+
+concat(String1,String2,String3)  String3 = String1 + String2
+	(string,string,string) - (i,i,o) (i,o,i)
+	(o,i,i) (i,i,i)
+
+str_len(String,Length)
+	(string,integer) - (i,i) (i,o) (o,i)
+
+isname(StringParam)
+	(string) - (i)
+
+format( OutputVariable, FormatString, Variable|Constant* )
+	See writef for the Format string
+
+
+CONVERSIONS
+===========
+
+char_int(CharParam,IntgParam)
+	(char,integer) - (i,o) (o,i) (i,i)
+
+str_int(StringParam,IntgParam)
+	(string,integer) - (i,o) (o,i) (i,i)
+
+str_char(StringParam,CharParam)
+	(string,char) - (i,o) (o,i) (i,i)
+
+str_real(StringParam,RealParam)
+	(string,real) - (i,o) (o,i) (i,i)
+
+upper_lower(StringInUpperCase,StringInLowerCase)
+	(string,string) - (i,i) (i,o) (o,i)
+
+upper_lower(CharInUpperCase,CharInLowerCase)
+	(char,char) - (i,i) (i,o) (o,i)
+
+
+
+HANDLING THE INTERNAL DATABASE
+==============================
+
+consult(DosFileName)
+	(string) - (i)
+
+consult(DosFileName,InternalDatabaseName)
+	(string,InternalDatabaseName) - (i,i)
+
+save(DosFileName)
+	(string) - (i)
+
+save(DosFileName,InternalDatabaseName)
+	(string,DatabaseName) - (i,i)
+
+assert( Term )
+	(InternalDatabaseDomain) - (i)
+
+asserta( Term )
+	(InternalDatabaseDomain) - (i)
+
+assertz( Term )
+	(InternalDatabaseDomain) - (i)
+
+nondeterm retract( Term )
+	(InternalDatabaseDomain) - (_)
+
+nondeterm retract( Term, InternalDbaseName )
+	(InternalDatabaseDomain) - (_,i)
+
+retractall(Term)
+	(InternalDatabaseDomain) - (_)
+	Performs as a retract-fail combination; no output arguments.
+	Never fails
+
+retractall(_, InternalDbaseName )
+	(_,InternalDatabaseDomain) - (_,i)
+	As above, but on a named database.
+
+
+EXTERNAL DATABASE SYSTEM
+========================
+
+db_create(Dbase,Name,Place)
+	(db_selector,string,place) - (i,i,i)
+
+db_open(Dbase,Name,Place)
+	(db_selector,string,place) - (i,i,i)
+
+db_openinvalid(Dbase,Name,Place)
+	(db_selector,string,place) - (i,i,i)
+
+db_close(Dbase)
+	(db_selector) - (i)
+
+db_delete(Name,Place)
+	(string,place) - (i,i)
+
+db_flush(Dbase)
+	(db_selector) - (i)
+
+db_garbagecollect(Dbase)
+	(db_selector) - (i)
+
+db_copy(Dbase,Name,Place)
+	(db_selector,string,place) - (i,i,i)
+
+nondeterm db_chains(Dbase,Chain)
+	(db_selector,string) - (i,o)
+
+nondeterm db_btrees(Dbase,Btree)
+	(db_selector,string) - (i,o)
+
+db_statistics(Dbase,NoOfTerms,MemSize,DbaSize,FreeSize)
+	(db_selector,real,real,real,real) - (i,o,o,o,o)
+
+chain_inserta(Dbase,Chain,Domain,Term,Ref)
+	(db_selector,string,symbol,<Domain>,ref) - (i,i,i,i,o)
+
+chain_insertz(Dbase,Chain,Domain,Term,Ref)
+	(db_selector,string,symbol,<Domain>,ref) - (i,i,i,i,o)
+
+chain_insertafter(Dbase,Domain,Ref,Term,NewRef)
+	(db_selector,symbol,ref,<Domain>,ref) - (i,i,i,i,o)
+
+chain_delete(Dbase,Chain)
+	(db_selector,string) - (i,i)
+
+nondeterm chain_terms(Dbase,Chain,Domain,Term,Ref)
+	(db_selector,string,symbol,<Domain>,ref)-(i,i,i,_,o)
+
+chain_first(Dbase,Chain,FirstRef)
+	(db_selector,string,ref) - (i,i,o)
+
+chain_last(Dbase,Chain,LastRef)
+	(db_selector,string,ref) - (i,i,o)
+
+chain_next(Dbase,Ref,NextRef)
+	(db_selector,ref,ref) - (i,i,o)
+
+chain_prev(Dbase,Ref,PrevRef)
+	(db_selector,ref,ref) - (i,i,o)
+
+term_delete(Dbase,Chain,Ref)
+	(db_selector,string,ref) - (i,i,i)
+
+term_replace(Dbase,Domain,Ref,NewTerm)
+	(db_selector,symbol,ref,<Domain>) - (i,i,i,i)
+
+ref_term(Dbase,Domain,Ref,Term)
+	(db_selector,symbol,ref,<Domain>)-(i,i,i,_)
+
+bt_create(Dbase,BtreeName,Btree_selector,KeyLen,Order)
+	(db_selector,string,bt_selector,integer,integer) - (i,i,o,i,i)
+
+bt_open(Dbase,BtreeName,Btree_selector)
+	(db_selector,string,bt_selector) - (i,i,o)
+
+bt_close(Dbase,Btree_selector)
+	(db_selector,bt_selector) - (i,i)
+
+bt_delete(Dbase,BtreeName)
+	(db_selector,string) - (i,i)
+
+bt_statistics(Dbase,Btree_selector,NoOfKeys,NoOfPages,Dept,KeyLen,Order,PageSize)
+	(db_selector,bt_selector,real,real,integer,integer,integer,integer)
+	 - (i,i,o,o,o,o,o,o)
+
+key_insert(Dbase,Btree,Key,Ref)
+	(db_selector,bt_selector,string,ref) - (i,i,i,i)
+
+key_delete(Dbase,Btree,Key,Ref)
+	(db_selector,bt_selector,string,ref) - (i,i,i,i)
+
+key_first(Dbase,Btree,FirstRef)
+	(db_selector,bt_selector,ref) - (i,i,o)
+
+key_last(Dbase,Btree,LastRef)
+	(db_selector,bt_selector,ref) - (i,i,o)
+
+key_search(Dbase,Btree,Key,Ref)
+	(db_selector,bt_selector,string,ref) - (i,i,i,o)
+
+key_next(Dbase,Btree,NextRef)
+	(db_selector,bt_selector,ref) - (i,i,o)
+
+key_prev(Dbase,Btree,PrevRef)
+	(db_selector,bt_selector,ref) - (i,i,o)
+
+key_current(Dbase,Btree,Key,Ref)
+	(db_selector,bt_selector,string,ref) - (i,i,o,o)
+
+
+
+BGI GRAPHIC
+===========
+
+arc(X,Y,StAngle,EndAngle,Radius)
+	(integer,integer,integer,integer,integer) - (i,i,i,i,i)
+
+bar(Left,Top,Right,Bottom)
+	(integer,integer,integer,integer) - (i,i,i,i)
+
+bar3d(Left,Top,Right,Bottom,Depth,Topflag)
+	(integer,integer,integer,integer,integer,integer) -
+	(i,i,i,i,i,i)
+
+circle(X,Y,Radius)
+	(integer,integer,integer) - (i,i,i)
+
+cleardevice
+
+clearviewport
+
+closegraph
+
+detectgraph(Graphdriver,Graphmode)
+	(integer,integer) - (o,o)
+
+drawpoly(PolyPointsList)
+	(bgi_ilist) - (i)
+
+ellipse(X,Y,StAngle,EndAngle,Xradius,YRadius)
+	(integer,integer,integer,integer,integer,integer) -
+	(i,i,i,i,i,i)
+
+fillellipse(X,Y,Xradius,YRadius)
+	(integer,integer,integer,integer) - (i,i,i,i)
+
+fillpoly(PolyPointsList)
+	(bgi_ilist) - (i)
+
+floodfill(X,Y,Border)
+	(integer,integer,integer) - (i,i,i)
+
+getarccoords(X,Y,Xstart,Ystart,Xend,Yend)
+	(integer,integer,integer,integer,integer,integer) -
+	(o,o,o,o,o,o)
+
+getaspectratio(Xasp,Yasp)
+	(integer,integer) - (o,o)
+
+getbkcolor(BkColor)
+	(integer) - (o)
+
+getcolor(Color)
+	(integer) - (o)
+
+getdrivername(DriverName)
+	(string) - (o)
+
+getdefaultpalette(DefaultPalette)
+	(bgi_ilist) - (o)
+
+getfillpattern(PatternList)
+	(bgi_ilist) - (o)
+
+getfillsettings(FillPattern,FillColor)
+	(integer,integer) - (o,o)
+
+getgraphmode(GraphMode)
+	(integer) - (o)
+
+getimage(Left,Top,Right,Bottom,BitMap)
+	(integer,integer,integer,integer,string) - (i,i,i,i,o)
+
+getlinesettings(LineStyle,Upattern,Thickness)
+	(integer,integer,integer) - (o,o,o)
+
+getmaxcolor(MaxColor)
+	(integer) - (o)
+
+getmaxx(X)
+	(integer) - (o)
+
+getmaxy(Y)
+	(integer) - (o)
+
+getmaxmode(MaxMode)
+	(integer) - (o)
+
+getmodename(DriverMode,ModeName)
+	(integer,string) - (i,o)
+
+getmoderange(Graphdriver,Lomode,Himode)
+	(integer,integer,integer) - (i,o,o)
+
+getpalette(PaletteList)
+	(bgi_ilist) - (o)
+
+getpalettesize(PaletteSize)
+	(integer) - (o)
+
+getpixel(X,Y,Color)
+	(integer,integer,integer) - (i,i,o)
+
+gettextsettings(Font,Direction,CharSize,Horiz,Vert)
+	(integer,integer,integer,integer,integer) - (o,o,o,o,o)
+
+getviewsettings(Left,Top,Right,Bottom,Clip)
+	(integer,integer,integer,integer,integer) - (o,o,o,o,o)
+
+getx(X)
+	(integer) - (o)
+
+gety(Y)
+	(integer) - (o)
+
+graphdefaults
+
+imagesize(Left,Top,Right,Bottom,Size)
+	(integer,integer,integer,integer,integer) - (i,i,i,i,o)
+
+initgraph(Graphdriver,Graphmode,NewDriver,NewMode,Pathtodriver)
+	(integer,integer,integer,integer,string) - (i,i,o,o,i)
+
+line(X0,Y0,X1,Y1)
+	(integer,integer,integer,integer) - (i,i,i,i)
+
+linerel(Dx,Dy)
+	(integer,integer) - (i,i)
+
+lineto(X,Y)
+	(integer,integer) - (i,i)
+
+moverel(Dx,Dy)
+	(integer,integer) - (i,i)
+
+moveto(X,Y)
+	(integer,integer) - (i,i)
+
+outtext(Textstring)
+	(string) - (i)
+
+outtextxy(X,Y,Textstring)
+	(integer,integer,string) - (i,i,i)
+
+pieslice(X,Y,Stangle,Endangle,Radius)
+	(integer,integer,integer,integer,integer) - (i,i,i,i,i)
+
+putimage(X,Y,Bitmap,Op)
+	(integer,integer,string,integer) - (i,i,i,i)
+
+putpixel(X,Y,Pixelcolor)
+	(integer,integer,integer) - (i,i,i)
+
+rectangle(Left,Top,Right,Bottom)
+	(integer,integer,integer,integer) - (i,i,i,i)
+
+restorecrtmode
+
+
+setactivepage(Page)
+	(integer) - (i)
+
+setallpalette(PaletteList)
+	(bgi_ilist) - (i)
+
+setaspectratio(Xasp,Yasp)
+	(integer,integer) - (i,i)
+
+setbkcolor(Color)
+	(integer) - (i)
+
+setcolor(Color)
+	(integer) - (i)
+
+setfillpattern(UpatternList,Color)
+	(bgi_ilist,integer) - (i,i)
+
+setfillstyle(Pattern,Color)
+	(integer,integer) - (i,i)
+
+setgraphmode(Mode)
+	(integer) - (i)
+
+setgraphbufsize(BufSize)
+	(integer) - (i)
+
+setlinestyle(Linestyle,Upattern,Thickness)
+	(integer,integer,integer) - (i,i,i)
+
+setpalette(Index,Actual_color)
+	(integer,integer) - (i,i)
+
+settextjustify(Horiz,Vert)
+	(integer,integer) - (i,i)
+
+settextstyle(Font,Direction,Charsize)
+	(integer,integer,integer) - (i,i,i)
+
+setusercharsize(Multx,Divx,Multy,Divy)
+	(integer,integer,integer,integer) - (i,i,i,i)
+
+setviewport(Left,Top,Right,Bottom,Clip)
+	(integer,integer,integer,integer,integer) - (i,i,i,i,i)
+
+setvisualpage(Pagenum)
+	(integer) - (i)
+
+setwritemode(WriteMode)
+	(integer) - (i)
+
+textheight(Textstring,Height)
+	(string,integer) - (i,o)
+
+textwidth(Textstring,Width)
+	(string,integer) - (i,o)
+
+
+OLD GRAPHICS
+============
+
+graphics(ModeParam,Palette,Background)
+	(integer,integer,integer) - (i,i,i)
+
+dot(Row,Column,Color)
+	(integer,integer,integer) - (i,i,i) (i,i,o)
+
+line(Row1,Col1,Row2,Col2,Color)
+	(integer,integer,integer,integer,integer)
+	- (i,i,i,i,i)
+
+text
+
+
+
+TURTLE GRAPHICS   (Works together with old graphic)
+===============
+
+pendown
+
+penup
+
+pencolor(Color)
+	(integer) - (i) (o)
+
+forward(Step)
+	(integer) - (i)
+
+back(Step)
+	(integer) - (i)
+
+right(Angle)
+	(integer) - (i)
+
+left(Angle)
+	(integer) - (i)
+
+penpos(RowCoordinate,ColumnCoordinate,Angle)
+	(Integer,Integer,Integer) - (i,i,i) (o,o,o)
+
+
+
+EDITOR
+======
+display(String)
+	(string) - (i)
+
+edit(InputString,OutputString)
+	(string,string) - (i,o)
+
+edit(InputString,OutputString,Headstr,Headstr2,Msg,Pos,Helpfilename,
+	EditMode,Indent,Insert,TextMode,RetPos,RetStatus)
+	(string,string,string,string,string,integer,string,
+	integer,integer,integer,integer,integer,integer)
+	- (i,o,i,i,i,i,i,i,i,i,i,o,o)
+
+	If the user saves the text from the editor, HeadStr2 will be used as
+	the file name.
+
+	EditMode	= 0	means display mode
+			= 1	means read/overwrite mode
+
+	Indent		= 0	no indentation
+			= 1	auto indentation on
+
+	Insert		= 0	overwrite mode
+			= 1	insert mode
+
+	TextMode	= 0	Textmode off
+			= 1	Textmode on (automatic linefeed)
+
+	RetPos		= 	Cursor position related to OutPutString at
+				return.
+
+	RetStatus	= 0	F10 editor ended by F10
+			  1	F10 editor ended by Esc
+
+
+editmsg(InputString,OutputString,Headstr,Headstr2,Msg,Pos,Helpfilename,RetStatus)
+	(string,string,string,string,string,integer,string,integer)
+	- (i,o,i,i,i,i,i,o)
+
+
+
+DOS RELATED
+===========
+
+system(DosCommandString)
+	(string) - (i)
+
+system(DosCommandString,ResetVideo,RetCode)
+	(string,integer,integer) - (i,i,o)
+
+	DosCommandString=	Name of external program.
+
+	ResetVideo	= 0	Do not reset video to stage
+				before executing the external program.
+
+	ResetVideo	= 1	Reset video.
+
+	RetCode		=	Return code for external program (ErrorLevel).
+
+dir(Path,Filespec,Filename)
+	(string,string,string) - (i,i,o)
+
+dir(Path,Filespec,Filename,ShowDir,ChgFileMask,ShowPath)
+	(string,string,string) - (i,i,o,i,i,i)
+
+	ShowDir		= 0	Do not include directories
+			= 1	Include directories in listning
+
+	ChgFileMask	= 0	Do Not let user change file mask
+			= 1	Allow the user to change mask by F4
+
+	ShowPath	= 0	Do not show current file mask
+			= 1	Show filemask in window label
+
+comline(LineBuffer)
+	(String) - (o)
+
+envsymbol(EnvId,SymbolStr)
+	(string,string) - (i,o)
+
+
+MISCELLANEOUS MACHINE LOWLEVEL
+==============================
+
+port_byte(PortNo,Value)
+	(integer,integer) - (i,i) (i,o)
+
+ptr_dword(8086Ptr,Segment,Offset)
+	(string,integer,integer) - (i,o,o) (o,i,i)
+
+memword(Segment,Offset,Word)
+	(integer,integer,integer) - (i,i,i) (i,i,o)
+
+membyte(Segment,Offset,Byte)
+	(integer,integer,integer) - (i,i,i) (i,i,o)
+
+bitand(X,Y,Z) : Z=X and Y
+	(integer,integer,integer) - (i,i,o)
+
+bitor(X,Y,Z) : Z=X or Y
+	(integer,integer,integer) - (i,i,o)
+
+bitxor(X,Y,Z) : Z=X xor Y
+	(integer,integer,integer) - (i,i,o)
+
+bitnot(X,Y) : Y= not X
+	(integer,integer) - (i,o)
+
+bitleft(X,Y,Z) : Z=X shifted Y places to the left
+	(integer,integer,integer) - (i,i,o)
+
+bitright(X,Y,Z) : Z=X shifted Y places to the left
+	(integer,integer,integer) - (i,i,o)
+
+bios(Interruptno,reg(AXi,BXi,CXi,DXi,SIi,DIi,DSi,ESi),
+		 reg(AXo,BXo,CXo,DXo,SIo,DIo,DSo,ESo))
+	(integer,REG,REG) - (i,i,o) (i,i,reg(o,o ... ))
+
+bios(Interruptno,reg(AXi,BXi,CXi,DXi,SIi,DIi,DSi,ESi),
+		 reg(AXo,BXo,CXo,DXo,SIo,DIo,DSo,ESo), OutFlags)
+	(integer,REG,REG,integer) - (i,i,o,o) (i,i,reg(o,o ... ),o)
+
+debug
+	Performs an INT 1 to call the DOS debugger
+
+
+
+ERROR & BREAK CONTROL
+=====================
+
+trap(PredicateCall,ExitCode,PredicateToCallOnError)
+
+exit
+
+exit(ExitCode)
+	(integer) - (i)
+	if exit to DOS then the DOS errorlevel task processing variable will
+	contain the value given to the exit predicate.
+
+break(on/off)
+	(string) - (i) (o)
+
+breakpressed
+	Test for Ctrl-Break pressed.
+
+errormsg(FileName,ErrorNo,ErrorMsg,ExtraHelpMsg)
+	(String,Integer,String,String) - (i,i,o,o)
+	Read an error message from a text file structured as PROLOG.ERR.
+
+readtermerror(LineWithError,ErrorPosInLine)
+	(string,integer)-(o,o)
+
+consulterror(LineWithError,ErrorPosInLine,LineNoInFile)
+	(string,integer,real)-(o,o,o)
+
+
+* User defined error handling predicates. When compiling to modules Prolog
+* clauses can be defined for these procedures to override the default error
+* handling in the library.
+
+FileError(ErrNo,FileName)
+	 (Integer,String) - (i,i) language C
+
+CriticalError(ErrNo,ErrType,DiskNo,Action)
+	     (integer,integer,integer,integer) - (i,i,i,o) language C
+
+
+MISCELLANEOUS
+=============
+
+random(RealVariable)
+	(real) - (o)
+
+random(MaxValue,RandomInt)
+	(integer,integer) - (i,o)
+
+storage(StackSize,HeapSize,TrailSize)
+	(real,real,real) - (o,o,o)
+
+sound(Duration,Frequency)
+	(integer,integer) - (i,i)
+
+beep
+
+date(Year,Month,Day)
+	(integer,integer,integer) - (o,o,o) (i,i,i)
+
+time(Hours,Minutes,Seconds,Hundredths)
+	(integer,integer,integer,integer) - (o,o,o,o) (i,i,i,i)
+
+trace(on/off)
+	(string) - (i) (o)
+
+
+CONTROL PREDICATES
+==================
+
+findall( Variable, Atom, ListVariable )
+
+not( Atom )
+
+free( Variable )
+
+bound( Variable )
+
+fail
+
+true
+
+getbacktrack(BTOP)
+	(integer)-(o)
+
+cutbacktrack(BTOP)
+	(integer)-(i)
+
+
+ARITHMETIC
+==========
+
+Arithmetic operators: +, -, *, /, mod, div
+
+Relational operators: >, <, =, >=, <=, <>, ><
+
+Functions: sin, cos, tan, arctan, ln, log, exp, sqrt, round, trunc, abs
+
+
+
+SUMMARY OF PROGRAM SECTIONS
+==========================
+
+Options must precede the other sections
+
+CONSTANTS
+  const1 = definition
+  const2 = definition
+
+[GLOBAL] DOMAINS
+   dom [,dom] = [reference] declaration1; declaration2
+   listdom = dom*
+   dom = <basisdom>
+
+[GLOBAL] DATABASE [ - <databasename> ]
+   [determ] pred1(....)
+            pred2(.....)
+
+GLOBAL PREDICATES
+  [determ|nondeterm] pred1(.........)
+	-(i,i,o,..)(i,o,i,..) [ language c|pascal|fortran ] [ as "name" ]
+  pred2(........)
+
+PREDICATES
+  [determ|nondeterm] pred1(.........)
+  pred2(........)
+
+CLAUSES
+  p(....):-p1(...), p2(.....), ... .
+  p(....):-p1(...), p2(.....), ... .
+
+
+include "filename"  Include a file during compilation.
+
+
+
+CONDITIONAL COMPILATION
+=======================
+
+
+ifdef/ifndef <constant>
+
+ <text section>
+
+elsedef		% Optional
+
+ <text section>
+
+enddef
+
+
+
+PREDEFINED DOMAINS
+==================
+
+char		1 byte characters
+integer		2 byte integer numbers
+real		8 byte floating point numbers
+ref		database reference numbers
+symbol		strings inserted in the internal symboltable
+string		sequences of chars "hello world\n"
+
+dbasedom    	generated domain for terms in the global database
+bt_selector	returned binary tree selector
+db_selector	user-defined external database selectors
+place		in_memory; in_ems; in_file
+file		keyboard; screen; printer; com1; stdin; stdout .... userdefined
+reg		reg(AX,BX,CX,DX,SI,DI,DS,ES)
+bgi_ilist	list of integers used in the BGI predicates.
+
+
+
+€ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
+€								 €
+€			OPTIONS					 €
+€								 €
+€‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹€
+
+
+trace		traces all predicates.
+
+trace p1,p2,..	trace predicates p1,p2,... only.
+
+shorttrace	tracing without disturbing system optimization.
+
+shorttrace p1,p2,..
+		shorttrace predicates p1,p2,... only.
+
+nowarnings	Suppress warnings from variable used only once
+
+nobreak		Predicates should not scan the keyboard to see
+                if CTRL-BREAK has been pressed.
+
+check_determ	Warns about the presence of nondeterministic clauses.
+
+diagnostics	Print compiler diagnostics
+
+config "ConfigFileName"
+		Configuration file loaded by EXE-module.
+
+project "ProjectName"
+		Name of project.
+
+errorlevel = n
+  n=0: Generate no cursorinformation to .exe file.
+  n=1: Generate cursorinf on every call to standard predicates.
+  n=2: Generate cursorinf on every predicate call.
+
+
+Linking in BGI drivers
+	bgidriver "_EGAVGA_driver_far"
+	bgidriver "_CGA_driver_far"
+	bgidriver "_HERC_driver_far"
+	bgidriver "_ATT_driver_far"
+	bgidriver "_PC3270_driver_far"
+	bgidriver "_IBM8514_driver_far"
+
+Linking in BGI fonts
+	bgifont   "_gothic_font_far"
+	bgifont   "_small_font_far"
+	bgifont   "_sansserif_font_far"
+	bgifont   "_triplex_font_far"
+
+
+Adjustment of compiler tables:
+******************************
+code=nnn	Size of the code array in paragraphs (default 1000).
+trail=nnn	Size of the trail in paragraphs (default 10).
+
