@@ -1,0 +1,27 @@
+
+E -> E sub E sup E              .. b for sub  p for sup
+E -> E sub E
+E -> E sup E
+E -> {E}
+E-> c
+
+
+Original productions ....
+E --> EbEpE | EbE | EpE | {E} | c
+
+
+step0before removing left recursion
+E --> EbEpE | EbE | EpE | {E} | c            
+
+step0after removing left recursion...
+E --> {E}E' | cE'
+
+E' --> bEpEE' | bEE' | pEE' | ^
+
+
+*********        After elimination of left recursions************** 
+         *********** New productions ***********
+ 
+E --> {E}E' | cE'
+
+E' --> bEpEE' | bEE' | pEE' | ^

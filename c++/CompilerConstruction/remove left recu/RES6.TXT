@@ -1,0 +1,19 @@
+
+Original productions .... 
+A --> Ac | Aad | bd | ^
+
+step0before removing left recursion
+A --> Ac | Aad | bd | ^
+
+step0after removing left recursion...
+A --> bdA' | ^A'
+
+A' --> cA' | adA' | ^
+
+
+*********        After elimination of left recursions************** 
+         *********** New productions ***********
+ 
+A --> bdA' | ^A'
+
+A' --> cA' | adA' | ^

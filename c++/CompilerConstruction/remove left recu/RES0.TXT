@@ -1,0 +1,37 @@
+
+Original productions .... 
+S --> Aa | b
+
+A --> Ac | Sd | ^
+
+step0before removing left recursion
+S --> Aa | b
+
+A --> Ac | Sd | ^
+
+step0after removing left recursion...
+S --> Aa | b
+
+A --> Ac | Sd | ^
+
+step1before removing left recursion
+S --> Aa | b
+
+A --> Ac | Aad | bd | ^
+
+step1after removing left recursion...
+S --> Aa | b
+
+A --> bdA' | ^A'
+
+A' --> cA' | adA' | ^
+
+
+*********        After elimination of left recursions************** 
+         *********** New productions ***********
+ 
+S --> Aa | b
+
+A --> bdA' | ^A'
+
+A' --> cA' | adA' | ^

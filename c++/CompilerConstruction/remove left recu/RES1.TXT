@@ -1,0 +1,71 @@
+
+Original productions .... 
+S --> Aa | b
+
+A --> Ac | Sd | ^
+
+B --> Be | Af | Sf
+
+step0before removing left recursion
+S --> Aa | b
+
+A --> Ac | Sd | ^
+
+B --> Be | Af | Sf
+
+step0after removing left recursion...
+S --> Aa | b
+
+A --> Ac | Sd | ^
+
+B --> Be | Af | Sf
+
+step1before removing left recursion
+S --> Aa | b
+
+A --> Ac | Aad | bd | ^
+
+B --> Be | Af | Sf
+
+step1after removing left recursion...
+S --> Aa | b
+
+A --> bdA' | ^A'
+
+B --> Be | Af | Sf
+
+A' --> cA' | adA' | ^
+
+step2before removing left recursion
+S --> Aa | b
+
+A --> bdA' | ^A'
+
+B --> Be | bdA'f | ^A'f | bdA'af | ^A'af | bf
+
+A' --> cA' | adA' | ^
+
+step2after removing left recursion...
+S --> Aa | b
+
+A --> bdA' | ^A'
+
+B --> bdA'fB' | ^A'fB' | bdA'afB' | ^A'afB' | bfB'
+
+A' --> cA' | adA' | ^
+
+B' --> eB' | ^
+
+
+*********        After elimination of left recursions************** 
+         *********** New productions ***********
+ 
+S --> Aa | b
+
+A --> bdA' | ^A'
+
+B --> bdA'fB' | ^A'fB' | bdA'afB' | ^A'afB' | bfB'
+
+A' --> cA' | adA' | ^
+
+B' --> eB' | ^

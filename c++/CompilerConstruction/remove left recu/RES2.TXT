@@ -1,0 +1,37 @@
+
+Original productions .... 
+S --> (L) | a
+
+L --> L,S | S
+
+step0before removing left recursion
+S --> (L) | a
+
+L --> L,S | S
+
+step0after removing left recursion...
+S --> (L) | a
+
+L --> L,S | S
+
+step1before removing left recursion
+S --> (L) | a
+
+L --> L,S | (L) | a
+
+step1after removing left recursion...
+S --> (L) | a
+
+L --> (L)L' | aL'
+
+L' --> ,SL' | ^
+
+
+*********        After elimination of left recursions************** 
+         *********** New productions ***********
+ 
+S --> (L) | a
+
+L --> (L)L' | aL'
+
+L' --> ,SL' | ^

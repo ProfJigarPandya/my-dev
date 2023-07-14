@@ -1,0 +1,19 @@
+
+Original productions .... 
+A --> Ax | b
+
+step0before removing left recursion
+A --> Ax | b
+
+step0after removing left recursion...
+A --> bA'
+
+A' --> xA' | ^
+
+
+*********        After elimination of left recursions************** 
+         *********** New productions ***********
+ 
+A --> bA'
+
+A' --> xA' | ^

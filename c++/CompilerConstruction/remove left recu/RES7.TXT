@@ -1,0 +1,19 @@
+
+Original productions .... 
+S --> S(S)S | ^
+
+step0before removing left recursion
+S --> S(S)S | ^
+
+step0after removing left recursion...
+S --> ^S'
+
+S' --> (S)SS' | ^
+
+
+*********        After elimination of left recursions************** 
+         *********** New productions ***********
+ 
+S --> ^S'
+
+S' --> (S)SS' | ^
