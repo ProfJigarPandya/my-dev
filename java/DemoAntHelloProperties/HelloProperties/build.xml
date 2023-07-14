@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="HelloProperties" default="all" basedir=".">
+  <target name="clean">
+    <delete dir="classes"/>
+  </target>
+  <target name="compile" description="Compile Properties Tutorial">
+    <mkdir dir="classes"/>
+    <echo message="Properties Tutorial is using javac as Java compiler"/>
+    <javac srcdir="src" destdir="classes" fork="yes" executable="javac" debug="on" includeantruntime="false">
+      <compilerarg value="-Xlint:unchecked"/>
+      <compilerarg value="-Xlint:deprecation"/>
+    </javac>
+  </target>
+  <target name="run">
+    <java classname="HelloProperties" fork="true" dir="./classes">
+    </java>
+  </target>
+</project>
