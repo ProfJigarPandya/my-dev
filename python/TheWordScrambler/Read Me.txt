@@ -1,0 +1,22 @@
+THE WORD SCRAMBLER
+
+This project can be used to scramble words from any file contain textual data.
+It uses Python 3 to run the program.
+It has two scrambling modules:
+
+1) ScramblerUsingInbuilt:
+        It uses inbuilt functions from random to shuffle the chars of words.
+2) ScramblerUsingUserDefinedFunction:
+        It does random swapping of chars to shuffle up the characters of the word to be scrambled.
+
+The pseudo steps for the Word Scrambling Algorithm is as follows:
+
+1) Read input file (assume it is read into variable "data").
+2) Separate lines and words from data.
+3) Scramble individual word as follow
+    i)   Separate 1st and last character from the word.
+    ii)  Check last character for punctuation:
+            If punctuation is present shuffle all the characters except 1st,Last and 2ns Last character.
+            Else shuffle all the characters except 1st and last characters.
+    iii) Write the word into the file and also add new line character at the end of line.
+4) Save and Close the file.
