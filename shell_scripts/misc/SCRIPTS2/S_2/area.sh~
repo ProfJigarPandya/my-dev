@@ -1,0 +1,6 @@
+echo "Enter the value of hight and base:"
+
+read h b
+
+a=`echo " scale = 5 ; ( h * b ) / 2 " |bc `
+echo "area of triangle is : $a "
