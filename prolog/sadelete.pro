@@ -1,0 +1,9 @@
+trace
+domains
+	l=integer*
+predicates
+	d(l,integer,l,l)
+clauses
+	d([],_,T,T).
+	d([H|T],X,T2,T1):-H=X,d(T,H,T2,T1).
+	d([H|T],X,[H|T1],W):-H<>X,d(T,X,T1,W).

@@ -1,0 +1,87 @@
+nowarnings
+trace
+domains
+list=symbol*
+
+predicates
+symlist(list)
+eat(symbol,symbol) /*facts about who eats who*/
+checkeat(list)  /*returns true if anyone eats anyone in the List*/
+search(symbol,list)  /*searches for Symbol in the list*/
+move(list,list,list,list)  /*selects & moves from left to right*/
+moveback(list,list,list,list) /*selects & moves from right to left*/
+select(symbol,symbol,list) /*for selection of symbols from the list*/
+deletelist(list,list,list) 
+appendlist(list,list,list)
+selectone(list,list) /*for selection while moving from right to left*/
+goone(list,list) 
+doesnoteat(symbol,list) /*checks whether Symbol eats anybody in List*/
+findnoteating(symbol,list) /*returns a Symbol who doesn't eat anyone in List*/
+rotateleft(list,list)
+checkremaining(symbol,list) /*gets value from the list who has to go with farmer*/
+getlength(list,integer)
+absent(symbol,list) /*returns the symbol which is absent in the List*/
+go
+checkeat1(list) /*replacement for checkeat*/
+writelist(list) 
+printboth(list,list) /*prints both the lists*/
+empty(list) /*returns true if the list is empty*/
+
+clauses
+symlist([farmer,fox,chicken,grain]).
+eat(fox,chicken).
+eat(chicken,fox).
+eat(chicken,grain).
+eat(grain,chicken).
+checkeat1(L):-checkeat(L),not(search(farmer,L)).
+checkeat([H1|[H2|T]]):-eat(H1,H2),!.
+checkeat([H1|[H2|T]]):-checkeat([H1|T]),!.
+checkeat([H1|[H2|T]]):-checkeat([H2|T]).
+search(H,[H|T]).
+search(X,[H|T]):-search(X,T).
+writelist([]).
+writelist([H|T]):-write(H," "),writelist(T).
+empty([]).
+move(Left,Right,L,R) :- select(X,Y,Left),write("Move ",X," and ",Y),nl,
+			   deletelist([X,Y],Left,L),appendlist([X,Y],Right,R).
+moveback(Left,Right,L,R):-selectone(Moving,Right),write("Moveback "),
+			writelist(Moving),nl,deletelist(Moving,Right,R),
+		      appendlist(Moving,Left,L).
+go:-symlist(L),printboth(L,[]),goone(L,[]).
+printboth(L,R):-write("Left is ["),writelist(L),write("]  Right is ["),
+		writelist(R),write("]"),nl.
+goone([],Right).
+goone(Left,Right):-move(Left,Right,L,R),printboth(L,R),not(empty(L)),
+		moveback(L,R,L1,R1),printboth(L1,R1),goone(L1,R1).
+goone(Left,Right).
+
+doesnoteat(X,[]).
+doesnoteat(X,[H|T]):-not(eat(X,H)),doesnoteat(X,T).
+
+findnoteating(H,[H|[H2|T]]):-doesnoteat(H,[H2|T]),!.
+findnoteating(H2,[H|[H2|T]]):-rotateleft([H|[H2|T]],L),findnoteating(H2,L).
+rotateleft([X|Y],Z):-appendlist(Y,[X],Z).
+appendlist([],L,L).
+appendlist([X|L1],L2,[X|L3]):-appendlist(L1,L2,L3).
+checkremaining(H,[H|T]):-not(checkeat1(T)),!.
+checkremaining(H,List):-rotateleft(List,L),checkremaining(H,L).
+select(X,Y,List):-getlength(List,I),I=4,findnoteating(X,List),
+			deletelist([X],List,L),checkremaining(Y,L),!.
+select(H,T,[H|[T|X]]):-getlength([H|[T|X]],I),I=2,!.
+select(H,T,List):-absent(X,List),eat(X,Z),deletelist([Z],List,[H|[T|T2]]).
+selectone([X],List):-getlength(List,I),I=2,findnoteating(X,List),!.
+selectone([X],List):-findnoteating(X,List),absent(Y,List),
+			checkremaining(Y,[Y|List]),!.
+selectone([X,Y],List):-findnoteating(X,List),deletelist([X],List,L1),
+			checkremaining(Y,L1).
+/*selectone([farmer],List):-getlength(List,I),I=2,!.
+selectone([farmer],List):-absent(chicken,List),!.
+selectone([farmer,chicken],List):-absent(fox,List),!.
+selectone([farmer,chicken],List).*/
+/*selectone([farmer,fox],List).alternative solution*/
+deletelist([],Source,Source):-!.
+deletelist([H|T],[H|Tail],Target):-deletelist(T,Tail,Target),!.
+deletelist(H,L,Target):-rotateleft(L,List),deletelist(H,List,Target).
+getlength([],0).
+getlength([H|T],J):-getlength(T,I),J=I+1.
+absent(H,List):-symlist(L),deletelist(List,L,[X|_]),H=X.

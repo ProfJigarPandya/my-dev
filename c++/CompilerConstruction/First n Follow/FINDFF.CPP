@@ -1,0 +1,371 @@
+/* Program for finding first and follow with ll1 grammer verification BY MT_07 JIGAR */
+# include <stdio.h>
+# include <ctype.h>
+# include <conio.h>
+# include <stdlib.h>
+# define MAX 50
+# define ESC 27
+#include <string.h>
+#define FILENAME "grammer1.txt"
+
+/* Sample Input1
+
+	S>iEtSZ
+	S>a
+	Z>eS
+	Z>^
+	E>b
+	Ctrl+Z
+*/
+/* Sample Input2
+	E>TZ
+	Z>+TZ
+	T>FY
+	Y>*FY
+	F>(E)
+	F>i
+	Z>^
+	Y>^
+	Ctrl+Z
+*/
+
+struct ntstruct {
+	char nt;
+	char t[MAX];
+	int tcount;
+	int flag;
+	int isnullable;
+	int followflag;
+	int followcount;
+	char f[MAX];
+	int rightntcount;
+	char rightnt[MAX];
+};
+removedup(char *str) {
+	int i,k,n=strlen(str);
+	char *ptr = new char[n];
+	ptr[0]=str[0];
+	for(i=1,k=1;i<n;i++) 	{
+		for(int j=0;j<k;j++){
+			if(str[i] == ptr[j]) 	break;
+		}
+
+		if(j==k)			ptr[k++] = str[i];
+	}
+	ptr[k]='\0';
+	strcpy(str,ptr);
+	return k;
+}
+
+class llverify {
+	private:
+		struct ntstruct NT[MAX];
+		char T[MAX];
+		int NTcount;
+		int Tcount;
+		FILE *fp;
+		int simple;
+		int with_abs;
+		int without_abs;
+	public:
+		llverify();
+		void ipgrammer();
+		void collect_T_NT();
+		void decidenullable();
+		void first(char,int); 		void findallfirst();
+		void findallfollow(); 		void follow(char,int);
+		void print(); 		void verify();
+};
+void llverify::llverify()  {
+	NTcount=0; 	Tcount=0;  	simple=1; 	with_abs=1; 	without_abs=1;
+}
+void llverify::ipgrammer() {
+	char c;
+		fp=fopen(FILENAME,"w");
+		if(fp==NULL){
+			printf("File open error"); 		exit(0);
+		}
+		printf("\n\n");
+		while((c=getchar())!=EOF) fputc(c,fp);
+		fputc(c,fp); 	fclose(fp);
+}
+
+
+void llverify::collect_T_NT() {
+	char c;  	int i,j; 	int flag=1;
+	char temp; 	fp=fopen(FILENAME,"r");
+	while( (c=getc(fp) ) != EOF) 	{
+		if(c=='\n') { flag=1; 	continue; 	}
+		if(flag){
+			if(NT[NTcount-1].nt!=c){
+				NT[NTcount].tcount=0;
+				NT[NTcount].flag=0;   // To tell that first(NT[i]) is empty
+				NT[NTcount].followflag=0;
+				NT[NTcount].followcount=0;
+				NT[NTcount].isnullable=0;
+				NT[NTcount].nt=c;
+				NT[NTcount++].rightntcount=0;
+				while(getc(fp)!='>');
+			}
+			else 	while(getc(fp)!='>');
+		}
+		flag=0;
+
+		if(!isupper(c) && c!='$' && c!='^'){ ///m last two conds
+			if(c==' ') continue;
+			for(int i=0;i<Tcount;i++) if(T[i]==c) break;
+			if(i==Tcount) T[Tcount++]=c;
+		}
+       } // End while...
+       fclose(fp);
+}
+void llverify::print(){
+	printf("\nNTs==========================>\n ");
+	for (int i=0;i<NTcount;i++){
+		printf("first(%c) :=> ",NT[i]);
+		for(int j=0;j<NT[i].tcount;j++)	printf("%c ",NT[i].t[j]);
+		printf("\n");
+		for(j=0;j<NT[i].rightntcount;j++)	printf("\n      %c ",NT[i].rightnt[j]);
+		printf("\n");
+		if(NT[i].isnullable==1)
+		printf("%c is nullable\n",NT[i]);
+		printf("follow(%c) :=> ",NT[i]);
+		for(j=0;j<NT[i].followcount;j++)	printf("\n     %c       ",NT[i].f[j]);
+		printf("\n-------------------------------------------------------\n");
+	}
+}
+
+void llverify::first(char temp_nt,int index){
+	char c; int indexc;  // index of NT c 
+	FILE *fptemp;
+	if((fptemp=fopen(FILENAME,"r"))==NULL){
+		printf("File open error in first()"); exit(0); 
+}
+
+	while( (c=fgetc(fptemp) ) != EOF){
+		if(c=='\n' || c== ' ' || c== '\t' )  continue;   // Ignore white spaces
+		if(temp_nt!=c){    //  if it isn't the specified
+				   //  nt then ignore the whole statement
+			while(fgetc(fptemp)!='\n');
+			continue;          // skeep remaining statements
+		}
+		else{
+			char tempc;
+			while(fgetc(fptemp)!='>');//get the RHS of production
+			while((tempc=fgetc(fptemp))==' ');//skeep blanks
+			//this loop will get index of c
+			for(int i=0;i<NTcount;i++) {
+				if(NT[i].nt==tempc)
+				{
+				indexc=i;
+				break;
+				}
+			}
+			if(isupper(tempc)){
+				simple=0;
+				NT[index].rightnt[NT[index].rightntcount++]=tempc;
+				first(tempc,indexc);
+				//now copy first(c) to first(temp_nt)
+				for(int i=0;i<NT[indexc].tcount;i++)
+				NT[index].t[NT[index].tcount++]=NT[indexc].t[i];
+			}
+			else  NT[index].t[NT[index].tcount++]=tempc;
+			while(fgetc(fptemp)!='\n'); //skeep remaining potrion of RHS of rule
+		    }//end of else
+	  }//End of main while()
+	  NT[index].flag=1; // First(NT[index].nt) has been found..
+	  fclose(fptemp);
+}
+
+void llverify::findallfirst(){
+	for(int i=0;i<NTcount;i++)	{
+		if(NT[i].flag==1) continue;
+		first(NT[i].nt,i);
+	}
+}
+void llverify::decidenullable(){
+	for(int i=0;i<NTcount;i++){
+		for(int j=0;j<NT[i].tcount;j++){
+			if(NT[i].t[j]=='^'){
+				simple=0;
+				without_abs=0;
+				NT[i].isnullable=1;
+				break;
+			}
+		 }
+       }
+}
+
+void llverify::findallfollow(){
+	 for(int i=0;i<NTcount;i++)
+	 {
+		follow(NT[i].nt,i);
+		NT[i].f[NT[i].followcount]='\0';
+		if(NT[i].followcount!=1)
+			NT[i].followcount  = removedup(NT[i].f);
+	 }
+}
+
+void llverify::follow(char temp_nt,int index){
+	char c,tempc; 	char firstnt; 	int indexc;  // index of NT c
+	FILE *fptemp; 	int ss;
+	if((fptemp=fopen(FILENAME,"r"))==NULL){
+		printf("File open error in follow()");
+		exit(0);
+	}
+
+	while( (c=fgetc(fptemp) ) != EOF){
+		ss=0;
+		if(c=='\n' || c== ' ' || c== '\t' )  continue;   // Ignore white spaces
+		if(c==temp_nt){
+		   char ch;
+		   while( (ch=fgetc(fptemp)) !='\n' && ch !=temp_nt);
+		   if(ch=='\n')
+			   continue;
+		   else{
+		      firstnt = ch;
+		      ss = 1;
+		      goto JUST;
+		   }
+		}
+		if(isupper(c) ) firstnt=c;
+		while(fgetc(fptemp)!='>');//get the RHS of production
+		while((tempc=fgetc(fptemp))!=temp_nt)	{
+			if(tempc=='\n') break;
+		}
+		if(tempc=='\n') continue;
+     JUST:
+		tempc=fgetc(fptemp);
+		if(tempc=='\n' ) //case 3 first
+		{
+			int indexfirstnt;
+			for(int i=0;i<NTcount;i++){
+				if(NT[i].nt==firstnt){
+				indexfirstnt=i;
+				break;
+				}
+			}
+			if(ss==0)
+			for(i=0;i<NT[indexfirstnt].followcount;i++) //< .tcount
+			{
+					NT[index].f[NT[index].followcount++]=NT[indexfirstnt].f[i];//.t[t]
+			}
+			continue;
+		}
+		if(isupper(tempc))    //A->Alpha B Beta
+		{
+			// This will determine index of tempc
+				for(int i=0;i<NTcount;i++) {
+					if(NT[i].nt==tempc){
+						indexc=i;
+						break;
+					}
+				}
+
+				for(i=0;i<NT[indexc].tcount;i++){
+				   if(NT[indexc].t[i]!='^')
+					NT[index].f[NT[index].followcount++]=NT[indexc].t[i];
+
+				}
+		if(ss==0)
+		    if(NT[indexc].isnullable==1) //case 2
+		    {
+			int indexfirstnt;
+			for(int i=0;i<NTcount;i++){
+				if(NT[i].nt==firstnt){
+				indexfirstnt=i;
+				break;
+				}
+			}
+
+			for(i=0;i<NT[indexfirstnt].followcount;i++) //< .tcount
+			{
+					NT[index].f[NT[index].followcount++]=NT[indexfirstnt].f[i];//.t[t]
+			}
+			continue;
+		    }
+		 }
+		 else     // Two possibilities (1) \n (2) terminal
+		 {
+				NT[index].f[NT[index].followcount++]=tempc;
+		 }
+
+    }//Main while complete
+NT[index].followflag=1;
+}
+
+void llverify::verify(){
+	// verification of simple LL(1)
+	char tempt; 
+	for(int i=0;i<NTcount;i++){
+		for(int j=0;j<NT[i].tcount;j++){
+			tempt=NT[i].t[j];
+			for(int k=0;k<NT[i].tcount;k++){
+				if(k==j) continue;
+				if(NT[i].t[k]==tempt){
+					simple=0;with_abs=0;
+					without_abs=0;
+					break;
+				}
+			}
+		}
+	}
+	// verification of LL(1) without ^ rules
+	int index1;int index2;
+	for(int m=0;m<NTcount;m++){
+	for(i=0;i<NT[m].rightntcount;i++){
+		//index calc
+		for(int o=0;o<NTcount;o++) {
+				if(NT[o].nt==NT[m].rightnt[i]){
+					index1=o;
+					break;
+				}
+		}
+		for(int j=i+1;j<NT[m].rightntcount;j++){
+			//index calc
+			for(int o=0;o<NTcount;o++) {
+				if(NT[o].nt==NT[m].rightnt[j]){
+				index2=o; 	break;
+				}
+			}
+			//Finding intersection of NT[i] & NT[j]
+			for(int k=0;k<NT[index1].tcount;k++){
+				tempt=NT[index1].t[k];
+				for(int l=0;l<NT[index2].tcount;l++){
+					if(tempt==NT[index2].t[l]){
+					with_abs=0;
+					without_abs=0;
+					break;
+					}
+				}
+			}
+		}
+	}
+
+       }
+
+	printf("\n\nGrammer is :");
+	if(simple==1)
+	printf("Simple LL(1)");
+	else{
+		if(without_abs)  printf("LL(1) without ^ rules ");
+		else{
+			if(with_abs) printf("LL(1) with ^ rules");
+			else printf("not LL(1)");
+		}
+	}
+}
+
+void main() {
+	clrscr();
+	llverify obj;
+	obj.ipgrammer();
+	obj.collect_T_NT();
+	obj.findallfirst();
+	obj.decidenullable();
+	obj.findallfollow();
+	obj.print();
+	obj.verify();
+	getch();
+}
+

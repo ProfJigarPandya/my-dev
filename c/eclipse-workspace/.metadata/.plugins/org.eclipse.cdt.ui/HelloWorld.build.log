@@ -1,0 +1,7 @@
+17:15:45 **** Incremental Build of configuration Build (GNU) for project HelloWorld ****
+make all 
+make: *** No rule to make target 'all'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+17:15:45 Build Failed. 1 errors, 0 warnings. (took 215ms)
+

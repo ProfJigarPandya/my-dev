@@ -1,0 +1,79 @@
+
+Original productions .... 
+E --> EoT | T             // o for or       E for Expr    T for Term
+
+T --> TaF | F            // a for and       F for Factor
+
+F --> nF | (E) | t | f   //n for not        t for true     f for false
+
+step0before removing left recursion
+E --> EoT | T
+
+T --> TaF | F
+
+F --> nF | (E) | t | f
+
+step0after removing left recursion...
+E --> TE'
+
+T --> TaF | F
+
+F --> nF | (E) | t | f
+
+E' --> oTE' | ^
+
+step1before removing left recursion
+E --> TE'
+
+T --> TaF | F
+
+F --> nF | (E) | t | f
+
+E' --> oTE' | ^
+
+step1after removing left recursion...
+E --> TE'
+
+T --> FT'
+
+F --> nF | (E) | t | f
+
+E' --> oTE' | ^
+
+T' --> aFT' | ^
+
+step2before removing left recursion
+E --> TE'
+
+T --> FT'
+
+F --> nF | (E) | t | f
+
+E' --> oTE' | ^
+
+T' --> aFT' | ^
+
+step2after removing left recursion...
+E --> TE'
+
+T --> FT'
+
+F --> nF | (E) | t | f
+
+E' --> oTE' | ^
+
+T' --> aFT' | ^
+
+
+*********        After elimination of left recursions************** 
+         *********** New productions ***********
+ 
+E --> TE'
+
+T --> FT'
+
+F --> nF | (E) | t | f
+
+E' --> oTE' | ^
+
+T' --> aFT' | ^

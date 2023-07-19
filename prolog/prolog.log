@@ -1,0 +1,26 @@
+count(0,A)CALL:count(0,_)
+Goal: count(0,A)CALL:a(0,_)
+FAIL:a(0,_)
+REDO:a(0,_)
+FAIL:a(0,_)
+REDO:a(0,_)
+FAIL:a(0,_)
+REDO:a(0,_)
+FAIL:a(0,_)
+REDO:a(0,_)
+FAIL:a(0,_)
+REDO:a(0,_)
+FAIL:a(0,_)
+REDO:a(0,_)
+FAIL:a(0,_)
+REDO:a(0,_)
+FAIL:a(0,_)
+REDO:a(0,_)
+RETURN:a(0,_)
+0=0
+RETURN:count(0,0)
+A=0
+1 Solution
+*.PROprolog.log
+Load C:\PROLOG\PROLOG.LOG
+Load C:\PROLOG\PROLOG.LOGSave current text (y/n): n

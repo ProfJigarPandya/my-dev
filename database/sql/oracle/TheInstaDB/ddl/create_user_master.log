@@ -1,0 +1,14 @@
+SQL> create table user_master (user_id number(5) primary key, email_address varchar2(50), fname varchar2(50) not null, mname varchar2(50), lname varchar2(50) not null,
+CHECK (REGEXP_LIKE (email_address, '^[a-z|0-9|\.|_]+@[a-z]+\.[a-z]+$')) );
+
+Error starting at line : 5 in command -
+create table user_master (user_id number(5) primary key, email_address varchar2(50), fname varchar2(50) not null, mname varchar2(50), lname varchar2(50) not null,
+CHECK (REGEXP_LIKE (email_address, '^[a-z|0-9|\.|_]+@[a-z]+\.[a-z]+$')) )
+Error report -
+SQL Error: ORA-01950: no privileges on tablespace 'SYSTEM'
+01950. 00000 -  "no privileges on tablespace '%s'"
+*Cause:    User does not have privileges to allocate an extent in the
+           specified tablespace.
+*Action:   Grant the user the appropriate system privileges or grant the user
+           space resource on the tablespace.
+SQL> spool off;

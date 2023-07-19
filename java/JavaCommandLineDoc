@@ -1,0 +1,276 @@
+javap -s java.PackageName.Classname
+
+For example...
+
+[jpandya@localhost ~]$ javap -s java.lang.String
+
+[jpandya@localhost ~]$ javap -s java.lang.String
+Compiled from "String.java"
+public final class java.lang.String implements java.io.Serializable, java.lang.Comparable<java.lang.String>, java.lang.CharSequence {
+  public static final java.util.Comparator<java.lang.String> CASE_INSENSITIVE_ORDER;
+    Signature: Ljava/util/Comparator;
+  public java.lang.String();
+    Signature: ()V
+
+  public java.lang.String(java.lang.String);
+    Signature: (Ljava/lang/String;)V
+
+  public java.lang.String(char[]);
+    Signature: ([C)V
+
+  public java.lang.String(char[], int, int);
+    Signature: ([CII)V
+
+  public java.lang.String(int[], int, int);
+    Signature: ([III)V
+
+  public java.lang.String(byte[], int, int, int);
+    Signature: ([BIII)V
+
+  public java.lang.String(byte[], int);
+    Signature: ([BI)V
+
+  public java.lang.String(byte[], int, int, java.lang.String) throws java.io.UnsupportedEncodingException;
+    Signature: ([BIILjava/lang/String;)V
+
+  public java.lang.String(byte[], int, int, java.nio.charset.Charset);
+    Signature: ([BIILjava/nio/charset/Charset;)V
+
+  public java.lang.String(byte[], java.lang.String) throws java.io.UnsupportedEncodingException;
+    Signature: ([BLjava/lang/String;)V
+
+  public java.lang.String(byte[], java.nio.charset.Charset);
+    Signature: ([BLjava/nio/charset/Charset;)V
+
+  public java.lang.String(byte[], int, int);
+    Signature: ([BII)V
+
+  public java.lang.String(byte[]);
+    Signature: ([B)V
+
+  public java.lang.String(java.lang.StringBuffer);
+    Signature: (Ljava/lang/StringBuffer;)V
+
+  public java.lang.String(java.lang.StringBuilder);
+    Signature: (Ljava/lang/StringBuilder;)V
+
+  java.lang.String(char[], boolean);
+    Signature: ([CZ)V
+
+  java.lang.String(int, int, char[]);
+    Signature: (II[C)V
+
+  public int length();
+    Signature: ()I
+
+  public boolean isEmpty();
+    Signature: ()Z
+
+  public char charAt(int);
+    Signature: (I)C
+
+  public int codePointAt(int);
+    Signature: (I)I
+
+  public int codePointBefore(int);
+    Signature: (I)I
+
+  public int codePointCount(int, int);
+    Signature: (II)I
+
+  public int offsetByCodePoints(int, int);
+    Signature: (II)I
+
+  void getChars(char[], int);
+    Signature: ([CI)V
+
+  public void getChars(int, int, char[], int);
+    Signature: (II[CI)V
+
+  public void getBytes(int, int, byte[], int);
+    Signature: (II[BI)V
+
+  public byte[] getBytes(java.lang.String) throws java.io.UnsupportedEncodingException;
+    Signature: (Ljava/lang/String;)[B
+
+  public byte[] getBytes(java.nio.charset.Charset);
+    Signature: (Ljava/nio/charset/Charset;)[B
+
+  public byte[] getBytes();
+    Signature: ()[B
+
+  public boolean equals(java.lang.Object);
+    Signature: (Ljava/lang/Object;)Z
+
+  public boolean contentEquals(java.lang.StringBuffer);
+    Signature: (Ljava/lang/StringBuffer;)Z
+
+  public boolean contentEquals(java.lang.CharSequence);
+    Signature: (Ljava/lang/CharSequence;)Z
+
+  public boolean equalsIgnoreCase(java.lang.String);
+    Signature: (Ljava/lang/String;)Z
+
+  public int compareTo(java.lang.String);
+    Signature: (Ljava/lang/String;)I
+
+  public int compareToIgnoreCase(java.lang.String);
+    Signature: (Ljava/lang/String;)I
+
+  public boolean regionMatches(int, java.lang.String, int, int);
+    Signature: (ILjava/lang/String;II)Z
+
+  public boolean regionMatches(boolean, int, java.lang.String, int, int);
+    Signature: (ZILjava/lang/String;II)Z
+
+  public boolean startsWith(java.lang.String, int);
+    Signature: (Ljava/lang/String;I)Z
+
+  public boolean startsWith(java.lang.String);
+    Signature: (Ljava/lang/String;)Z
+
+  public boolean endsWith(java.lang.String);
+    Signature: (Ljava/lang/String;)Z
+
+  public int hashCode();
+    Signature: ()I
+
+  public int indexOf(int);
+    Signature: (I)I
+
+  public int indexOf(int, int);
+    Signature: (II)I
+
+  public int lastIndexOf(int);
+    Signature: (I)I
+
+  public int lastIndexOf(int, int);
+    Signature: (II)I
+
+  public int indexOf(java.lang.String);
+    Signature: (Ljava/lang/String;)I
+
+  public int indexOf(java.lang.String, int);
+    Signature: (Ljava/lang/String;I)I
+
+  static int indexOf(char[], int, int, char[], int, int, int);
+    Signature: ([CII[CIII)I
+
+  public int lastIndexOf(java.lang.String);
+    Signature: (Ljava/lang/String;)I
+
+  public int lastIndexOf(java.lang.String, int);
+    Signature: (Ljava/lang/String;I)I
+
+  static int lastIndexOf(char[], int, int, char[], int, int, int);
+    Signature: ([CII[CIII)I
+
+  public java.lang.String substring(int);
+    Signature: (I)Ljava/lang/String;
+
+  public java.lang.String substring(int, int);
+    Signature: (II)Ljava/lang/String;
+
+  public java.lang.CharSequence subSequence(int, int);
+    Signature: (II)Ljava/lang/CharSequence;
+
+  public java.lang.String concat(java.lang.String);
+    Signature: (Ljava/lang/String;)Ljava/lang/String;
+
+  public java.lang.String replace(char, char);
+    Signature: (CC)Ljava/lang/String;
+
+  public boolean matches(java.lang.String);
+    Signature: (Ljava/lang/String;)Z
+
+  public boolean contains(java.lang.CharSequence);
+    Signature: (Ljava/lang/CharSequence;)Z
+
+  public java.lang.String replaceFirst(java.lang.String, java.lang.String);
+    Signature: (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+  public java.lang.String replaceAll(java.lang.String, java.lang.String);
+    Signature: (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+  public java.lang.String replace(java.lang.CharSequence, java.lang.CharSequence);
+    Signature: (Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+  public java.lang.String[] split(java.lang.String, int);
+    Signature: (Ljava/lang/String;I)[Ljava/lang/String;
+
+  public java.lang.String[] split(java.lang.String);
+    Signature: (Ljava/lang/String;)[Ljava/lang/String;
+
+  public java.lang.String toLowerCase(java.util.Locale);
+    Signature: (Ljava/util/Locale;)Ljava/lang/String;
+
+  public java.lang.String toLowerCase();
+    Signature: ()Ljava/lang/String;
+
+  public java.lang.String toUpperCase(java.util.Locale);
+    Signature: (Ljava/util/Locale;)Ljava/lang/String;
+
+  public java.lang.String toUpperCase();
+    Signature: ()Ljava/lang/String;
+
+  public java.lang.String trim();
+    Signature: ()Ljava/lang/String;
+
+  public java.lang.String toString();
+    Signature: ()Ljava/lang/String;
+
+  public char[] toCharArray();
+    Signature: ()[C
+
+  public static java.lang.String format(java.lang.String, java.lang.Object...);
+    Signature: (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+  public static java.lang.String format(java.util.Locale, java.lang.String, java.lang.Object...);
+    Signature: (Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+  public static java.lang.String valueOf(java.lang.Object);
+    Signature: (Ljava/lang/Object;)Ljava/lang/String;
+
+  public static java.lang.String valueOf(char[]);
+    Signature: ([C)Ljava/lang/String;
+
+  public static java.lang.String valueOf(char[], int, int);
+    Signature: ([CII)Ljava/lang/String;
+
+  public static java.lang.String copyValueOf(char[], int, int);
+    Signature: ([CII)Ljava/lang/String;
+
+  public static java.lang.String copyValueOf(char[]);
+    Signature: ([C)Ljava/lang/String;
+
+  public static java.lang.String valueOf(boolean);
+    Signature: (Z)Ljava/lang/String;
+
+  public static java.lang.String valueOf(char);
+    Signature: (C)Ljava/lang/String;
+
+  public static java.lang.String valueOf(int);
+    Signature: (I)Ljava/lang/String;
+
+  public static java.lang.String valueOf(long);
+    Signature: (J)Ljava/lang/String;
+
+  public static java.lang.String valueOf(float);
+    Signature: (F)Ljava/lang/String;
+
+  public static java.lang.String valueOf(double);
+    Signature: (D)Ljava/lang/String;
+
+  public native java.lang.String intern();
+    Signature: ()Ljava/lang/String;
+
+  int hash32();
+    Signature: ()I
+
+  public int compareTo(java.lang.Object);
+    Signature: (Ljava/lang/Object;)I
+
+  static {};
+    Signature: ()V
+}
+[jpandya@localhost ~]$ 

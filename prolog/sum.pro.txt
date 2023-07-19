@@ -1,0 +1,16 @@
+predicates
+	enter
+	fact(integer,integer,integer)
+clauses
+	enter:-
+		write("Enter A=>"),
+		readint(N),
+		fact(1,1,N).
+	fact(AAA,C,N):-
+			C>N,nl,
+			write("FACTORIAL==>",AAA),nl.
+	fact(A1,B,N):-
+			AA=A1+B,
+			BB=B+1,
+			write(AA),nl,
+			fact(AA,BB,N).

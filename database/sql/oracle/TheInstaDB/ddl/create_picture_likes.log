@@ -1,0 +1,10 @@
+SQL> create table picture_likes (like_id number(7), user_id number(5) references user_master(user_id), picture_id references picture_master(picture_id) number(5), whenwas date, primary key (like_id, user_id, picture_id));
+
+Error starting at line : 5 in command -
+create table picture_likes (like_id number(7), user_id number(5) references user_master(user_id), picture_id references picture_master(picture_id) number(5), whenwas date, primary key (like_id, user_id, picture_id))
+Error report -
+SQL Error: ORA-00907: missing right parenthesis
+00907. 00000 -  "missing right parenthesis"
+*Cause:    
+*Action:
+SQL> spool off;

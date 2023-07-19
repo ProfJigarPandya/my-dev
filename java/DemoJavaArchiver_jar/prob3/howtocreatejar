@@ -1,0 +1,77 @@
+[jpandya@localhost prob3]$ ls -lR .
+.:
+total 16
+-rw-rw-r-- 1 jpandya jpandya   70 Aug 13 15:02 MANIFEST.MF
+drwxrwxr-x 2 jpandya jpandya 4096 Aug 13 15:04 studentpackage
+
+./studentpackage:
+total 16
+-rw-rw-r-- 1 jpandya jpandya 896 Aug 12 14:47 StudentRecordExample.java
+-rw-rw-r-- 1 jpandya jpandya 466 Aug 12 14:39 StudentRecord.java
+[jpandya@localhost prob3]$ javac -cp . studentpackage/*
+[jpandya@localhost prob3]$ ls -lR .
+.:
+total 16
+-rw-rw-r-- 1 jpandya jpandya   70 Aug 13 15:02 MANIFEST.MF
+drwxrwxr-x 2 jpandya jpandya 4096 Aug 13 15:04 studentpackage
+
+./studentpackage:
+total 32
+-rw-rw-r-- 1 jpandya jpandya  738 Aug 13 15:04 StudentRecord.class
+-rw-rw-r-- 1 jpandya jpandya 1174 Aug 13 15:04 StudentRecordExample.class
+-rw-rw-r-- 1 jpandya jpandya  896 Aug 12 14:47 StudentRecordExample.java
+-rw-rw-r-- 1 jpandya jpandya  466 Aug 12 14:39 StudentRecord.java
+[jpandya@localhost prob3]$ java studentpackage/StudentRecordExample
+First Student : FirstStudentName
+Second Student : AnotherStudentName
+Third Student : ThirdStudentName
+ Total counts 3
+Good Bye Lab5 Prob2
+[jpandya@localhost prob3]$ cat MANIFEST.MF 
+Manifest-Version: 1.0
+Main-Class: studentpackage.StudentRecordExample
+[jpandya@localhost prob3]$ jar -cvfm Student.jar MANIFEST.MF studentpackage/*.class
+added manifest
+adding: studentpackage/StudentRecord.class(in = 738) (out= 403)(deflated 45%)
+adding: studentpackage/StudentRecordExample.class(in = 1174) (out= 647)(deflated 44%)
+[jpandya@localhost prob3]$ ll
+total 24
+-rw-rw-r-- 1 jpandya jpandya   70 Aug 13 15:02 MANIFEST.MF
+-rw-rw-r-- 1 jpandya jpandya 1769 Aug 13 15:05 Student.jar
+drwxrwxr-x 2 jpandya jpandya 4096 Aug 13 15:04 studentpackage
+[jpandya@localhost prob3]$ java -jar Student.jar 
+First Student : FirstStudentName
+Second Student : AnotherStudentName
+Third Student : ThirdStudentName
+ Total counts 3
+Good Bye Lab5 Prob2
+[jpandya@localhost prob3]$ 
+
+
+[jpandya@localhost test]$ ll
+total 8
+-rw-rw-r-- 1 jpandya jpandya 1769 Aug 13 15:08 Student.jar
+[jpandya@localhost test]$ jar xf Student.jar 
+[jpandya@localhost test]$ ll
+total 24
+drwxrwxr-x 2 jpandya jpandya 4096 Aug 13 15:05 META-INF
+-rw-rw-r-- 1 jpandya jpandya 1769 Aug 13 15:08 Student.jar
+drwxrwxr-x 2 jpandya jpandya 4096 Aug 13 15:09 studentpackage
+[jpandya@localhost test]$ ls -lR .
+.:
+total 24
+drwxrwxr-x 2 jpandya jpandya 4096 Aug 13 15:05 META-INF
+-rw-rw-r-- 1 jpandya jpandya 1769 Aug 13 15:08 Student.jar
+drwxrwxr-x 2 jpandya jpandya 4096 Aug 13 15:09 studentpackage
+
+./META-INF:
+total 8
+-rw-rw-r-- 1 jpandya jpandya 117 Aug 13 15:05 MANIFEST.MF
+
+./studentpackage:
+total 16
+-rw-rw-r-- 1 jpandya jpandya  738 Aug 13 15:04 StudentRecord.class
+-rw-rw-r-- 1 jpandya jpandya 1174 Aug 13 15:04 StudentRecordExample.class
+[jpandya@localhost test]$ 
+
+

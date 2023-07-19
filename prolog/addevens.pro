@@ -1,0 +1,11 @@
+domains
+	l=integer*
+predicates
+	d(l,integer,integer)
+	dd(l,integer,integer,integer,integer)
+clauses
+	
+	d(L,O,E):-dd(L,0,0,O,E).
+	dd([],O,E,O,E).
+	dd([H|T],X,Y,Odd,Even):- H mod 2 = 0,YY=Y+H,dd(T,X,YY,Odd,Even).
+	dd([H|T],X,Y,Odd,Even):-H mod 2 <> 0 ,XX=X+H,dd(T,XX,Y,Odd,Even).

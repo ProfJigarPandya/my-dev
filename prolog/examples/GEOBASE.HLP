@@ -1,0 +1,114 @@
+
+
+                           G E O B A S E
+                           *************
+
+
+Geobase is a natural language interface to U.S. geography containing
+the following information:
+
+Information about states:
+  Area of the state                        In square miles
+  Population of the state                  In citizens
+  Capital of the state
+  Which states border a given state
+  Rivers in the state
+  Cities in the state
+  Highest and lowest point in the state    In feet
+
+Information about rivers:
+  Length of river                          In miles
+
+Information about cities:
+  Population of the city                   In citizens
+
+
+You can retrieve any or all of this information by asking questions
+in normal English. Some sample queries:
+
+  - states
+
+  - give me the cities in california.
+
+  - what is the biggest city in california ?
+
+  - what is the longest river in the us?
+
+  - which rivers are more than 1 thousand miles long?
+
+  - what is the name of the state with the lowest point ?
+
+  - which states border alabama ?
+
+  - which rivers do not run through texas
+
+  - which rivers run through states that border the state
+    whose capital is austin?
+
+
+You can modify Geobase as you work with it. If
+it doesn't understand a word in one of your questions, you can
+add the word to the language definition. The language is defined in a
+number of relations, the most important one being the schema. A
+schema is a description of the logical structure of a database.
+In Geobase, the schema is the "entity network" for the
+language.A schema entry follows the form: ENTITY ASSOCIATION
+ENTITY; this signifies that the two entities are bound together
+by the given association.
+
+To display the relations and their schema, select View Language from the main
+Geobase menu, then choose one of the items listed below.
+
+
+1. Schema of relations
+
+   The geography data are stored in a number of relations. The
+   schema for these relations is listed here.
+
+2. Schema of questions
+
+   The schema for all possible questions that can be asked is listed
+   here. For example, one possibility is:
+
+   > population  of  city <
+
+   That is, what is the population of a given city?
+
+3. Names of entities
+
+   All known entities are listed her.
+
+4. Synonyms for entities
+
+   Synonyms for entities are allowed. The previously defined synonyms
+   are listed here; you can also add synonyms to the database
+   dynamically.
+
+5. Synonyms for associations
+
+   Synonyms for associations are allowed, and can consist of more than one word.
+
+6. Words that are ignored
+
+   Some words are simply ignored by the system, since they are not
+   directly relevant to the meaning of questions. Ignored words are
+   listed here.
+
+7. Units for entities
+
+   The units of measure for different entities are listed here. For
+   instance, the unit for population is "number of citizens".
+
+8. Synonyms for relational operators
+
+   There are several ways to say that a city is "bigger than" 1 million
+   citizens or that a river is "shorter than" 1 thousand miles. These synonyms
+   are listed here.
+
+9. Alternative ways to designate the minimum
+
+    The different ways to designate adjectives for "minimum" are listed here.
+
+10. Alternative ways to designate the maximun
+
+    The different ways to designate adjectives for "maximum" are listed here.

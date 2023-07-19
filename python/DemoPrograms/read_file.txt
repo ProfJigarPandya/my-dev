@@ -1,0 +1,8 @@
+﻿Why Python?
+
+Easy to read and learn
+Free and open source
+Useful for scientific computing
+Very Powerful 
+It is used by many of the most highly productive professional programmers. 
+A few of the places that use Python extensively are Google, the New York Stock Exchange, Industrial Light and Magic, ....

@@ -1,0 +1,8 @@
+domains
+	l=integer*
+predicates
+	d(l,l,l)
+clauses
+	d([],[],[]).
+	d([H|T],T1,[H|T2]):-H mod 2<>0,d(T,T1,T2).
+	d([H|T],[H|T1],T2):-H mod 2=0,d(T,T1,T2).

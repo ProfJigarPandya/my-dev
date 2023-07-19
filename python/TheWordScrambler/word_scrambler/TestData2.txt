@@ -1,0 +1,3 @@
+Hello World!
+This is The Word Scrambler.
+It is awesome isn't it?

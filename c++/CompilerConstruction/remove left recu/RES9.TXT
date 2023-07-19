@@ -1,0 +1,137 @@
+
+Original productions .... 
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step0before removing left recursion
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step0after removing left recursion...
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step1before removing left recursion
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step1after removing left recursion...
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step2before removing left recursion
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step2after removing left recursion...
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step3before removing left recursion
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step3after removing left recursion...
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step4before removing left recursion
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+step4after removing left recursion...
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+
+*********        After elimination of left recursions************** 
+         *********** New productions ***********
+ 
+E --> TX
+
+X --> +TX | ^
+
+T --> FY
+
+Y --> *FY | ^
+
+F --> (E) | i
+
+ The input grammer is not left recursive at all

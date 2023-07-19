@@ -1,0 +1,20 @@
+#define R 3
+#define C 3
+int addmatrices(int m1[][C],int r1,int c1,int m2[][C],int r2,int c2,int m[][C])
+{
+ int i,j;
+
+	if(r1==r2 && c1==c2)
+	{
+		for(i=0;i<r1;i++)
+		{
+			for(j=0;j<c1;j++)
+			{
+				m[i][j]=m1[i][j]+m2[i][j];
+			}
+		}
+		return 0; //success
+	}
+	else
+		return -1;//failure
+}

@@ -1,0 +1,16 @@
+domains
+list=symbol*
+
+predicates
+go(list,list)
+eat(symbol,symbol)
+checkeat(list)
+
+clauses
+eat(fox,chicken).
+eat(chicken,fox).
+eat(chicken,grain).
+eat(grain,chicken).
+checkeat([H1|[H2|T]]):-eat(H1,H2),!
+checkeat([H1|[H2|T]]):-checkeat([H1|T]),checkeat([H2|T]).
+go(X,Y):-
