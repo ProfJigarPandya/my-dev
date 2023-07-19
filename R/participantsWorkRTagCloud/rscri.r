@@ -1,7 +1,7 @@
 library("tm")
 library("corpus")
 library("SnowballC")
-cname <- file.path("/home/jigarpandya/Desktop/parti", "data")
+cname <- file.path("C:\\my-dev\\R\\participantsWorkRTagCloud", "data")
 dir(cname)
 text_corpus <- Corpus(DirSource(cname))
 text_corpus <- tm_map(text_corpus, stripWhitespace)
