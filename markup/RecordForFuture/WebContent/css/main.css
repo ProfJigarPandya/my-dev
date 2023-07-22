@@ -1,0 +1,109 @@
+/* semantic elements = elements with meaning */
+header, section, footer, aside, nav,  main, article, figure, time{
+	display:block;
+}
+
+body{
+	font-family: Verdana, sans-serif;
+	font-size: 0.9em;
+}
+
+/* CSS Box Model: Margin, Border, Padding, Content. */
+header, footer {
+  	margin: 10px;
+	border:4px;
+	padding:14px 16px;	
+    color:SteelBlue;
+	background-color: Cornsilk;
+}
+
+.highlight{
+	font-size: xx-large;
+}
+
+
+
+nav a{
+  	margin: 10px;
+	border:4px;
+	padding:14px 16px;	
+	background-color: WhiteSmoke;
+}   
+    
+
+
+
+nav a:hover{
+	background-color:LightYellow;
+	color: Coral;
+}
+
+@media screen and (max-width: 600px){
+	nav a { 
+			float:none;
+			display:table; 
+		  }
+}
+
+/*For https://getbootstrap.com/docs/4.1/getting-started/introduction/#box-sizing*/
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+ 
+
+section {
+	margin: 10px;
+	border:4px;
+	padding:14px 16px;	
+	background-color:LavenderBlush;	
+}
+
+main  {
+	margin: 10px;
+	outline: BlanchedAlmond ridge 2px;
+	border: 4px;
+	padding:14px 16px;	
+	background-color:Azure;	
+	height:400px;
+}
+
+article {
+	margin: 10px;
+	border:4px;
+	padding:14px 16px;	
+	background-color:Ivory;	
+}
+
+aside {
+	margin: 10px;
+	border:4px;
+	padding:14px 16px;	
+	background-color:LightCyan;
+	float:center;
+}
+
+summary {
+	margin: 10px;
+	border:4px;
+	padding:14px 16px;	
+	background-color:PaleGoldenRod;	
+}
+
+time {
+	margin: 10px;
+	border:4px;
+	padding:14px 16px;	
+	background-color:LightSteelBlue;
+	color:SteelBlue;
+	text-align: center;
+	widht:100%;
+}
+
+myrafting {
+	margin: 10px;
+	border:4px;
+	padding:14px 16px;	
+	display: block; /* This is to comply to old browsers */
+	background-color: #dddddd;
+}
+

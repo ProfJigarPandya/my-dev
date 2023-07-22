@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+		  var sayWelcome = function() {
+		    alert("grecaptcha is ready! Welcome!");
+		  };
+		  var sayExpired = function() {
+			    alert("grecaptcha is expired! Timeout!");\
+		  };
+		  var sayError = function() {
+				    alert("grecaptcha is resulted in error! ");
+		  };	
+</script>
+  </head>
+  <body>
+    <form action="?" method="POST">
+      <label>Name</label>
+      <input id="cname"></input>
+      <div class="g-recaptcha" data-callback="sayWelcome" data-expired-callback="sayExpired"  data-error-callback="sayError" data-sitekey="6LcUdWgUAAAAAJSD5SA1C8JYrH54IKOJJ14tdMiB"></div>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
