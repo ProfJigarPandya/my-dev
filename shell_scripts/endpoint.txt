@@ -1,0 +1,1 @@
+https://us-south.ml.cloud.ibm.com/ml/v4/deployments/316d7500-d4dd-4b39-87da-6e4e7ac3a136/predictions
