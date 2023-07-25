@@ -8,5 +8,5 @@ do
 		rm -r ./handson$i/challenge$j/*.o 
 		rm -r ./handson$i/challenge$j/demo
 	done; 
-done
+done;
 

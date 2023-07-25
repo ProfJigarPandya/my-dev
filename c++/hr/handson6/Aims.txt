@@ -2,9 +2,9 @@ Handson#6
 TargetTopics:	Operator overloading
 Teaching Topics:
 ChallangeNo	Question Title
-1		ComplexNumber: C++ class
-2		SimpleArray: C++ class
+1		ComplexNumber
+2		SimpleArray
 3		Overload ++ operator for Complex class (pre-increment)
-4		Operator overloading: using Rectangle class
-5		A Bus on a Route: profit or loss?
+4		Operator overloading using Rectangle Class
+5		A Bus on a Route profit or loss
 6		A small Company
