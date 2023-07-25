@@ -1,8 +1,10 @@
 //============================================================================
 // Name        : NLogNTimeCompDemo.cpp
 // Author      : ProfJigarPandya
-// Description : Explain what an O(NLogN) algorithm might be running internally.
+// Description : Getting Started With Competitive Programming
+// Explain what an O(NLogN) algorithm might be running internally.
 // Source : https://onlinecourses.nptel.ac.in/noc23_cs103/unit?unit=17&assessment=239
+//Problem statement courtesy: Ms. Neeldhara Misra
 //============================================================================
 
 #include <iostream>
