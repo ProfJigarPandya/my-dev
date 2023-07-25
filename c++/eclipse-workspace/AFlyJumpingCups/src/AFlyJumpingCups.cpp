@@ -17,7 +17,6 @@
 //3
 //output
 //NO
-*/
 // Source : https://onlinecourses.nptel.ac.in/noc23_cs103/progassignment?name=244
 // Problem statement courtesy: Ms. Neeldhara Misra
 //============================================================================
