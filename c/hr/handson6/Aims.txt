@@ -1,0 +1,18 @@
+Handson#6	
+TargetTopics:	Multidimentional array and string
+QUIZ Link:	https://forms.gle/zWcS72Mz8BYjtoS96
+ChallengeNo	Question Title
+1		Add two matrices
+2		Transpose a given matrix
+3		Multiply two integer matrices
+4		Determinant of Matrix
+5		Convert a String
+6		String Palindrome check
+7		Sort names of students
+8		Compare and concatenate
+9		Caeser Cipher
+10		Search roll number from student name
+11		Reverse a string 
+12		Split string by space into words
+13		Maximum Occurring Character in a String
+	

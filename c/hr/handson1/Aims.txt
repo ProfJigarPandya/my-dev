@@ -1,0 +1,12 @@
+Handson#1
+TargetTopics:	dataTypes, printf, scanf, Arithmetic Operators and Simple Assignment Operator
+QUIZ Link:	https://forms.gle/nuke9ZAUWCxuFZW9A
+ChallengeNo	Question Title
+1		Print Message
+2		Simple Calculator
+3		Year Calculator
+4		Student Result
+5		Simple Interest
+6		Compound Interest
+7		Area of Circle
+	

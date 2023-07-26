@@ -1,0 +1,13 @@
+Handson#8	
+TargetTopics:	Functions + array + storage types
+QUIZ Link:	https://forms.gle/XJ3TJGmxfhTqM7Rr7
+ChallengeNo	Question Title
+1		Check arrays - if one array is reverse of other
+2		Reverse an array using function
+3		Addition of two matrices using function
+4		Print 1 to n using function
+5		Print a line of stars using function
+6		Check if Strings are anagram or not
+7		Check if a number is prime or armstrong or both
+8		Check if an array can be split in such a position that, the sum of the left side of splitting is equal to the sum of the right side
+	

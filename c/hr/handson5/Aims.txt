@@ -1,0 +1,17 @@
+Handson#5	
+TargetTopics:	More on loops and 1-D array
+QUIZ Link:	https://forms.gle/h6mmWTHpSWrzbJ3X7
+ChallengeNo	Question Title
+1		Largest integer from given four integers
+2		Factorial of any given number
+3		The Euclidean Algorithm
+4		Print an integer array in reverse
+5		Mean, median and mode
+6		Election result
+7		Find 2nd largest Manufacturer Company
+8		Sort real numbers
+9		Print sum of squares of first n natural numbers
+10		Delete duplicate elements in an array
+11		Search a given element in array 
+12		Common element in two arrays
+	

@@ -1,0 +1,17 @@
+Handson#10	
+TargetTopics:	Structure within structure, union, bit fields, pointer basics
+QUIZ Link:	https://forms.gle/gfNSP5EUBCFnsSLv9
+ChallengeNo	Question Title
+1		Area of given shape
+2		Swap values of two variables using pointer
+3		Play with the code
+4		Traverse an array
+5		Exchange two integer using pointer and function
+6		Array rotation - I
+7		Array rotation - II
+8		Array rotation - III
+9		Sum of the elements in array using Pointers
+10		Array element retrieval using a pointer
+11		Printing City names
+12		Sort an array using Pointers 1
+	

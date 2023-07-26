@@ -1,0 +1,13 @@
+Handson#11
+TargetTopics:   Pointers
+QUIZ Link:      https://forms.gle/unMi3bAxrCE4cYPL9
+ChallengeNo     Question Title
+1       	Fiddle with given code - I
+2       	Fiddle with given code - II
+3       	Count occurrences of substring
+4       	Sort names of students (4-sort-names-of-students)
+5       	Sort students based on marks
+6       	Transpose of two dimensional array using pointer
+7       	Insert New value in the array
+8       	Print all strong numbers between given interval
+

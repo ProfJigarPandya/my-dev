@@ -1,0 +1,15 @@
+Handson#3	
+TargetTopics:	if else, switch
+QUIZ Link:	https://forms.gle/KRLEo1jYAydhsTPUA
+ChallengeNo	Question Title
+1		Maximum of Three
+2		Divisible by 5 or 7
+3		If Challenge
+4		If Challenge 2
+5		Leap year test
+6		Days in a given month
+7		Decide student's grade
+8		Find closest number divisible by 2, 3 and 5 (without using loop)
+9		Employee's Gross Salary
+10		Simple Calculator Revisited
+	

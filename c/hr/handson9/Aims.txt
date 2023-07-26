@@ -1,0 +1,14 @@
+Handson#9	
+TargetTopics:	Structure (Everything related to structure except structure within structure and Union)
+QUIZ Link:	https://forms.gle/9zat9DjExjNuWCXd8
+ChallengeNo	Question Title
+1		Read information of employees using structure
+2		Area and perimeter of rectangle
+3		Adding complex numbers using structure
+4		Playing with calendar dates
+5		Figure out next calendar date for a given calendar date
+6		Calculate party expense
+7		Add Two distances (in Inch Feet System) using structures
+8		Cricket structure sorting with team-wise
+9		Difference between two time periods
+	
