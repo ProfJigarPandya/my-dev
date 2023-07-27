@@ -1,3 +1,6 @@
+//runme.sh handson1/challenge1/PrintMessage.c
+//validate.sh handson1/challenge1/PrintMessage.c
+
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
