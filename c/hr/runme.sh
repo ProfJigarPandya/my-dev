@@ -10,12 +10,12 @@ fi
 
 firstChar=`echo $1|cut -d "/" -f 1`
 echo $firstChar
-if [ $firstChar != '.' ] #i.e. run like this -> sh runme.sh handson1/challenge1/PrimalityTest.cpp
+if [ $firstChar != '.' ] #i.e. run like this -> sh runme.sh handson1/challenge1/PrimalityTest.c
 then
 	handsOnNumber=`echo $1|cut -d "/" -f1`
 	challengeNumber=`echo $1|cut -d "/" -f2`
 	sourceFileNameWE=`echo $1|cut -d "/" -f3`
-else # otherwise sh runme.sh ./handson1/challenge1/PrimalityTest.cpp
+else # otherwise sh runme.sh ./handson1/challenge1/PrimalityTest.c
 	handsOnNumber=`echo $1|cut -d "/" -f2`
 	challengeNumber=`echo $1|cut -d "/" -f3`
 	sourceFileNameWE=`echo $1|cut -d "/" -f4`
@@ -33,7 +33,7 @@ rm -f ./$handsOnNumber/$challengeNumber/$sourceFileName.o
 rm -rf ./$handsOnNumber/$challengeNumber/demo
 
 #compile
-g++ ./$handsOnNumber/$challengeNumber/$sourceFileName.cpp -o ./$handsOnNumber/$challengeNumber/$sourceFileName.o
+g++ ./$handsOnNumber/$challengeNumber/$sourceFileName.c -o ./$handsOnNumber/$challengeNumber/$sourceFileName.o
 
 #g++ exit status is 0 upon successful compilation
 if [ `echo $?` -eq 0 ]

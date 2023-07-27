@@ -1,0 +1,6 @@
+5
+Sachin India 50
+Rahul India 45
+Ponting Australia 50
+Dhoni India 60
+ABD SA 70

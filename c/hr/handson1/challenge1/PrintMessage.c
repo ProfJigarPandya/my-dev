@@ -6,6 +6,7 @@
 int main() {
 
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+	printf("Hello12345\n World");
     return 0;
 }
 

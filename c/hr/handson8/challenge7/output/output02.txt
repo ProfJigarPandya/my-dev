@@ -1,0 +1,2 @@
+Given number is not prime.
+Given number is armstrong.
