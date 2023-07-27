@@ -1,0 +1,2 @@
+Given number is prime.
+Given number is armstrong.

@@ -19,3 +19,7 @@ i.e.
 echo "Two ways to create dynamic array" | sed -r "s/([[:space:]])([a-z])/\U\2/g"
 TwoWaysToCreateDynamicArray
 
+
+
+
+find . -name "*.cpp" -exec rm {} \;
