@@ -1,3 +1,4 @@
+//Convert F to C
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -6,6 +7,9 @@
 int main() {
 
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+	float f;
+	scanf("%f",&f);
+	printf("%.3f",(f-32)*5/9);
     return 0;
 }
 
