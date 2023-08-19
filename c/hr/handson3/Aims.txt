@@ -1,6 +1,6 @@
 Handson#3	
 TargetTopics:	if else, switch
-QUIZ Link:	https://forms.gle/KRLEo1jYAydhsTPUA
+Contest Link:
 ChallengeNo	Question Title
 1		Maximum of Three
 2		Divisible by 5 or 7

@@ -1,6 +1,6 @@
 Handson#5	
 TargetTopics:	More on loops and 1-D array
-QUIZ Link:	https://forms.gle/h6mmWTHpSWrzbJ3X7
+Contest Link:
 ChallengeNo	Question Title
 1		Largest integer from given four integers
 2		Factorial of any given number

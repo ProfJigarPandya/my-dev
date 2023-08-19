@@ -1,6 +1,6 @@
 Handson#8	
 TargetTopics:	Functions + array + storage types
-QUIZ Link:	https://forms.gle/XJ3TJGmxfhTqM7Rr7
+Contest Link:
 ChallengeNo	Question Title
 1		Check arrays - if one array is reverse of other
 2		Reverse an array using function

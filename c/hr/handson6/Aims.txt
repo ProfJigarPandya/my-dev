@@ -1,6 +1,6 @@
 Handson#6	
 TargetTopics:	Multidimentional array and string
-QUIZ Link:	https://forms.gle/zWcS72Mz8BYjtoS96
+Contest Link:
 ChallengeNo	Question Title
 1		Add two matrices
 2		Transpose a given matrix

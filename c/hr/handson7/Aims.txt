@@ -1,6 +1,6 @@
 Handson#7	
 TargetTopics:	Function
-QUIZ Link:	https://forms.gle/iosgDiCDiBWK6EeK8
+Contest Link:
 ChallengeNo	Question Title
 1		Integer array sorting - using function
 2		Integer as a sum of two prime numbers 1

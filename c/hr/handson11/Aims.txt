@@ -1,6 +1,6 @@
 Handson#11
 TargetTopics:   Pointers
-QUIZ Link:      https://forms.gle/unMi3bAxrCE4cYPL9
+Contest Link:
 ChallengeNo     Question Title
 1       	Fiddle with given code - I
 2       	Fiddle with given code - II

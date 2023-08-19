@@ -1,6 +1,6 @@
 Handson#9	
 TargetTopics:	Structure (Everything related to structure except structure within structure and Union)
-QUIZ Link:	https://forms.gle/9zat9DjExjNuWCXd8
+Contest Link:
 ChallengeNo	Question Title
 1		Read information of employees using structure
 2		Area and perimeter of rectangle

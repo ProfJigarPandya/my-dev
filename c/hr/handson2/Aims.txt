@@ -1,6 +1,6 @@
 Handson#2	
 TargetTopics:	Relational operators, Logical operators, Ternary operator, Increment-decrement Operator, bitwise operators, special operators, evaluation of expressions, precedence and associativity, mixed mode arithmetic
-QUIZ Link:	https://forms.gle/P9S4fm3iGymMTRCK6
+Contest Link:
 ChallengeNo	Question Title
 1		Max of two numbers
 2		Simple interest calculation

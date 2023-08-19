@@ -1,6 +1,6 @@
 Handson#4	
 TargetTopics:	looping - for, while, do...while, break, continue, pattern and other loops related practice problems
-QUIZ Link:	https://forms.gle/WJxtwjt2f1WRsZ1r6
+Contest Link:
 ChallengeNo	Question Title
 1		Print 5 even numbers from given number
 2		Pattern I

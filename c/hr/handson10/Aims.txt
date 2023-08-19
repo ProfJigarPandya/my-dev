@@ -1,6 +1,6 @@
 Handson#10	
 TargetTopics:	Structure within structure, union, bit fields, pointer basics
-QUIZ Link:	https://forms.gle/gfNSP5EUBCFnsSLv9
+Contest Link:
 ChallengeNo	Question Title
 1		Area of given shape
 2		Swap values of two variables using pointer

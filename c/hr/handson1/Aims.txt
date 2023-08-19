@@ -1,6 +1,6 @@
 Handson#1
 TargetTopics:	dataTypes, printf, scanf, Arithmetic Operators and Simple Assignment Operator
-QUIZ Link:	https://forms.gle/nuke9ZAUWCxuFZW9A
+Contest Link:
 ChallengeNo	Question Title
 1		Print Message
 2		Simple Calculator
