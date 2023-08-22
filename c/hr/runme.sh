@@ -33,7 +33,7 @@ rm -f ./$handsOnNumber/$challengeNumber/$sourceFileName.o
 rm -rf ./$handsOnNumber/$challengeNumber/demo
 
 #compile
-g++ ./$handsOnNumber/$challengeNumber/$sourceFileName.c -o ./$handsOnNumber/$challengeNumber/$sourceFileName.o
+g++ ./$handsOnNumber/$challengeNumber/$sourceFileName.c -o ./$handsOnNumber/$challengeNumber/$sourceFileName.o -lm
 
 #g++ exit status is 0 upon successful compilation
 if [ `echo $?` -eq 0 ]
