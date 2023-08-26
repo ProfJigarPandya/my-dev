@@ -40,7 +40,7 @@ int main()
 			
 			if(mod==1)
 			{
-				result = pow(10,(length-1)) + result; //To take care of preceding zeroes of actual result
+				result = mod * pow(10,(length-1)) + result; //To take care of preceding zeroes of actual result
 			}
 		}
 		while(number);
