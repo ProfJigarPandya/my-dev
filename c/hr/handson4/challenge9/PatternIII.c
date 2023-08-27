@@ -21,10 +21,55 @@ int main() {
 
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
 	int n;
+	int line;
+	char datachar,fillerchar,spacechar;
+	int fwdchar, bwdchar;
 	scanf("%d",&n);
 	if(!(n%2))//even input
 		return 1;
-	for(
+	
+
+	fillerchar=' ';
+	//fillerchar='f';
+	spacechar=' ';
+	//spacechar='*';
+	for(line=1;line<=n;line++)
+	{
+		datachar='A';
+		for(fwdchar=1;fwdchar<(n-line+1);fwdchar++)
+		{
+			printf("%c%c",datachar++,spacechar);
+		}
+		printf("%c",datachar++);
+		
+		for(fwdchar=(n-line+1);fwdchar<n;fwdchar++)
+		{
+			printf("%c%c",spacechar,fillerchar);
+		}
+		for(bwdchar=n;bwdchar>(n-line+1)+1;bwdchar--)
+		{
+			printf("%c%c",spacechar,fillerchar);
+		}
+		
+		if(line==1)
+		{	
+			datachar--;
+			for(bwdchar=(n-line+1)-1;bwdchar>1;bwdchar--)
+			{
+				printf("%c%c",spacechar,--datachar);
+			}
+		}
+		else
+		{
+			for(bwdchar=(n-line+1);bwdchar>1;bwdchar--)
+			{
+				printf("%c%c",spacechar,--datachar);
+			}
+		}
+		printf("%c%c",spacechar,--datachar);
+		if(line<n)
+			printf("\n");
+	}
 	
     return 0;
 }
