@@ -25,9 +25,11 @@ int main() {
 	char datachar,fillerchar,spacechar;
 	int fwdchar, bwdchar;
 	scanf("%d",&n);
-	if(!(n%2))//even input
-		return 1;
-	
+	if(n==1)
+	{
+		printf("A");
+		return 0;
+	}
 
 	fillerchar=' ';
 	//fillerchar='f';
@@ -36,7 +38,8 @@ int main() {
 	for(line=1;line<=n;line++)
 	{
 		datachar='A';
-		for(fwdchar=1;fwdchar<(n-line+1);fwdchar++)
+		//print forward alphabet until middle location
+		for(fwdchar=1;fwdchar<=(n-line);fwdchar++)//(n-line) times
 		{
 			printf("%c%c",datachar++,spacechar);
 		}
