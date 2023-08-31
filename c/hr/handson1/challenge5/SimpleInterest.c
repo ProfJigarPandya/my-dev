@@ -7,11 +7,11 @@ int main() {
 
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
 	int principalAmount;
-	float annualRateOfInterest;
+	double annualRateOfInterest;
 	int durationOfLoan;
 
 	scanf("%d",&principalAmount);
-	scanf("%f",&annualRateOfInterest);
+	scanf("%lf",&annualRateOfInterest);
 	scanf("%d",&durationOfLoan);
 
 	float interestAmount;

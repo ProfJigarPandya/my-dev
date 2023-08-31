@@ -8,7 +8,7 @@
 #include <stdlib.h>
 int main()
 {
-	long int
+	int
 		number,
 		n,
 		mod,
@@ -19,14 +19,14 @@ int main()
 	system("clear");
 	printf("Enter number ");
 	scanf("%d",&number);	
-	
+	printf("\n You entered %d ",number);
      //for(int i=1;i<=30;i++)
      {
 	
 	printf(" number, mod, result, length \n");
 	//n=number=i;
 	n=number;
-	if(number>=1 && number < 1024)
+	if((number>=1) && (number < 1024))
 	{
 		result = mod = number % 2;
 		length=1;
@@ -40,7 +40,7 @@ int main()
 			
 			if(mod==1)
 			{
-				result = pow(10,(length-1)) + result; //To take care of preceding zeroes of actual result
+				result = mod * pow(10,(length-1)) + result; //To take care of preceding zeroes of actual result
 			}
 		}
 		while(number);
