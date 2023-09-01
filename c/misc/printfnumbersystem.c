@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <math.h>
+enum boolean {false,true};
 int main()
 {
-	//unsigned int data=15;
-	unsigned int data=32767;
+	unsigned int data=5024;
 	long int mask;
-	int msb;
+	int msb,bit;
+	enum boolean flagShowZeroes=false;//do not show zeroes
 	int totalBytes=sizeof(unsigned int);
 	printf("Decimal %d\n",data);
 	printf("Hex %x\n",data);
@@ -14,6 +15,13 @@ int main()
 	for(msb=1;msb<=totalBytes*8;msb++)
 	{
 		mask=(unsigned int)pow(2.0,totalBytes*8-msb);
-		printf("%d",(data&mask)>0?1:0);
+		bit=data&mask;
+		if(bit)
+		{
+			printf("1");
+			flagShowZeroes=true;
+		}
+		else if(flagShowZeroes)
+			printf("0");
 	}
 }
