@@ -18,7 +18,11 @@ int main()
     return 0;
 }
 
-long factorial(int)
+long factorial(int n)
 {
   	/* remove this comment and write your code here */
+	long result=1;
+	for(int i=2;i<=n;i++)
+		result=result*i;
+	return result;
 }
