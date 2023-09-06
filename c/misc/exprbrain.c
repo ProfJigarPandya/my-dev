@@ -18,16 +18,17 @@ enum boolean
 
 int main()
 {
-
-	float af = 3, bf = 1, cf = 3, df = 6;
-	int ia = 3, ib = 1, ic = 3, id = 6;
-	enum boolean flag = FALSE;
-	int res = 0;
-
+	
+	float af=3,bf=1,cf=3,df=6;
+	int ia=3,ib=1,ic=3,id=6;
+	enum boolean flag=FALSE;
+	float res=0;
 	//system("clear");
 
 	res = (af + bf) / cf * df;
 	printf("\n Result of float arithmetic %d", res);
+	res = (af + bf) / cf * df ;
+	printf("\n Result of float arithmetic %f",res);
 
 	if (res == 8)
 		flag = TRUE;
@@ -41,6 +42,8 @@ int main()
 
 	res = (ia + ib) / ic * id;//6
 	printf("\n Result of integer arithmetic %d", res);
+        res = (ia + ib) / ic * id ;
+        printf("\n Result of integer arithmetic %f",res);
 
 	if (res == 8)
 		flag = TRUE;
