@@ -7,6 +7,7 @@
 */
 #include <stdio.h>
 
+
 int main(void)
 {
    int n=15,i,j,value,leftup,times,x,y;
@@ -24,7 +25,7 @@ int main(void)
 	      {
 		gotoxy(x,y);
 		printf("%d",value++);
-		delay(100);
+		//delay(100);
 		x+=5;
 	      }
 	      x-=5;
@@ -39,7 +40,7 @@ int main(void)
 		{
 			gotoxy(x,y);
 			printf("%d",value++);
-			delay(100);
+			//delay(100);
 			if(leftup==0)
 				y--;
 			else
@@ -54,7 +55,7 @@ int main(void)
 		{
 			gotoxy(x,y);
 			printf("%d",value++);
-			delay(100);
+			//delay(100);
 			if(leftup==0)
 				x+=5;
 			else
