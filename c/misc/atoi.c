@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 int atoi(char ar[])
 {
  int res=0,i=0;
@@ -10,14 +9,12 @@ int atoi(char ar[])
 	}
  return res;
 }
-void main()
+int main()
 {
 	char arr[]={'2','3','4','\0'};
 	int i=0,res;
-	clrscr();
 
 	printf("%d",atoi(arr));
 
-
-	getch();
+	return 0;
 }

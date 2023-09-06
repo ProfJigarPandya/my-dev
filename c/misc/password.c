@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #define MINLEN 8
 enum boolean {FALSE,TRUE};
 
@@ -55,13 +56,13 @@ int main()
 	{
 		printf("Please, try another password. Current password doesn't match the security requirement criteria.");
 		if(!yUpper)
-			printf("\n You need atleast one upper case alphabet is missing.");
+			printf("\n You need atleast one upper case alphabet.");
 		if(!yLower)
-			printf("\n You need atleast one lower case alphabet is missing.");
+			printf("\n You need atleast one lower case alphabet.");
 		if(!yDigit)
-			printf("\n You need atleast one digit is missing.");
+			printf("\n You need atleast one digit.");
 		if(!ySymbol)
-			printf("\n You need atleast one symbol/puncuation mark is missing.");
+			printf("\n You need atleast one symbol/puncuation mark.");
 		if(chCount!=MINLEN)
 			printf("\n You need atleast %d length of input password not including the enter key at the end.",MINLEN);
 		printf("\n");
