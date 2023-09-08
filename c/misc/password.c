@@ -39,13 +39,14 @@ int main()
 			yDigit=TRUE;
 		else if(!ySymbol && ispunct(ch))
 			ySymbol=TRUE;
-		
+			
+
+		chCount++;
+		//printf("\t%d\t\n",chCount);
 		if( yUpper && yLower && ySymbol && yDigit && (chCount>=MINLEN ) )
 		{
 			yValidPass=TRUE;
 		}
-
-		chCount++;
 
 	}while(ch!='\n');
 	
@@ -63,7 +64,7 @@ int main()
 			printf("\n You need atleast one digit.");
 		if(!ySymbol)
 			printf("\n You need atleast one symbol/puncuation mark.");
-		if(chCount!=MINLEN)
+		if(chCount<=MINLEN)
 			printf("\n You need atleast %d length of input password not including the enter key at the end.",MINLEN);
 		printf("\n");
 	}
