@@ -1,41 +1,64 @@
 /* a no. is a perfect no. if
 	sum of all its factor is equal to the original no.
 
+	Actually, sum of all proper factors i.e. 28 => 1, 2, 4, 7, 14 => 28
+	i.e. 6 => 1, 2, 3 => 6
+	496
+	8128
+etc.
+
+Logic here needs to be improved for efficiency. May be with use of prime number.
+
 	i.e.  1+2+3 = 6; so, 6 is a perfect no. */
 
 
 #include <stdio.h>
-#include <conio.h>
+//#include <conio.h>
 
-void main()
+int main()
 {
- long int no,i,sum,temp;
- clrscr();
- for(no=3;no<1000;no++)
+ long int no,i,sum,nintermed;
+
+ //no=6;
+ //no=28;
+ //no=496;
+ //no=8128;
+ 
+
+
+ //clrscr();
+ for(no=3;no<250000;no++)
  {
 
   sum=1;
-  temp = no;
+  nintermed = no;
   i=2;
-  while(temp!=1)
+  while(i<nintermed)
   {
-	if(temp%i==0)
+	//printf("%ld %ld\n",i,nintermed);
+
+	if(nintermed%i==0)
 	{
 		sum+=i;
-		temp=temp/i;
-		i=2;
+		//printf(" sum is %ld \n",sum);
+		//nintermed=nintermed/i;
+		//i=2;
 	}
-	else
-	   i++;
+	i++;
   }
 
   if(sum==no)
   {
-	printf("\n %d ",no);
+	printf("\nYes %ld",no);
+  }
+  else
+  {
+	//printf("\nNo %ld",no);
   }
 
  }
 
 
- getch();
+ //getch();
+ return 0;
 }
