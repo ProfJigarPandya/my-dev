@@ -9,7 +9,7 @@ int main()
 	int n;
 	printf("Enter n. The number of terms final line. ");
 	scanf("%d",&n);
-	int i,j,k,prev[n],current[n];
+	int i,j,k,prev[n+1],current[n+1];
 	for(i=1;i<=n;i++)
 	{
 		for(j=1;j<=i;j++)
