@@ -1,0 +1,12 @@
+drop user usr1 cascade;
+drop user usr2 cascade;
+drop user usr3 cascade;
+drop user usr4 cascade;
+drop user usr5 cascade;
+drop user usr6 cascade;
+drop user usr7 cascade;
+drop user usr8 cascade;
+drop user usr9 cascade;
+drop user usr10 cascade;
+commit;
+exit;

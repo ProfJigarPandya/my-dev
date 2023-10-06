@@ -2,29 +2,30 @@
 int main()
 {
 	int n;
-	int row,col,flag;
+	int row,col;
+	//int flag;
 	scanf("%d",&n);
 	for(row=1;row<=n;row++)
 	{
-		flag=1;
-		for(col=1;col<=row;col++)
+		//flag=1;
+		if(row%3==0)
 		{
-			if(row%3==0)
+			printf("%d",row);
+		}
+		else
+		{
+
+			for(col=1;col<=row;col++)
 			{
-				printf("%d",row);
-				break;
-			}
-			else
-			{
-				if(flag)
+				if(col%2)
 				{
 					printf("%d",col);
-					flag=0;
+					//flag=0;
 				}
 				else
 				{
 					printf("*");
-					flag=1;
+					//flag=1;
 				}
 			}
 		}
