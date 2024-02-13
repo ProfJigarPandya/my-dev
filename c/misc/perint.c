@@ -155,7 +155,7 @@ struct data
 
 void display(struct data *d,unsigned int nofp)
 {
-	printf("\nPer#%7d ",nofp);
+	printf("\nPer#(%7d) ",nofp);
 
 	for(int i=0;i<d->size;i++)
 		printf("%2d ",d->array[i]);
