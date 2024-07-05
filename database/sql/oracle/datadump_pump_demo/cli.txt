@@ -1,0 +1,252 @@
+Script started on Mon 24 Aug 2015 02:49:56 PM EDT
+root@localhost:~?1034h[root@localhost ~]# pwd
+/root
+root@localhost:~[root@localhost ~]# echo $ORACLE_HOME
+/u01/app/oracle/product/11.2.0/xe
+root@localhost:~[root@localhost ~]# cd $ORACLE_HOME/bin
+
+
+--executing export utility from oracle bin folder
+root@localhost:/u01/app/oracle/product/11.2.0/xe/bin[root@localhost bin]# exp
+
+Export: Release 11.2.0.2.0 - Production on Mon Aug 24 14:50:22 2015
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.	 All rights reserved.
+
+
+Username: jpandya@xe
+Password:
+
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Enter array fetch buffer size: 4096 > 512
+--default file is expdat.dmp, here I chose to have client_master.dmp
+Export file: expdat.dmp > client_master.dump
+
+
+
+--Choose to export Tables. Default is 2-users;
+(2)U(sers), or (3)T(ables): (2)U > 3T
+
+Export table data (yes/no): yes > yes
+
+Compress extents (yes/no): yes > nyes
+
+Export done in US7ASCII character set and AL16UTF16 NCHAR character set
+server uses AL32UTF8 character set (possible charset conversion)
+
+About to export specified tables via Conventional Path ...
+Table(T) or Partition(T:P) to be exported: (RETURN to quit) > T
+
+
+. . exporting table		     CLIENT_MASTER
+	  6 rows exported
+EXP-00091: Exporting questionable statistics.
+Table(T) or Partition(T:P) to be exported: (RETURN to quit) >
+EXP-00091: Exporting questionable statistics.
+Export terminated successfully with warnings.
+--done exporting. You may also export users, privileges, etc.
+
+root@localhost:/u01/app/oracle/product/11.2.0/xe/bin[root@localhost bin]# ls -ltr
+-rw-r--r--. 1 root   root     16384 Aug 24 14:52 client_master.dmp
+
+--Now renaming the existing talbe to backup hence we can practice import utility.
+
+root@localhost:/u01/app/oracle/product/11.2.0/xe/bin[root@localhost bin]# sqlplus fprmKKKKjpandya@xe
+
+SQL*Plus: Release 11.2.0.2.0 Production on Mon Aug 24 14:52:35 2015
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+Enter password:
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+
+SQL> alter table client_master rename to client_master_backup;
+
+Table altered.
+
+SQL> select * from client_master_backup;
+
+CLIENT NAME		    ADDRESS1
+------ -------------------- ------------------------------
+ADDRESS2		       CITY	       STATE		  PINCODE
+------------------------------ --------------- --------------- ----------
+   BAL_DUE
+----------
+0002   Vandana
+			       Madras	       Tamilnadu	   780001
+	 0
+
+0003   Pramada
+			       Bombay	       Maharashtra	   400057
+      5000
+
+CLIENT NAME		    ADDRESS1
+------ -------------------- ------------------------------
+ADDRESS2		       CITY	       STATE		  PINCODE
+------------------------------ --------------- --------------- ----------
+   BAL_DUE
+----------
+
+0004   Basu
+			       Bombay	       Maharashtra	   400056
+	 0
+
+0005   Ravi
+			       Bombay	       Gujarat		   100001
+
+CLIENT NAME		    ADDRESS1
+------ -------------------- ------------------------------
+ADDRESS2		       CITY	       STATE		  PINCODE
+------------------------------ --------------- --------------- ----------
+   BAL_DUE
+----------
+      2000
+
+0006   Rukmini
+			       Bombay	       Maharashtra	   400050
+	 0
+
+0001   Ivan
+
+CLIENT NAME		    ADDRESS1
+------ -------------------- ------------------------------
+ADDRESS2		       CITY	       STATE		  PINCODE
+------------------------------ --------------- --------------- ----------
+   BAL_DUE
+----------
+			       Bombay	       Maharastra	   400054
+     15000
+
+
+6 rows selected.
+
+SQL> select * from client_mastr;
+select * from client_master
+	      *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> exit
+
+--Note that as above table client_master does not exist. Lets now go ahead and import then will test again.
+
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+root@localhost:/u01/app/oracle/product/11.2.0/xe/bin[root@localhost bin]# imp
+
+Import: Release 11.2.0.2.0 - Production on Mon Aug 24 14:53:50 2015
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.	 All rights reserved.
+
+Username: jpandya@xe
+Password:
+
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+Import data only (yes/no): no > no
+
+--provide dump file name
+Import file: expdat.dmp > client_master.dmp
+
+Enter insert buffer size (minimum is 8192) 30720>
+
+Export file created by EXPORT:V11.02.00 via conventional path
+import done in US7ASCII character set and AL16UTF16 NCHAR character set
+import server uses AL32UTF8 character set (possible charset conversion)
+List contents of import file only (yes/no): no >
+
+Ignore create error due to object existence (yes/no): no >
+
+Import grants (yes/no): yes >
+
+Import table data (yes/no): yes >
+
+Import entire export file (yes/no): no >
+
+Import entire export file (yes/no): no >
+Username: jpandya
+
+Enter table(T) or partition(T:P) names. Null list means all tables for user
+Enter table(T) or partition(T:P) name or . if done:
+
+. importing JPANDYA's objects into JPANDYA
+. importing JPANDYA's objects into JPANDYA
+. . importing table		   "CLIENT_MASTER"	    6 rows imported
+
+Import terminated successfully without warnings.
+root@localhost:/u01/app/oracle/product/11.2.0/xe/bin[root@localhost bin]#
+
+
+--verifying import using select statement
+
+
+
+sqlplus
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> select * from client_master;
+
+CLIENT NAME		    ADDRESS1
+------ -------------------- ------------------------------
+ADDRESS2		       CITY	       STATE		  PINCODE
+------------------------------ --------------- --------------- ----------
+   BAL_DUE
+----------
+0002   Vandana
+			       Madras	       Tamilnadu	   780001
+	 0
+
+0003   Pramada
+			       Bombay	       Maharashtra	   400057
+      5000
+
+CLIENT NAME		    ADDRESS1
+------ -------------------- ------------------------------
+ADDRESS2		       CITY	       STATE		  PINCODE
+------------------------------ --------------- --------------- ----------
+   BAL_DUE
+----------
+
+0004   Basu
+			       Bombay	       Maharashtra	   400056
+	 0
+
+0005   Ravi
+			       Bombay	       Gujarat		   100001
+
+CLIENT NAME		    ADDRESS1
+------ -------------------- ------------------------------
+ADDRESS2		       CITY	       STATE		  PINCODE
+------------------------------ --------------- --------------- ----------
+   BAL_DUE
+----------
+      2000
+
+0006   Rukmini
+			       Bombay	       Maharashtra	   400050
+	 0
+
+0001   Ivan
+
+CLIENT NAME		    ADDRESS1
+------ -------------------- ------------------------------
+ADDRESS2		       CITY	       STATE		  PINCODE
+------------------------------ --------------- --------------- ----------
+   BAL_DUE
+----------
+			       Bombay	       Maharastra	   400054
+     15000
+
+
+6 rows selected.
+
+SQL> exit
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+root@localhost:/u01/app/oracle/product/11.2.0/xe/bin[root@localhost bin]# exit
+
+Script done on Mon 24 Aug 2015 02:56:11 PM EDT
