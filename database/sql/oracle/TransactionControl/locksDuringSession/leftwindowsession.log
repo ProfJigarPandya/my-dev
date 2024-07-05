@@ -1,0 +1,71 @@
+SQL> show user;
+USER is "JPANDYA"
+
+SQL> select sid from v$mystat where rownum<=1;
+
+       SID                                                                      
+----------                                                                      
+       106                                                                      
+
+SQL> select * from client_master where client_no='0004';
+
+CLIENT NAME                 ADDRESS1                                            
+------ -------------------- ------------------------------                      
+ADDRESS2                       CITY            STATE              PINCODE       
+------------------------------ --------------- --------------- ----------       
+   BAL_DUE                                                                      
+----------                                                                      
+0004   Basu                                                                     
+                               Bombay          Maharashtra         400056       
+         0                                                                      
+                                                                                
+
+SQL> update client_master set name='Prag' where client_no='0004';
+
+1 row updated.
+
+SQL> select * from client_master where client_no='0004';
+
+CLIENT NAME                 ADDRESS1                                            
+------ -------------------- ------------------------------                      
+ADDRESS2                       CITY            STATE              PINCODE       
+------------------------------ --------------- --------------- ----------       
+   BAL_DUE                                                                      
+----------                                                                      
+0004   Prag                                                                     
+                               Bombay          Maharashtra         400056       
+         0                                                                      
+                                                                                
+
+SQL> --now go to right window and check. It shall still show original data as this is not commited yet;
+SQL> commit;
+
+Commit complete.
+
+SQL> --now go to right window and check. It shall now show updated data as committ complete.
+SQL> --what if left and right both updates simultaneously? Is it allowed? Or any locking mechanism is present?
+SQL> update client_master set name='newPrag' where client_no='0004';
+
+1 row updated.
+
+SQL> --now go to right window and update their locally as well.
+SQL> --Note that because there is a lock by session 106, 104 is in waiting mode.
+SQL> --Let us commit here in left window to move changes and release lock;
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from client_master where client_no='0004';
+
+CLIENT NAME                 ADDRESS1                                            
+------ -------------------- ------------------------------                      
+ADDRESS2                       CITY            STATE              PINCODE       
+------------------------------ --------------- --------------- ----------       
+   BAL_DUE                                                                      
+----------                                                                      
+0004   newRightPrag                                                             
+                               Bombay          Maharashtra         400056       
+         0                                                                      
+                                                                                
+
+SQL> spool off;
