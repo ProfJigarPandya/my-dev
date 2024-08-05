@@ -1,0 +1,88 @@
+SQL> show user;
+USER is "JPANDYA"
+
+SQL> select sid from v$mystat where rownum<=1;
+
+       SID                                                                      
+----------                                                                      
+       104                                                                      
+
+SQL> select * from client_master where client_no='0004';
+
+CLIENT NAME                 ADDRESS1                                            
+------ -------------------- ------------------------------                      
+ADDRESS2                       CITY            STATE              PINCODE       
+------------------------------ --------------- --------------- ----------       
+   BAL_DUE                                                                      
+----------                                                                      
+0004   Basu                                                                     
+                               Bombay          Maharashtra         400056       
+         0                                                                      
+                                                                                
+
+SQL> --moved here from left window to see the data now.
+SQL> select * from client_master where client_no='0004';
+
+CLIENT NAME                 ADDRESS1                                            
+------ -------------------- ------------------------------                      
+ADDRESS2                       CITY            STATE              PINCODE       
+------------------------------ --------------- --------------- ----------       
+   BAL_DUE                                                                      
+----------                                                                      
+0004   Basu                                                                     
+                               Bombay          Maharashtra         400056       
+         0                                                                      
+                                                                                
+
+SQL> --moved here after commit in left window.
+SQL> select * from client_master where client_no='0004';
+
+CLIENT NAME                 ADDRESS1                                            
+------ -------------------- ------------------------------                      
+ADDRESS2                       CITY            STATE              PINCODE       
+------------------------------ --------------- --------------- ----------       
+   BAL_DUE                                                                      
+----------                                                                      
+0004   Prag                                                                     
+                               Bombay          Maharashtra         400056       
+         0                                                                      
+                                                                                
+
+SQL> --see above the name is refreshed. Meaning committed changes reflected.
+SQL> update client_master set name='newRightPrag' where client_no='0004';
+
+1 row updated.
+
+SQL> select * from client_master where client_no='0004';
+
+CLIENT NAME                 ADDRESS1                                            
+------ -------------------- ------------------------------                      
+ADDRESS2                       CITY            STATE              PINCODE       
+------------------------------ --------------- --------------- ----------       
+   BAL_DUE                                                                      
+----------                                                                      
+0004   newRightPrag                                                             
+                               Bombay          Maharashtra         400056       
+         0                                                                      
+                                                                                
+
+SQL> --note while running above update, the command was waiting(i.e.hanging) and when in leftwindow, I hit commit, immediately 106 lock is released and command return here.
+SQL> --Its showing a lock now by 104. Lets commit and check lock log.
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from client_master where client_no='0004';
+
+CLIENT NAME                 ADDRESS1                                            
+------ -------------------- ------------------------------                      
+ADDRESS2                       CITY            STATE              PINCODE       
+------------------------------ --------------- --------------- ----------       
+   BAL_DUE                                                                      
+----------                                                                      
+0004   newRightPrag                                                             
+                               Bombay          Maharashtra         400056       
+         0                                                                      
+                                                                                
+
+SQL> spool off;

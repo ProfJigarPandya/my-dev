@@ -1,0 +1,53 @@
+SQL> show user;
+USER is "SYSTEM"
+
+
+SQL> select sid from v$mystat where rownum<=1;
+
+       SID                                                                      
+----------                                                                      
+        18                                                                      
+
+SQL> select * from v$locked_object;
+
+    XIDUSN    XIDSLOT     XIDSQN  OBJECT_ID SESSION_ID                          
+---------- ---------- ---------- ---------- ----------                          
+ORACLE_USERNAME                OS_USER_NAME                                     
+------------------------------ ------------------------------                   
+PROCESS                  LOCKED_MODE                                            
+------------------------ -----------                                            
+         0          0          0      28783        104                          
+JPANDYA                        jigar.pandya                                     
+2222                               3                                            
+                                                                                
+         2          4       2339      28783        106                          
+JPANDYA                        jigar.pandya                                     
+2239                               3                                            
+
+    XIDUSN    XIDSLOT     XIDSQN  OBJECT_ID SESSION_ID                          
+---------- ---------- ---------- ---------- ----------                          
+ORACLE_USERNAME                OS_USER_NAME                                     
+------------------------------ ------------------------------                   
+PROCESS                  LOCKED_MODE                                            
+------------------------ -----------                                            
+                                                                                
+
+SQL> select * from v$locked_object;
+
+    XIDUSN    XIDSLOT     XIDSQN  OBJECT_ID SESSION_ID                          
+---------- ---------- ---------- ---------- ----------                          
+ORACLE_USERNAME                OS_USER_NAME                                     
+------------------------------ ------------------------------                   
+PROCESS                  LOCKED_MODE                                            
+------------------------ -----------                                            
+         6         33       2357      28783        104                          
+JPANDYA                        jigar.pandya                                     
+2222                               3                                            
+                                                                                
+
+SQL> --after committing in both.
+SQL> select * from v$locked_object;
+
+no rows selected
+
+SQL> spool off;

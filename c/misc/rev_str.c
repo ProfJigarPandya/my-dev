@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 
 
 void reverse()
@@ -8,8 +7,11 @@ void reverse()
 
   ch = getchar();
 
-  if(ch!=EOF)
-	reverse();
+  //In LINUX press Ctrl+d to indicate end of input
+  if(ch==EOF)
+	  return;
+
+ reverse();
 
  printf("%c",ch);
 
@@ -19,7 +21,5 @@ void reverse()
 
 void main()
 {
-clrscr();
 reverse();
-getch();
 }

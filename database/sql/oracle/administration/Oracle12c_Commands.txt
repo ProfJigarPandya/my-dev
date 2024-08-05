@@ -1,0 +1,491 @@
+In Browser:
+
+https://localhost:5500/em
+
+User Name: 		sys
+Password: 		adminadmin
+Container Name: CDB$ROOT
+
+select checkbox  and role  as sysdba
+
+Click on Login
+
+
+col name format a15;
+select name, con_id from v$containers;
+
+
+
+
+On Command Prompt:
+sqlplus / as sysdba
+
+sqlplus sys/adminadmin@orcl as sysdba;
+
+cl scr;
+
+col tname format a35;
+select tname from tab where tname like '%USER%';
+
+desc user_users;
+select count(*) from user_users;
+
+
+conn sys as sysdba;
+
+show user;
+
+alter session set container = orclpdb;
+
+show con_name;
+
+desc v$pdbs;
+
+select name, open_mode from v$pdbs;
+
+alter pluggable database orclpdb open;
+
+select name, open_mode from v$pdbs;
+
+alter user hr identified by hr account unlock;
+
+
+conn hr/hr@orclpdb
+
+show user;
+
+select name, open_mode from v$pdbs where name='ORCLPDB';
+
+select tname from tab;
+
+select * from tab;
+
+desc employees;
+
+set heading on;
+
+set heading off;
+
+desc dba_data_files;
+
+select tablespace_name, file_name, bytes from dba_data_files;
+
+
+conn sys/adminadmin@orcl
+
+exec dbms_xdb_config.setglobalportenabled(TRUE);
+
+select dbms_xdb_config.gethttpsport() from dual;
+
+alter session set container=CDB$ROOT;
+
+
+alter session set "_ORACLE_SCRIPT"=true;  
+create user dbtest identified by dbtest;
+grant connect, resource to dbtest;
+grant create table to dbtest;
+grant select, insert, update, delete on dbtest.test_table to dbtest;
+alter user dbtest quota 100M on users;
+
+create table test_table (col1 integer, col2 integer);
+insert into test_table values (1, 100);
+insert into test_table values (2, 200);
+insert into test_table values (3, 300);
+
+create or replace procedure test_proc
+as
+begin
+for x in (select col1, col2 from test_table)
+loop
+null;
+end loop;
+end;
+/
+
+execute test_proc;
+
+col object_name format a25;
+SELECT OBJECT_NAME, STATUS FROM USER_OBJECTS WHERE OBJECT_NAME = 'TEST_PROC';
+ALTER TABLE test_table ADD col3 INTEGER;
+SELECT OBJECT_NAME, STATUS FROM USER_OBJECTS WHERE OBJECT_NAME = 'TEST_PROC';
+delete from test_table;
+ALTER TABLE test_table MODIFY col1 VARCHAR2(20);
+SELECT OBJECT_NAME, STATUS FROM USER_OBJECTS WHERE OBJECT_NAME = 'TEST_PROC';
+EXECUTE test_proc
+SELECT OBJECT_NAME, STATUS FROM USER_OBJECTS WHERE OBJECT_NAME = 'TEST_PROC';
+
+conn system as sysdba
+password: manager
+
+CREATE TABLE products ( prod_id INT, count INT INVISIBLE );
+ALTER TABLE products MODIFY ( count VISIBLE );
+
+CREATE TABLE employees
+( employee_id NUMBER(6)
+, first_name VARCHAR2(20)
+, last_name VARCHAR2(25)
+CONSTRAINT emp_last_name_nn NOT NULL
+, email VARCHAR2(25)
+CONSTRAINT emp_email_nn NOT NULL
+, phone_number VARCHAR2(20)
+, hire_date DATE
+CONSTRAINT emp_hire_date_nn NOT NULL
+, job_id VARCHAR2(10)
+CONSTRAINT emp_job_nn NOT NULL
+, salary NUMBER(8,2)
+, commission_pct NUMBER(2,2)
+, manager_id NUMBER(6)
+, department_id NUMBER(4)
+, CONSTRAINT emp_salary_min
+CHECK (salary > 0)
+, CONSTRAINT emp_email_uk
+UNIQUE (email)
+) ;
+
+ALTER TABLE employees
+ADD ( CONSTRAINT emp_emp_id_pk
+PRIMARY KEY (employee_id)
+, CONSTRAINT emp_dept_fk
+FOREIGN KEY (department_id)
+REFERENCES departments
+, CONSTRAINT emp_job_fk
+FOREIGN KEY (job_id)
+REFERENCES jobs (job_id)
+, CONSTRAINT emp_manager_fk
+FOREIGN KEY (manager_id)
+REFERENCES employees
+) ;
+
+SELECT ROWID FROM employees WHERE employee_id = 100;
+
+SELECT last_name employee, TO_CHAR(salary, '$99,990.99') AS "SALARY" FROM employees WHERE department_id = 80 AND last_name = 'Russell';
+
+UPDATE employees
+2 SET hire_date = TO_DATE('1998 05 20','YYYY MM DD')
+3 WHERE last_name = 'Hunold';
+
+ALTER TABLE oe.orders ROW STORE COMPRESS ADVANCED;
+
+CREATE TABLE sales (
+prod_id NUMBER NOT NULLcust_id NUMBER NOT NULL, ... )
+PCTFREE 5 NOLOGGING NOCOMPRESS
+PARTITION BY RANGE (time_id)
+( partition sales_2013 VALUES LESS THAN(TO_DATE(...)) ROW STORE COMPRESS BASIC,
+partition sales_2014 VALUES LESS THAN (MAXVALUE) ROW STORE COMPRESS ADVANCED );
+
+show parameter memory_target
+
+select name from v$datafile;
+
+select name from v$tempfile;
+
+select name from v$datafile union select name from v$tempfile;
+
+set pagesize 60;
+
+select magazine_id, magazine_name from magazines where magazine_name like ('%FIRST\_NAME%') ESCAPE '\';
+
+select rownum, magazine_name from magazines where rownum<5;
+
+select distributer_name from distributers where distributer_name like 'AQUA\_%' escape '\';
+
+select fname, salary from personnel where fname='&fname';
+
+select fname, salary from personnel where fname=&fname;
+
+select distributer_name, contact_lname, &&col_name, phone_number from distributers order by &col_name;
+define col_name = profit_share;
+undefine col_name;
+
+define col_name=salary;
+select * from personnel where &col_name < 20000;
+
+set verify on;
+set verify off;
+
+//Used to undefine a variable
+set define off;
+
+set define on;
+select magazine_name from magazines where category_id=&cat_id and retail_price<&ret_price;
+ 
+
+select upper('HELlo')  from dual;
+select lower('HELlo')  from dual;
+select initcap('HELlo')  from dual;
+select initcap('HELlo WoRlD')  from dual;
+
+select substr('hello world',-5, 4) from dual;
+select substr('hello world', 5, 4) from dual;
+
+select length('hello world') from dual;
+
+select replace('hello world','h', 'm') from dual;
+select replace('hello world','wo', 'to') from dual;
+
+select instr('hello world','o',2,1) from dual;
+select instr('hello world','o',2,2) from dual;
+select instr('hello world','o',2,3) from dual;
+
+select lpad('hello',10,'#') from dual;
+select lpad('hello',8,'01_') from dual;
+
+select rpad('hello',8,'_01') from dual;
+
+col CC format a16;
+set pagesize 60;
+select subscriber_lname, credit_card_type, rpad(substr(credit_card_num, 1, 4), 16, '*') as CC from subscribers;
+
+select trim(leading '*' from '**hello**') from dual;
+select trim(trailing '*' from '**hello**') from dual;
+select trim(both '*' from '**hello**') from dual;
+
+col subscriber_address format a25
+col addr format a20
+select  subscriber_address, ltrim(subscriber_address, 'P.O. BOX')  as addr from subscribers;
+
+select round(5678.5678, 2) from dual;
+select round(5678.5678, -2) from dual;
+
+select trunc(5678.5678, 2) from dual;
+select trunc(5678.5678, -2) from dual;
+
+select remainder(14,7), remainder(15,7), remainder(20,7) from dual;
+select mod(14,7), mod(15,7), mod(20,7) from dual;
+
+select hire_date, round((sysdate-hire_date)/365, 0) from personnel;
+
+select subscription_start_date, round(subscription_start_date, 'MONTH') FROM subscriptions;
+select subscription_start_date, round(subscription_start_date, 'YEAR') FROM subscriptions;
+
+select subscription_start_date, trunc(subscription_start_date, 'MONTH') FROM subscriptions;
+select subscription_start_date, trunc(subscription_start_date, 'YEAR') FROM subscriptions;
+
+select next_day('27-MAY-17','MONDAY') FROM DUAL;
+
+select last_day(sysdate) from dual;
+
+select add_months('31-JAN-17', 1) from dual;
+
+select months_between('27-NOV-17', sysdate) from dual;
+select months_between(sysdate, '27-NOV-17') from dual;
+select months_between(sysdate, '26-NOV-17') from dual;
+
+select numtoyminterval(40, 'MONTH') from dual;
+select numtodsinterval(140, 'SECOND') from dual;
+
+select to_date('27-MAY-2017', 'DD-MON-YY') from dual;
+select fname, hire_date from personnel where hire_date < to_date('01/01/2003','DD/MM/YYYY');
+select to_number('$23.45','$99.99') - 10.00 from dual;
+
+select nvl(null, 'hello') from dual;
+select nvl('abc', 'hello') from dual;
+
+select subscriber_fname, nvl(credit_card_type, 'no credit card'), credit_card_num  from subscribers;
+select subscriber_fname, nvl2(credit_card_type, credit_card_num, 'no credit card') from subscribers;
+select subscriber_fname, nvl2(credit_card_type, to_char(credit_card_num), 'no credit card') CREDIT_CARD from subscribers;
+
+select promotion_name, decode(promotion_name, 'FREE_TSHIRT', 'bronze discount', 'FREE_1YEAR', 'silver discount', 'no discount') from promotions;
+
+select subscriber_id, subscriber_state, case subscriber_state when 'CA' then 'WEST' when 'TX' then 'SOUTHWEST' else 'not a region' end region from subscribers;
+
+select subscriber_id, subscriber_state, case when subscriber_state = 'CA' then 'WEST' when subscriber_state = 'TX' then 'SOUTHWEST' else 'not a region' end region from subscribers;
+
+select coalesce('hello',null,'test') from dual;
+select coalesce(null,'world','test') from dual;
+select coalesce(null,null,'test') from dual;
+
+select nullif('abc','abc') nullif from dual;
+select nullif('abc','pqr') nullif from dual;
+
+desc dba_data_files;
+col file_name format a50;
+select file_name, bytes from dba_data_files;
+select sum(bytes) "database size" from dba_data_files;
+select sum(bytes/1024/1024/1024) "database size in GBs" from dba_data_files;
+
+select min(salary), max(salary) from personnel;
+
+select min(renewal_date), max(renewal_date) from subscriptions;
+
+select sum(months_between(sysdate, hire_date)/12) "total exp." from personnel;
+
+select department_id, trunc(avg(salary)) from personnel group by department_id;
+select department_id, to_char(trunc(avg(salary)), '$999,999') from personnel group by department_id;
+
+select department_id, avg(salary) from personnel group by department_id order by avg(salary);
+
+select department_id, position_id, avg(salary) from personnel group by department_id, position_id order by avg(salary);
+
+select count(subscriber_id) "SUB ID from state", subscriber_state "state" from subscribers having count(subscriber_id)>3 group by subscriber_state order by count(subscriber_id);
+
+select subscriber_id, magazine_name from subscriptions S, magazines M where S.magazine_id = M.magazine_id;
+select subscriber_id, magazine_name, S.magazine_id from subscriptions S, magazines M where S.magazine_id = M.magazine_id;
+
+select magazine_name, distributer_name from magazines, distributers;
+
+select magazine_name, category_name from magazines join category using (category_id);
+select magazine_name, category_name from magazines m, category c where m.category_id = c.category_id;
+select magazine_name, category_name from magazines m join category c on (m.category_id = c.category_id);
+
+select m.magazine_name, p.lname from magazines m join personnel p on (m.editor_id = p.personnel_id);
+select m.magazine_name, p.lname from magazines m join personnel p on (m.editor_id = p.personnel_id) where position_id = 'EDITOR';
+
+select m.magazine_name, sum(t.payment) "revenue per mag" from magazines m join subscriptions s on (m.magazine_id = s.magazine_id) join transactions t on (s.subscription_id = t.subscription_id) group by m.magazine_name order by sum(t.payment);
+ 
+select m.magazine_name, d.distributer_id, m.retail_price, d.cost_per_mag from magazines m join distributer_orders d on d.cost_per_mag > m.retail_price order by distributer_id;
+
+
+select s.subscriber_fname, s.subscriber_lname, ss.subscription_id from subscribers s left outer join subscriptions ss on (s.subscriber_id = ss.subscriber_id);
+select s.subscriber_fname, s.subscriber_lname, ss.subscription_id from subscribers s right outer join subscriptions ss on (s.subscriber_id = ss.subscriber_id);
+
+select p.fname, c.claim_description from claims c right outer join personnel p on c.personnel_id = c.personnel_id;
+
+select subscriber_id, subscriber_lname, subscriber_city from subscribers where subscriber_city = (select contact_city from distributers where distributer_name = 'GREEN FOLIAGE');
+
+select subscriber_id, subscriber_lname, subscriber_city from subscribers where subscriber_city IN (select contact_city from distributers where distributer_name in ( 'GREEN FOLIAGE', 'WORLD DISTRIBUTERS'));
+
+SELECT FNAME, LNAME, SALARY FROM PERSONNEL WHERE SALARY < (SELECT AVG(claim_cost) FROM CLAIMS);
+
+select category_id, trunc(avg(retail_price - cost)) from magazines group by category_id having avg(retail_price-cost) > (select avg(retail_price-cost) from magazines where category_id = 20);
+
+select fname, lname, salary from personnel where salary > all (select claim_cost from claims where claim_code = 'C455') and position_id = 'EDITOR';
+
+select p.fname, p.lname, a.position_id, p.salary, a.sal_avg from personnel p join (select position_id, avg(salary) sal_avg from personnel group by position_id) a on p.position_id = a.position_id and p.salary > a.sal_avg;
+
+// Oracle SQL statements that use the Oracle EXISTS condition are very inefficient since the sub-query is RE-RUN for EVERY row in the outer query's // table. There are more efficient ways to write most queries, that do not use the EXISTS condition.
+
+SELECT department_id
+  FROM departments d
+  WHERE EXISTS
+  (SELECT * FROM employees e
+    WHERE d.department_id 
+    = e.department_id);
+
+// return all records from the customers table who have placed at least one order
+SELECT *
+FROM customers
+WHERE EXISTS (SELECT *
+              FROM order_details
+              WHERE customers.customer_id = order_details.customer_id);
+
+
+// list all magazines which are subscribed.
+select magazine_name from magazines where exists ( select magazine_id from subscriptions where magazines.magazine_id = subscriptions.magazine_id);
+
+// list all magazines which are not subscribed.
+select magazine_name from magazines where not exists ( select magazine_id from subscriptions where magazines.magazine_id = subscriptions.magazine_id);
+
+select magazine_name, retail_price, (select to_char(trunc(avg(retail_price))) from magazines) from magazines;
+
+create table personnel2 as (select * from personnel where salary > 100000);
+
+insert into personnel2 select * from personnel where lname = 'OCONNELL';
+
+// update the salary of all SA_REP employee with maximum of salary of them.
+update personnel2 set salary = (select max(salary) from personnel where position_id = 'SA_REP') where position_id = 'SA_REP';
+
+delete from personnel2 where personnel_id not in (select personnel_id from claims);
+
+// removes duplicates
+select fname, lname from personnel union select subscriber_fname, subscriber_lname from subscribers;
+
+// does not remove duplicates
+select fname, lname from personnel union all select subscriber_fname, subscriber_lname from subscribers;
+
+select distributer_id, distributer_name, contact_city, contact_email from distributers where contact_city = 'NEW YORK' union all select channel_partner_id, channel_partner_name, city, email from channel_partners where city = 'NEW YORK';
+
+// returns rows that are common to both queries and removes any duplicates
+select fname, lname from personnel intersect select subscriber_fname, subscriber_lname from subscribers;
+
+//removes rows from the first query that are found in the result set of the second query
+select fname, lname from personnel minus select subscriber_fname, subscriber_lname from subscribers;
+select magazine_id from magazines minus select magazine_id from subscriptions;
+
+select sys_context('userenv', 'session_user') from dual;
+
+conn sys as sysdba
+password: adminadmin
+
+conn pub_admin
+password: abc123
+
+create table emp (a varchar2(20));
+create view emp as select * from emp;
+
+select table_name from user_tables;
+
+alter table emp rename to employee;
+
+alter table employee read only;
+
+alter table employee read write;
+
+alter table employee modify ( a number(10));
+alter table employee modify ( a number(30));
+alter table employee modify ( a varchar2(10));
+alter table employee modify ( a date);
+insert into employee values (sysdate);
+alter table employee modify ( a varchar2(10)); // failure
+delete from employee;
+alter table employee modify ( a varchar2(10)); // success
+insert into employee values ('hello');
+alter table employee modify ( a number(10)); // failure
+alter table employee rename column a to name;
+
+alter table employee add (salary number(10) default 5000);
+insert into employee (name) values ('smith');
+alter table employee drop column salary;
+alter table employee set unused column salary;
+alter table employee drop unused columns;
+drop table employee;
+create table emp (name varchar2(20)  primary key );
+drop table emp;
+create table emp (name varchar2(20)  primary key );
+create table emp (name varchar2(20), constraint name_pk  primary key (name));
+select constraint_name, constraint_type from user_constraints where table_name = 'emp';
+select constraint_name, constraint_type from user_constraints where table_name = 'EMP';
+
+create table table2 (b_id varchar2(10) primary key);
+create table test (a number(10), b_id varchar2(10), constraint b_fk foreign key (b_id) references table2 (b_id));
+select constraint_name, constraint_type from user_constraints where table_name = 'TEST';
+create table table3 (col varchar2(10), constraint col_uk unique (col));
+create table table4 (col varchar2(10) unique);
+create table table5 (col varchar2(10) not null);
+create table table6 (col date, constraint col_ck check (col > '01-Jun-2017') );
+select constraint_name, constraint_type from user_constraints where table_name = 'TABLE6';
+insert into table6 values ('01-May-2017'); // failure
+
+create table asset (asset_id varchar2(10), asset_name varchar2(20));
+alter table asset add constraint asset_id_pk primary key (asset_id);
+select constraint_name, constraint_type from user_constraints where table_name = 'ASSET';
+
+alter table asset modify (asset_name constraint asset_name_nn NOT NULL);
+
+alter table asset disable constraint asset_name_nn;
+select constraint_name, constraint_type, status from user_constraints where table_name = 'ASSET';
+
+alter table asset drop constraint asset_name_nn;
+select constraint_name, constraint_type, status from user_constraints where table_name = 'ASSET';
+
+create table test (a number(10), b_id varchar2(10), constraint b_fk foreign key (b_id) references table2 (b_id) on delete cascade);
+
+create user smith identified by abc124;
+grant create session to smith;
+grant create table to smith;
+grant create view, alter session to smith;
+
+alter session set nls_date_format = 'MM-DD-YY';
+
+grant select on magazines to smith;
+
+grant insert on magazines to smith with grant option; //smith can grant 'insert' to other user
+
+alter session set "_ORACLE_SCRIPT"=true;
+create role db_student;
+grant create session, create table, create view, alter session to db_student;
+
+create user test identified by test;
+grant db_student to test;
+
+

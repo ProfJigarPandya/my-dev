@@ -20,8 +20,8 @@ int main()
     for ( i = 0 ; i < n ; i++ )
     {
 	
-        for ( c = 0 ; c <= ( n - i - 2 ) ; c++ )
-            printf(" "); 
+        //for ( c = 0 ; c <= ( n - i - 2 ) ; c++ )
+        //    printf(" "); 
         for( c = 0 ; c <= i ; c++ )
 	{
             
