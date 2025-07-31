@@ -1,0 +1,36 @@
+Its possible to have genuinely install oracle database on Fedora 42 via having docker container Oracle Linux 10 with Oracle Database 21c.
+
+sudo systemctl status docker
+
+sudo dnf install docker
+
+sudo systemct start docker
+
+sudo systemctl status docker
+
+sudo systemctl enable docker
+
+
+docker pull container-registry.oracle.com/database/express:21.3.0-xe
+
+docker run -d --name oracle_xe -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=giveitatry container-registry.oracle.com/database/express:21.3.0-xe
+
+sudo docker exec -it oracle_xe sqlplus system/yourpassword@XEPDB1
+
+
+SID XE is default for express edition
+
+
+docker start oracle_xe
+
+docker update --restart unless-stopped oracle_xe
+
+dnf config_manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
+
+dnf update
+
+
+dnf install --allowerasing docker-ce docker-ce-cli containerd.io
+
+rpm -i docker-desktop-x86_64.rpm
+
