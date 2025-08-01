@@ -13,7 +13,7 @@ sudo systemctl enable docker
 
 docker pull container-registry.oracle.com/database/express:21.3.0-xe
 
-docker run -d --name oracle_xe -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=giveitatry container-registry.oracle.com/database/express:21.3.0-xe
+docker run -d --name oracle_xe -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=yourpassword container-registry.oracle.com/database/express:21.3.0-xe
 
 sudo docker exec -it oracle_xe sqlplus system/yourpassword@XEPDB1
 
