@@ -1,0 +1,2 @@
+in2csv JobOpportunities.xlsx > JobOpportunities.csv
+cut -d "," -f 1 it-job-opportunities-dataset/JobOpportunities.csv  > it-job-opportunities-dataset/data/roles_only.txt
