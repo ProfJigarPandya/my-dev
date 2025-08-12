@@ -12,6 +12,7 @@
 // Select the database to use.
 use('mongodbVSCodePlaygroundDB');
 
+db.sales.remove({});
 
 // Insert a few documents into the sales collection.
 db.getCollection('sales').insertMany([
@@ -40,7 +41,5 @@ db.getCollection('sales').aggregate([
   // Find all of the sales that occurred in 2014.
   { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
   // Group the total sales for each product.
-  { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
+  { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: ['$price', '$quantity'] } } } }
 ]);
-
-
