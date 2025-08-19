@@ -1,0 +1,54 @@
+alternatives --config java
+Set required jdk i.e. OpenJDK 21.
+
+
+Have repo registered as below
+
+cat /etc/yum.repos.d/neo4j.repo 
+[neo4j]
+name=Neo4j RPM Repository
+baseurl=https://yum.neo4j.com/stable/latest
+enabled=1
+gpgcheck=1
+
+
+
+
+dnf install neo4j
+
+By default, 
+native user name	neo4j 
+password		neo4j
+scheme			neo4j://
+Host			localhost
+Port			7687
+
+Before starting server, you may change the password to custom password as below
+neo4j-admin dbms set-initial-password <yourpassword>
+
+NEO4J_CONF    Path to directory which contains neo4j.conf.
+NEO4J_DEBUG   Set to anything to enable debug output.
+NEO4J_HOME    Neo4j home directory.
+
+mostly /etc/neo4j directory
+
+
+
+systemctl enable neo4j.service
+systemctl start neo4j.service
+
+netstat -an | grep 7687
+
+
+
+
+
+
+
+cypher-shell
+Ctrl+d to exit
+
+
+VSCode
+Install neo4j plugin by neo4j
+Add connection details
