@@ -1,0 +1,7 @@
+MATCH ()-[r]->()
+DELETE r;
+
+MATCH (n)
+DETACH DELETE n;
+
+

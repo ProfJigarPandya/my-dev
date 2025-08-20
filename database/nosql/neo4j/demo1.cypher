@@ -1,0 +1,62 @@
+CREATE (d1:Device {name: "Laptop", type: "Computer"})
+CREATE (d2:Device {name: "Desktop PC", type: "Computer"})
+CREATE (d3:Device {name: "Smartphone", type: "Mobile"})
+CREATE (d4:Device {name: "Tablet", type: "Mobile"})
+CREATE (d5:Device {name: "Smartwatch", type: "Wearable"})
+CREATE (d6:Device {name: "Smart TV", type: "Entertainment"})
+CREATE (d7:Device {name: "Gaming Console", type: "Entertainment"})
+CREATE (d8:Device {name: "Digital Camera", type: "Photography"})
+CREATE (d9:Device {name: "E-Reader", type: "Reading"})
+CREATE (d10:Device {name: "Smart Speaker", type: "Audio"})
+CREATE (d11:Device {name: "Fitness Tracker", type: "Health"})
+CREATE (d12:Device {name: "Virtual Reality Headset", type: "Gaming"})
+CREATE (d13:Device {name: "Smart Home Hub", type: "Home Automation"})
+CREATE (d14:Device {name: "Network Switch", type: "Networking"})
+CREATE (d15:Device {name: "USB Flash Drive", type: "Storage"})
+CREATE (d16:Device {name: "External SSD", type: "Storage"})
+CREATE (d17:Device {name: "Bluetooth Speaker", type: "Audio"})
+CREATE (d18:Device {name: "Wireless Earbuds", type: "Audio"})
+CREATE (d19:Device {name: "Smart Thermostat", type: "Home Automation"})
+CREATE (d20:Device {name: "Smart Light Bulb", type: "Home Automation"})
+CREATE (d21:Device {name: "Smart Lock", type: "Security"})
+CREATE (d22:Device {name: "Smart Doorbell", type: "Security"})
+CREATE (d23:Device {name: "Smart Camera", type: "Security"})
+CREATE (d24:Device {name: "Smart Refrigerator", type: "Appliance"})
+CREATE (d25:Device {name: "Smart Washing Machine", type: "Appliance"})
+CREATE (d26:Device {name: "Smart Oven", type: "Appliance"})
+CREATE (d27:Device {name: "Smart Coffee Maker", type: "Appliance"})
+CREATE (d28:Device {name: "Smart Air Conditioner", type: "Appliance"})
+CREATE (d29:Device {name: "Smart Vacuum Cleaner", type: "Appliance"})
+CREATE (d30:Device {name: "Smart Air Purifier", type: "Appliance"})
+CREATE (d31:Device {name: "Smart Water Leak Detector", type: "Security"})
+CREATE (d32:Device {name: "Smart Smoke Detector", type: "Security"})
+CREATE (d33:Device {name: "Smart Garage Door Opener", type: "Security"})
+CREATE (d34:Device {name: "Smart Irrigation System", type: "Gardening"})
+CREATE (d35:Device {name: "Smart Pet Feeder", type: "Pet Care"})
+CREATE (d36:Device {name: "Smart Mirror", type: "Home Decor"})
+CREATE (d37:Device {name: "Smart Scale", type: "Health"})
+CREATE (d38:Device {name: "Smart Blood Pressure Monitor", type: "Health"})
+CREATE (d39:Device {name: "Smart Glucose Monitor", type: "Health"})
+CREATE (d40:Device {name: "Smart Sleep Tracker", type: "Health"})
+CREATE (d41:Device {name: "Smart Air Quality Monitor", type: "Health"})           
+CREATE (d42:Device {name: "Computer Monitor", type: "Display"})
+CREATE (d43:Device {name: "Computer Mouse", type: "Input"})   
+CREATE (d44:Device {name: "Printer", type: "Output"})
+CREATE (d45:Device {name: "Scanner", type: "Input"})
+CREATE (d46:Device {name: "Projector", type: "Display"})
+CREATE (d47:Device {name: "Webcam", type: "Input"})
+CREATE (d48:Device {name: "Speakers", type: "Output"})
+CREATE (d49:Device {name: "External Hard Drive", type: "Storage"})
+CREATE (d50:Device {name: "Network Router", type: "Networking"})  
+
+
+WITH *
+MATCH (device:Device)
+WHERE device.type IN ["Computer", "Mobile", "Wearable", "Entertainment", "Photography", "Reading", "Audio", "Health", "Gaming", "Home Automation", "Networking", "Storage", "Security", "Appliance", "Gardening", "Pet Care", "Home Decor", "Display", "Input", "Output"]
+ORDER BY device.name
+RETURN device.name AS DeviceName, device.type AS DeviceType
+
+
+
+
+
