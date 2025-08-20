@@ -1,0 +1,14 @@
+{
+  "name": "neo4j-person-belongings",
+  "version": "1.0.0",
+  "description": "A project to manage a Neo4j graph of persons and their belongings.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "neo4j-driver": "^5.28.1"
+  },
+  "author": "ProfJigarPandya",
+  "license": "MIT"
+}

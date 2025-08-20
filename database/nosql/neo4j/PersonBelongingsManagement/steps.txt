@@ -1,0 +1,18 @@
+In the file 
+neo4j-person-belongings/src/index.js
+following line edit values of username and password as per your neo4j database installation. Default provided here.
+
+const driver = neo4j.driver('bolt://localhost:7687', neo4j.auth.basic('neo4j', 'neo4j'));
+
+
+npm -i neo4j-driver
+
+npm list neo4j-driver
+
+Update below file with approprite driver version value
+
+/neo4j-person-belongings/package.json:    "neo4j-driver": "^5.28.1"
+
+npm run start
+
+If you see successful message then verify your neo4j graph database for person and belongings graph existence.
