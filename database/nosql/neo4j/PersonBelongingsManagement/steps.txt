@@ -16,3 +16,7 @@ Update below file with approprite driver version value
 npm run start
 
 If you see successful message then verify your neo4j graph database for person and belongings graph existence.
+
+To get labels in visualization add following parameters
+initialZoom 1
+randerer 'canvas'

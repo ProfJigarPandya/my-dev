@@ -3,5 +3,3 @@ DELETE r;
 
 MATCH (n)
 DETACH DELETE n;
-
-
