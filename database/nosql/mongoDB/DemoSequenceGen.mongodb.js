@@ -29,3 +29,9 @@ db.usercounters.insertOne(
         _id: getnextseq("empid"),
         name: "Tom Jerry"
     })
+
+db.usercounters.insertOne(
+    {
+        _id: getnextseq("empid"),
+        name: "Tom Cruise"
+    })

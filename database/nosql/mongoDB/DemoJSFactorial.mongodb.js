@@ -16,7 +16,7 @@ db.system.js.find({})
     }
 );*/
 
-db.system.js.find({});
+//db.system.js.find({});
 
 //db.eval(x="factorial(1)");
 
@@ -27,6 +27,3 @@ db.system.js.find({});
 
 
 
-factorial(1);
-
-factorial(5);
