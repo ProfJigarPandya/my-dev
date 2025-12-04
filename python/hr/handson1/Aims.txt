@@ -1,0 +1,9 @@
+Handson#1
+Teaching-Topics:	Introduction to Python
+TargetTopics:	Hello World
+ChallengeNo	Question Title
+1		Hello World
+2		Python If-Else
+3		Loops
+4		Arithmetic Operators
+5		Python: Division
