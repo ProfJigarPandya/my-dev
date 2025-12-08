@@ -1,0 +1,9 @@
+SP_2025_26_HR_Lab02
+Application of Data Structures in Python
+Easy, medium and hard challenges
+
+
+https://www.hackerrank.com/challenges/collections-counter
+https://www.hackerrank.com/challenges/most-commons
+https://www.hackerrank.com/challenges/maximize-it
+
