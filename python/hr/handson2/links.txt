@@ -6,4 +6,4 @@ Easy, medium and hard challenges
 https://www.hackerrank.com/challenges/collections-counter
 https://www.hackerrank.com/challenges/most-commons
 https://www.hackerrank.com/challenges/maximize-it
-
+https://www.hackerrank.com/challenges/list-comprehensions
