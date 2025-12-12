@@ -1,0 +1,9 @@
+https://www.hackerrank.com/challenges/validate-list-of-email-address-with-filter
+
+https://www.hackerrank.com/challenges/incorrect-regex
+
+https://www.hackerrank.com/challenges/exceptions
+
+https://www.hackerrank.com/challenges/class-1-dealing-with-complex-numbers
+
+https://www.hackerrank.com/challenges/class-2-find-the-torsional-angle
