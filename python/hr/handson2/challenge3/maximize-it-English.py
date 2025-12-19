@@ -24,6 +24,12 @@ for l in range(K):
 
 if max_sum%M!=0:
     print(max_sum%M)
+elif K==1:
+    max_sum=lists[0][0]**2%M;
+    for i in range(1,len(lists[0])):
+        if lists[0][i]**2%M>max_sum:
+            max_sum=lists[0][i]**2%M
+    print(max_sum)
 else:
-   pass
+    pass
     
