@@ -7,3 +7,4 @@ https://www.hackerrank.com/challenges/collections-counter
 https://www.hackerrank.com/challenges/most-commons
 https://www.hackerrank.com/challenges/maximize-it
 https://www.hackerrank.com/challenges/list-comprehensions
+https://www.hackerrank.com/challenges/nested-list
