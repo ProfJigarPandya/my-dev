@@ -21,4 +21,5 @@ for c in comb:
     total_pairs=total_pairs+1
 #print(count_of_a)
 #print(total_pairs)
-print(count_of_a/total_pairs)
+result=count_of_a/total_pairs
+print(f"{result:.12g}",end='')
