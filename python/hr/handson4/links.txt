@@ -2,3 +2,5 @@ https://www.hackerrank.com/challenges/zipped
 https://www.hackerrank.com/challenges/any-or-all
 https://www.hackerrank.com/challenges/default-arguments
 https://www.hackerrank.com/challenges/calendar-module
+https://www.hackerrank.com/challenges/iterables-and-iterators
+https://www.hackerrank.com/challenges/itertools-product
