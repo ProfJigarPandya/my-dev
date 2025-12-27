@@ -11,6 +11,6 @@ c = Counter(s)
 most_common = c.most_common()
 most_common.sort(key=lambda x: (-x[1], x[0]))
 for a,b in most_common[0:2]:
-    print(a,b)
+	print(a,b)
 a,b=most_common[2]
 print(a,b,end='')
