@@ -9,3 +9,4 @@ https://www.hackerrank.com/challenges/maximize-it
 https://www.hackerrank.com/challenges/list-comprehensions
 https://www.hackerrank.com/challenges/nested-list
 https://www.hackerrank.com/challenges/finding-the-percentage/
+https://www.hackerrank.com/challenges/python-lists
