@@ -6,7 +6,7 @@ because the engine does not recognize the possessive syntax (Fails immediately; 
 import re
 number_of_lines = int(input())
 for _ in range(number_of_lines):
-    line = raw_input()
+    line = input()
     try:
         re.compile(line)
         print(True)
