@@ -1,0 +1,30 @@
+29
+append 1
+append 6
+append 10
+append 8
+append 9
+append 2
+append 12
+append 7
+append 3
+append 5
+insert 8 66
+insert 1 30
+insert 6 75
+insert 4 44
+insert 9 67
+insert 2 44
+insert 9 21
+insert 8 87
+insert 1 75
+insert 1 48
+print
+reverse
+print
+sort
+print
+append 2
+append 5
+remove 2
+print

@@ -1,0 +1,1 @@
+As per older version of python where possessive pattern was not supported a++ or .*+ is invalid. The expected output as per greedy pattern implmentation supported by Python2. This program outcome as per python2 is as expected.
