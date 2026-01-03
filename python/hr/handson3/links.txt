@@ -7,3 +7,5 @@ https://www.hackerrank.com/challenges/exceptions
 https://www.hackerrank.com/challenges/class-1-dealing-with-complex-numbers
 
 https://www.hackerrank.com/challenges/class-2-find-the-torsional-angle
+
+https://www.hackerrank.com/challenges/whats-your-name/problem
