@@ -22,7 +22,7 @@ if(number_of_lines_K==1):
     for prospective_element in line[1:]:
         if((prospective_element*prospective_element)%modulo_M>maximized_result):
             maximized_result = (prospective_element*prospective_element)%modulo_M
-    print(maximized_result)
+    print(maximized_result,end='')
     exit()          
 
 list_of_combinations_prev=[]
@@ -58,4 +58,4 @@ for prospective_list in list_of_combinations_current[1:]:
     if prospective_result>maximized_result:
         maximized_result=prospective_result
 
-print(maximized_result)
+print(maximized_result,end='')
