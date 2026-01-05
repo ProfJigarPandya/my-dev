@@ -23,12 +23,14 @@ echo $sourceFileName
 for inFileName in `ls ./$handsOnNumber/$challengeNumber/input`; 
 do 
 	outFileNameSuffix=`echo $inFileName | cut -b 6-`; 
+	testCaseNumber=`echo $inFileName | cut -b 7-8`
 	outFileName=output$outFileNameSuffix;
-	echo "Expected output: ./$handsOnNumber/$challengeNumber/output/$outFileName Generated Output: ./$handsOnNumber/$challengeNumber/demo/$outFileName"; 
+	#echo "Expected output: ./$handsOnNumber/$challengeNumber/output/$outFileName Generated Output: ./$handsOnNumber/$challengeNumber/demo/$outFileName"; 
 	diff ./$handsOnNumber/$challengeNumber/output/$outFileName ./$handsOnNumber/$challengeNumber/demo/$outFileName
 	if [ `echo $?` -ne 0 ];
 	then
 		echo "Output is not as per expectation. Test case failed."
 		break
 	fi
+	echo "$handsOnNumber $challengeNumber $testCaseNumber: Test case passed."
 done;
