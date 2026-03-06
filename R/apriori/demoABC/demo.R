@@ -1,0 +1,11 @@
+library(arules)
+library(arulesViz)
+taste <- list(c("A","B","C"),c("B","C"),c("A","B","D"),c("A","B","C","D"),c("A"),c("B"))
+tr<-as(taste,"transactions")
+inspect(tr)
+items
+image(tr)
+length(tr)
+itemFrequencyPlot(tr,type="absolute")
+rules <- apriori(tr,parameter=list(supp=0.5,conf=0.5))
+inspect(rules)
