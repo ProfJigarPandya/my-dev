@@ -1,0 +1,50 @@
+
+
+Attempt # 1 without outlier KM++
+centers [[8]
+ [2]]
+indices [3 1]
+
+Attempt # 2 with outlier KM++ 
+centers [[ 8]
+ [25]]
+indices [3 6]
+
+Attempt # 3 without outlier KM lloyd default
+centroid [[9.]
+ [2.]]
+label [1 1 1 0 0 0]
+inertia 4.0
+
+Attempt # 4 with outlier KM lloyd default
+centroid [[25. ]
+ [ 5.5]]
+label [1 1 1 1 1 1 0]
+inertia 77.5
+
+Attempt # 5 without outlier KM elkan
+centroid [[9.]
+ [2.]]
+label [1 1 1 0 0 0]
+inertia 4.0
+
+Attempt # 6 with outlier KM elkan
+centroid [[ 5.5]
+ [25. ]]
+label [0 0 0 0 0 0 1]
+inertia 77.5
+
+Attempt # 7 with outlier centroid 3 and 10
+centroid [[ 2.]
+ [13.]]
+label [0 0 0 1 1 1 1]
+inertia 196.00000000000006
+
+Attempt # 8 with outlier
+label [0 0 0 0 0 1 1]
+inertia 187.8055555555556
+
+Attempt # 9 with outlier
+label [0 0 0 0 0 1 1]
+inertia 187.8055555555556
+
