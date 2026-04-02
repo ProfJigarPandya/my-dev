@@ -33,4 +33,12 @@ dnf update
 dnf install --allowerasing docker-ce docker-ce-cli containerd.io
 
 rpm -i docker-desktop-x86_64.rpm
+docker images
 
+
+
+docker container ls
+
+same as
+
+docker ps

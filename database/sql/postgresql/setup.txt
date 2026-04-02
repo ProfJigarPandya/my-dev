@@ -1,0 +1,25 @@
+dnf install postgre-sqlserver
+dnf install postgre
+/usr/bin/postgresql-setup --initdb
+ * Initializing database in '/var/lib/pgsql/data'
+ * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log
+
+systemctl enable postgresql.service
+systemctl start postgresql.service
+systemctl status postgresql.service
+psql --version
+psql (PostgreSQL) 18.1
+ postgresql.service
+
+
+
+alter user postgres with password 'postgres';
+
+#Change local peer to md5
+vi /var/lib/pgsql/data/pg_hba.conf
+systemctl restart postgresql.service
+
+
+
+
+

@@ -1,0 +1,30 @@
+scala>     val sc = new SparkContext(conf)
+     | 
+org.apache.spark.SparkException: Only one SparkContext should be running in this JVM (see SPARK-2243).The currently running SparkContext was created at:
+org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:923)
+org.apache.spark.repl.Main$.createSparkSession(Main.scala:122)
+<init>(<console>:5)
+<init>(<console>:4)
+.<clinit>(<console>:1)
+.lzycompute(<synthetic>:6)
+.$print(<synthetic>:5)
+$print(<synthetic>)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)
+java.base/java.lang.reflect.Method.invoke(Method.java:580)
+scala.tools.nsc.interpreter.IMain$ReadEvalPrint.call(IMain.scala:669)
+scala.tools.nsc.interpreter.IMain$Request.loadAndRun(IMain.scala:1029)
+scala.tools.nsc.interpreter.IMain.$anonfun$doInterpret$1(IMain.scala:507)
+scala.reflect.internal.util.ScalaClassLoader.asContext(ScalaClassLoader.scala:36)
+scala.reflect.internal.util.ScalaClassLoader.asContext$(ScalaClassLoader.scala:127)
+scala.reflect.internal.util.AbstractFileClassLoader.asContext(AbstractFileClassLoader.scala:43)
+scala.tools.nsc.interpreter.IMain.loadAndRunReq$1(IMain.scala:506)
+scala.tools.nsc.interpreter.IMain.$anonfun$doInterpret$3(IMain.scala:520)
+  at org.apache.spark.SparkContext$.$anonfun$assertNoOtherContextIsRunning$2(SparkContext.scala:3011)
+  at scala.Option.foreach(Option.scala:437)
+  at org.apache.spark.SparkContext$.assertNoOtherContextIsRunning(SparkContext.scala:3008)
+  at org.apache.spark.SparkContext$.markPartiallyConstructed(SparkContext.scala:3099)
+  ... 43 elided
+
+

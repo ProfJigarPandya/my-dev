@@ -1,0 +1,2 @@
+sbin/start-worker.sh spark://jmpfedora:7077
+org.apache.spark.deploy.worker.Worker running as process 63960.  Stop it first.

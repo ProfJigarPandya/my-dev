@@ -1,0 +1,28 @@
+[WARNING]  Expected all dependencies to require Scala version: 2.12.-1
+[WARNING]  me.my.mine:SparkWordCount:1.0-SNAPSHOT requires scala version: 2.12.6
+[WARNING]  org.scala-lang:scala3-library_3:3.0.2 requires scala version: 2.13.6
+[WARNING] Multiple versions of scala libraries detected!
+[INFO] /run/media/jmpandya/MSWDataDrive/Career/my-dev/spark/SparkWordCount/src/main/scala:-1: info: compiling
+[INFO] /run/media/jmpandya/MSWDataDrive/Career/my-dev/spark/SparkWordCount/target/generated-sources/annotations:-1: info: compiling
+[INFO] Compiling 1 source files to /run/media/jmpandya/MSWDataDrive/Career/my-dev/spark/SparkWordCount/target/classes at 1775107099199
+Downloading from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6.jar (10 MB at 5.2 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-compiler/2.12.6/scala-compiler-2.12.6.pom (2.3 kB at 68 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6.pom (1.8 kB at 31 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/jline/jline/2.14.6/jline-2.14.6.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/jline/jline/2.14.6/jline-2.14.6.pom (20 kB at 265 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar (548 kB at 2.1 MB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-reflect/2.12.6/scala-reflect-2.12.6.jar (3.6 MB at 2.3 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0.jar (5.5 MB at 4.6 MB/s)
+[ERROR] error:
+[INFO]   bad constant pool index: 0 at pos: 48462
+[INFO]      while compiling: <no file>
+[INFO]         during phase: globalPhase=<no phase>, enteringPhase=<some phase>
+[INFO]      library version: version 2.12.6
+[INFO]     compiler version: version 2.12.6
+
