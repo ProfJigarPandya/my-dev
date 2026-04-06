@@ -1,0 +1,23 @@
+Human-Friendly Decision Tree
+
+    If Age is "31...40":
+        Predict: YES (They always buy a computer in this age group).
+    Else (Age is NOT "31...40"):
+        If Student is "Yes":
+            If Credit_Rating is "Fair":
+                Predict: YES
+            Else (Credit_Rating is "Excellent"):
+                If Age is "<=30":
+                    Predict: YES
+                Else (Age is ">40"):
+                    Predict: NO
+        Else (Student is "No"):
+            If Age is ">40":
+                If Credit_Rating is "Fair":
+                    Predict: YES
+                Else (Credit_Rating is "Excellent"):
+                    Predict: NO
+            Else (Age is "<=30"):
+                Predict: NO
+
+

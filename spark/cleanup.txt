@@ -1,0 +1,3 @@
+hdfs dfs -rm -r /user/jmpandya/my-dev/mapreduce/WordCount/spark_output
+Deleted /user/jmpandya/my-dev/mapreduce/WordCount/spark_output
+
