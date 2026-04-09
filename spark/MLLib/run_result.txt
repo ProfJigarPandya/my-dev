@@ -1,0 +1,49 @@
++-------+------+-------+-------------+-------------+----------+                 
+|    Age|Income|Student|Credit_Rating|Buys_Computer|prediction|
++-------+------+-------+-------------+-------------+----------+
+|   <=30|  High|     No|         Fair|           No|       1.0|
+|   <=30|  High|     No|    Excellent|           No|       1.0|
+|31...40|  High|     No|         Fair|          Yes|       0.0|
+|    >40|Medium|     No|         Fair|          Yes|       0.0|
+|    >40|   Low|    Yes|         Fair|          Yes|       0.0|
+|    >40|   Low|    Yes|    Excellent|           No|       1.0|
+|31...40|   Low|    Yes|    Excellent|          Yes|       0.0|
+|   <=30|Medium|     No|         Fair|           No|       1.0|
+|   <=30|   Low|    Yes|         Fair|          Yes|       0.0|
+|    >40|Medium|    Yes|         Fair|          Yes|       0.0|
+|   <=30|Medium|    Yes|    Excellent|          Yes|       0.0|
+|31...40|Medium|     No|    Excellent|          Yes|       0.0|
+|31...40|  High|    Yes|         Fair|          Yes|       0.0|
+|    >40|Medium|     No|    Excellent|           No|       1.0|
++-------+------+-------+-------------+-------------+----------+
+
+DecisionTreeClassificationModel: uid=DecisionTreeClassifier_a978de5c8d64, depth=4, numNodes=13, numClasses=2, numFeatures=4
+  If (feature 0 in {2.0})
+   Predict: 0.0
+  Else (feature 0 not in {2.0})
+   If (feature 2 in {1.0})
+    If (feature 3 in {0.0})
+     Predict: 0.0
+    Else (feature 3 not in {0.0})
+     If (feature 0 in {0.0})
+      Predict: 0.0
+     Else (feature 0 not in {0.0})
+      Predict: 1.0
+   Else (feature 2 not in {1.0})
+    If (feature 0 in {1.0})
+     If (feature 3 in {0.0})
+      Predict: 0.0
+     Else (feature 3 not in {0.0})
+      Predict: 1.0
+    Else (feature 0 not in {1.0})
+     Predict: 1.0
+
+Model Accuracy: 100.00%
+Test Error: 0.00%
++-------------+----------+-----+
+|Buys_Computer|prediction|count|
++-------------+----------+-----+
+|           No|       1.0|    5|
+|          Yes|       0.0|    9|
++-------------+----------+-----+
+
